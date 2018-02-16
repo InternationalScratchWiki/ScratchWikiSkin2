@@ -1,0 +1,42 @@
+{
+	"name": "ScratchWikiSkin",
+	"version": "1.0",
+	"author": "Original skin by JSO, with contributions from jvvg, blob8108, scmb1, -PRO-, and others. Rewrite to update style and registration by Kenny2scratch.",
+	"url": "https://github.com/InternationalScratchWiki/ScratchWikiSkin2",
+	"descriptionmsg": "scratchwikiskin-desc",
+	"namemsg": "skinname-scratchwikiskin2",
+	"license-name": "MIT",
+	"type": "skin",
+	"ValidSkinNames": {
+		"scratchwikiskin2": "ScratchWikiSkin"
+	},
+	"AutoloadClasses": {
+		"SkinScratchWikiSkin": "ScratchWikiSkin.skin.php",
+		"ScratchWikiSkinTemplate": "ScratchWikiSkinTemplate.php"
+	},
+	"MessagesDirs": {
+		"ScratchWikiSkin": "i18n"
+	},
+	"ResourceModules": {
+		"skins.scratchwikiskin2": {
+			"class": "ResourceLoaderSkinModule",
+			"position": "top",
+			"styles": {
+				"resources/main.css": {
+					"media": "screen"
+				}
+			}
+		},
+		"skins.scratchwikiskin2.js": {
+			"scripts": [
+				"resources/skin.js"
+			],
+			"position": "bottom"
+		}
+	},
+	"ResourceFileModulePaths": {
+		"localBasePath": "",
+		"remoteSkinPath": "ScratchWikiSkin"
+	},
+	"manifest_version": 1
+}
