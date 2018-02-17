@@ -114,14 +114,14 @@ if (!$wgUser->isLoggedIn()) { ?>
 				<?php if ($this->data['sitenotice']) { ?><div id="siteNotice"><?php $this->html('sitenotice'); ?></div><?php } ?>
 				<div class="box">
 					<div class="box-header">
-						<h1 class="firstHeading"><?php $this->html('title')?><?=$this->getIndicators()?></h1>
+						<h1 id="firstHeading" class="firstHeading"><?php $this->html('title')?><?=$this->getIndicators()?></h1>
 					</div>
-					<div class="box-content" id="article">
+					<div class="box-content" id="content">
 <p id="siteSub"><?=wfMessage( 'tagline' )->escaped()?></p>
-<?php if ($this->data['subtitle']) { ?><p><?php $this->html('subtitle') ?></p><?php } ?>
+<?php if ($this->data['subtitle']) { ?><p id="contentSub"><?php $this->html('subtitle') ?></p><?php } ?>
 <?php if ($this->data['undelete']) { ?><p><?php $this->html('undelete') ?></p><?php } ?>
 <?php $this->html('bodytext') ?>
-<?php $this->html('dataAfterCotnent'); ?>
+<?php $this->html('dataAfterContent'); ?>
 <?php if ($this->data['catlinks']) {
 	$this->html( 'catlinks' );
 } ?>

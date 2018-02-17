@@ -696,50 +696,50 @@ dl dd {
 
 /* MASTER ARTICLE STYLE */
 
-#article {
+#content {
     display: block;
     font-family: "Helvetica Neue", "Helvetica", Arial, sans-serif;
     color: black;
 }
 
-#article b,
-#article strong {
+#content b,
+#content strong {
     font-weight: bold;
 }
 
-#article a.new {
+#content a.new {
     color: #ba0000;
 }
 
-#article a.new:visited {
+#content a.new:visited {
     color: #a55858;
 }
 
-#article a.new:hover {
+#content a.new:hover {
     text-decoration: underline;
 }
 
-#article .previewnote p {
+#content .previewnote p {
     color: red;
 }
 
-#article code,
-#article pre {
+#content code,
+#content pre {
     border-color: #cecece;
     border-radius: 3px;
 }
 
-#article .mw-editsection {
+#content .mw-editsection {
     float: right;
     line-height: inherit;
 }
 
-#article h1,
-#article h2 {
+#content h1,
+#content h2 {
     border-bottom: 1px solid #111;
 }
 
-#article a.external {
+#content a.external {
     /* @embed */
     background-image: url("External_link.png");
     background-size: 10px 10px;
@@ -748,7 +748,7 @@ dl dd {
     padding-right: 13px;
 }
 
-#article .plainlinks a {
+#content .plainlinks a {
     background-image: inherit;
     background-size: inherit;
     background-position: inherit;
@@ -756,7 +756,7 @@ dl dd {
     padding-right: inherit;
 }
 
-#article hr {
+#content hr {
     height: 1px;
     color: #111;
     background-color: #111;
@@ -764,20 +764,20 @@ dl dd {
     margin: 0.2em 0;
 }
 
-#article h1,
-#article h2,
-#article h3,
-#article h4,
-#article h5 {
+#content h1,
+#content h2,
+#content h3,
+#content h4,
+#content h5 {
     margin-bottom: 1em;
 }
 
-#article dl {
+#content dl {
     line-height: inherit;
     font-size: inherit;
 }
 
-#article a:visited {
+#content a:visited {
     text-decoration: none;
     color: #0a85c2;
 }
