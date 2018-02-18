@@ -17,6 +17,9 @@ body {
 * {
     font-family: "Helvetica Neue", "Helvetica", Arial, sans-serif;
 }
+#content * {
+	font-family: inherit;
+}
 
 
 /* Typography */
