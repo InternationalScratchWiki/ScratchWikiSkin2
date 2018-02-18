@@ -13,12 +13,7 @@ body {
     background-color: #0c9ce4;
     padding: 0;
     color: #6b6b6b;
-}
-* {
     font-family: "Helvetica Neue", "Helvetica", Arial, sans-serif;
-}
-#content * {
-	font-family: inherit;
 }
 
 
@@ -705,6 +700,7 @@ dl dd {
     display: block;
     font-family: "Helvetica Neue", "Helvetica", Arial, sans-serif;
     color: black;
+    overflow-x: auto;
 }
 
 #content b,
