@@ -147,13 +147,13 @@ if (!$wgUser->isLoggedIn()) { ?>
 <dd><span><a href="https://scratch.mit.edu/developers/"><?=wfMessage('scratchwikiskin-footer-developers')->parse()?></a></span></dd>
 <dd><span><a href="https://scratch.mit.edu/info/credits"><?=wfMessage('scratchwikiskin-footer-credits')->parse()?></a></span></dd>
 <dd><span><a href="https://scratch.mit.edu/jobs"><?=wfMessage('scratchwikiskin-footer-jobs')->parse()?></a></span></dd>
-<dd><span><a href="https://wiki.scratch.mit.edu/wiki/Scratch_Press"><?=wfMessage('scratchwikiskin-footer-press')->parse()?></a></span></dd>
+<dd><span><a href="https://en.scratch-wiki.info/wiki/Scratch_Press"><?=wfMessage('scratchwikiskin-footer-press')->parse()?></a></span></dd>
 			</dl>
 			<dl>
 				<dt><span><?=wfMessage('scratchwikiskin-footer-community-title')->parse()?></span></dt>
 <dd><span><a href="https://scratch.mit.edu/community_guidelines"><?=wfMessage('scratchwikiskin-footer-cgs')->parse()?></a></span></dd>
 <dd><span><a href="https://scratch.mit.edu/discuss/"><?=wfMessage('scratchwikiskin-footer-discuss')->parse()?></a></span></dd>
-<dd><span><a href="https://wiki.scratch.mit.edu"><?=wfMessage('scratchwikiskin-footer-wiki')->parse()?></a></span></dd>
+<dd><span><a href="https://en.scratch-wiki.info"><?=wfMessage('scratchwikiskin-footer-wiki')->parse()?></a></span></dd>
 <dd><span><a href="https://scratch.mit.edu/statistics/"><?=wfMessage('scratchwikiskin-footer-stats')->parse()?></a></span></dd>
 			</dl>
 			<dl>

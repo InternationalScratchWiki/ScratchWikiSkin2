@@ -13,6 +13,8 @@ body {
     background-color: #0c9ce4;
     padding: 0;
     color: #6b6b6b;
+}
+* {
     font-family: "Helvetica Neue", "Helvetica", Arial, sans-serif;
 }
 
@@ -727,6 +729,7 @@ dl dd {
 #content pre {
     border-color: #cecece;
     border-radius: 3px;
+    font-family: monospace;
 }
 
 #content .mw-editsection {
