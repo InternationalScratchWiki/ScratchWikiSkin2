@@ -9,7 +9,7 @@
  */
 
 if ( !function_exists( 'wfLoadSkin' ) ) {
-	die( 'This skin has been upgraded and now requires MediaWiki 1.25 or newer.' );
+	die( 'Ce skin a été mis à jour et requiert MediaWiki 1.25 ou plus haut.' );
 }
 
 wfLoadSkin( 'ScratchWikiSkin' );
