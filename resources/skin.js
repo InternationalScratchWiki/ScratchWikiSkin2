@@ -64,4 +64,15 @@ window.onload = function(){
 			}
 		};
 	};
+	if (q(':target') !== null) {
+		var navbar = q('#navigation');
+		var view = q('#view');
+		navbar.style.display = 'none';
+		view.style.marginTop = '0';
+		window.onscroll = function(e){
+			navbar.style.display = '';
+			view.style.marginTop = '';
+			window.onscroll = null;
+		};
+	};
 };
