@@ -269,7 +269,7 @@ dl dd {
     z-index: 10;
     border-bottom: 1px solid rgba(0, 0, 0, 0.1);
     box-shadow: 0 0 3px rgba(0, 0, 0, 0.25);
-    background-color: #25aff4;
+    background-color: #7953c4;
     width: 100%;
     /* NOTE: Height should match offset settings in main.scss file */
     height: 50px;
