@@ -792,6 +792,8 @@ dl dd {
     border: 1px solid #d9d9d9;
 }
 
+/* Preferences styling */
+
 #preftoc ul {
     list-style: none;
 }
@@ -823,4 +825,8 @@ dl dd {
 
 #preftoc *:focus {
     outline: none;
+}
+
+#mw-input-wpscratchwikiskin-header-color {
+	font-family: monospace;
 }

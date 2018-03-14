@@ -32,4 +32,14 @@ class SkinScratchWikiSkin extends SkinTemplate {
 			'mediawiki.skinning.interface', 'skins.scratchwikiskin2'
 		] );
 	}
+	static function onGetPreferences( $user, &$preferences ) {
+		$origpref = $user->getOption( 'scratchwikiskin-header-color' );
+		$preferences['scratchwikiskin-header-color'] = [
+			'type' => 'text',
+			'label-message' => 'scratchwikiskin-pref-color',
+			'section' => 'rendering/skin',
+			'default' => ((!$origpref) ? '#7953c4' : $origpref),
+		];
+		return true;
+	}
 }

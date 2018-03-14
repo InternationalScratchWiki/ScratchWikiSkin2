@@ -47,5 +47,6 @@
 	"scratchwikiskin-footer-conference": "see title",
 	"scratchwikiskin-footer-foundation": "see title",
 	"scratchwikiskin-footer-llk": "Copyright paragraph contents",
-	"scratchwikiskin-notloggedin": "Text for the login link when not logged in"
+	"scratchwikiskin-notloggedin": "Text for the login link when not logged in",
+	"scratchwikiskin-pref-color": "Label for header color preferences option"
 }
