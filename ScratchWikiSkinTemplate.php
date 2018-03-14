@@ -19,7 +19,7 @@ class ScratchWikiSkinTemplate extends BaseTemplate {
 	background-image: url(<?=$wgLogo?>);
 }
 #navigation, .dropdown {
-	background-color: <?=htmlspecialchars($wgUser->getOption( 'scratchwikiskin-header-color' ))?>;
+	background-color: <?=htmlspecialchars(str_replace([';', '}'], '', $wgUser->getOption( 'scratchwikiskin-header-color' )))?>;
 }
 </style>
 <div id="navigation">
