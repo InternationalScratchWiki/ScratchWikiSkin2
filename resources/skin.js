@@ -66,10 +66,8 @@ window.addEventListener('load', function(){
 	};
 	if (q(':target') !== null) {
 		window.scrollBy(0, -50);
-		console.log('debug: scrolling -50');
 	};
 });
 window.addEventListener('hashchange', function(){
 	window.scrollBy(0, -50);
-	console.log('debug: scrolling -50');
 });
