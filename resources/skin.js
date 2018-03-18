@@ -18,7 +18,7 @@ function q(s) {
 	return h;
 }
 
-window.onload = function(){
+window.addEventListener('load', function(){
 	//when pencil icon clicked, display dropdown
 	var pagefctbtn = q('#navigation ul > li.content-actions > a.user-info');
 	var pagefctdropdown = q('#navigation ul > li.content-actions > ul.dropdown');
@@ -65,14 +65,11 @@ window.onload = function(){
 		};
 	};
 	if (q(':target') !== null) {
-		var navbar = q('#navigation');
-		var view = q('#view');
-		navbar.style.display = 'none';
-		view.style.marginTop = '0';
-		window.onscroll = function(e){
-			navbar.style.display = '';
-			view.style.marginTop = '';
-			window.onscroll = null;
-		};
+		window.scrollBy(0, -50);
+		console.log('debug: scrolling -50');
 	};
-};
+});
+window.addEventListener('hashchange', function(){
+	window.scrollBy(0, -50);
+	console.log('debug: scrolling -50');
+});
