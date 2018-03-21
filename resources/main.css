@@ -195,7 +195,8 @@ dl dd {
 .dropdown {
     display: none;
     position: absolute;
-    right: 0;
+    left: 0;
+    margin-left: 0;
     border: 1px solid rgba(0, 0, 0, 0.1);
     border-radius: 0 0 5px 5px;
     background-color: #7953c4;
@@ -205,6 +206,10 @@ dl dd {
     font-size: .8125rem;
     font-weight: normal;
     width: max-content;
+}
+.right .dropdown {
+    left: inherit;
+    right: 0;
 }
 
 .dropdown.open {

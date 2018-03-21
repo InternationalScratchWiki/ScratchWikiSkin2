@@ -37,7 +37,7 @@ class ScratchWikiSkinTemplate extends BaseTemplate {
 				<a class="dropdown-toggle"><span><?=wfMessage('scratchwikiskin-explore')->escaped()?></span></a>
 				<ul class="dropdown">
 					<li><a href="https://scratch.mit.edu/explore/projects/all"><span><?=wfMessage( 'scratchwikiskin-explore-projects' )->escaped() ?></span></a></li>
-					<li><a href="<?=wfMessage('randompage-url')->escaped()?>"><span><?=wfMessage('randompage')->escaped()?></span></a></li>
+					<li><a href="<?=Title::newFromText(wfMessage('randompage-url')->text())->getLocalURL()?>"><span><?=wfMessage('randompage')->escaped()?></span></a></li>
 				</ul>
 			</li>
 			<li class="link discuss">
@@ -45,14 +45,22 @@ class ScratchWikiSkinTemplate extends BaseTemplate {
 				<ul class="dropdown">
 					<li><a href="https://scratch.mit.edu/discuss"><span><?=wfMessage( 'scratchwikiskin-discuss-text' )->escaped() ?></span></a></li>
 					<li><a href="<?=wfMessage('scratchwikiskin-discuss-wiki')->escaped()?>"><span><?=wfMessage('scratchwikiskin-discuss-wiki-text')->escaped()?></span></a></li>
-					<li><a href="<?=wfMessage('portal-url')->escaped()?>"><span><?=wfMessage('portal')->escaped()?></span></a></li>
+					<li><a href="<?=Title::newFromText(wfMessage('portal-url')->text())->getLocalURL()?>"><span><?=wfMessage('portal')->escaped()?></span></a></li>
 				</ul>
 			</li>
 			<li class="link tips">
-				<a href="https://scratch.mit.edu/tips"><span><?=wfMessage( 'scratchwikiskin-tips' )->escaped() ?></span></a>
+				<a class="dropdown-toggle"><span><?=wfMessage('scratchwikiskin-tips')->escaped()?></span></a>
+				<ul class="dropdown">
+					<li><a href="https://scratch.mit.edu/tips"><span><?=wfMessage( 'scratchwikiskin-tips-text' )->escaped() ?></span></a></li>
+					<li><a href="<?=Title::newFromText(wfMessage('scratchwikiskin-faq-page-url')->text())->getLocalURL()?>"><span><?=wfMessage('scratchwikiskin-faq-page')->escaped()?></span></a></li>
+				</ul>
 			</li>
 			<li class="link about">
-				<a href="https://scratch.mit.edu/about"><span><?=wfMessage( 'scratchwikiskin-about' )->escaped() ?></span></a>
+				<a class="dropdown-toggle"><span><?=wfMessage('scratchwikiskin-about')->escaped()?></span></a>
+				<ul class="dropdown">
+					<li><a href="https://scratch.mit.edu/about"><span><?=wfMessage( 'scratchwikiskin-about-text' )->escaped() ?></span></a></li>
+					<li><a href="<?=Title::newFromText(wfMessage('aboutpage')->text())->getLocalURL()?>"><span><?=wfMessage('aboutsite')->escaped()?></span></a></li>
+				</ul>
 			</li>
 			<li class="search">
 				<form class="form" action="<?php $this->text( 'wgScript' ) ?>">
