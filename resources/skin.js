@@ -36,6 +36,20 @@ window.addEventListener('load', function(){
 	if (document.querySelector(':target') !== null) {
 		window.scrollBy(0, -50);
 	};
+	document.querySelector('#searchInput').onfocus = function () {
+		for (let link of document.querySelectorAll('#navigation .link')) {
+			if (!link.classList.contains('right')) {
+				link.style.display = 'none';
+			}
+		}
+	};
+	document.querySelector('#searchInput').onblur = function () {
+		for (let link of document.querySelectorAll('#navigation .link')) {
+			if (!link.classList.contains('right')) {
+				link.style.display = '';
+			}
+		}
+	};
 });
 window.addEventListener('hashchange', function(){
 	window.scrollBy(0, -50);
