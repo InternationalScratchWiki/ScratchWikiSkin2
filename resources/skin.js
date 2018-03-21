@@ -20,15 +20,15 @@ function q(s) {
 
 window.addEventListener('load', function(){
 	//when pencil icon clicked, display dropdown
-	var pagefctbtn = q('#navigation ul > li.content-actions > a.user-info');
+	var pagefctbtn = q('#navigation ul > li.content-actions > a.dropdown-toggle');
 	var pagefctdropdown = q('#navigation ul > li.content-actions > ul.dropdown');
 	pagefctbtn.onclick = function(){
-		if (pagefctdropdown.style.display != 'block') {
+		if (!pagefctdropdown.classList.contains('open')) {
 			pagefctbtn.addclass('open');
-			pagefctdropdown.show();
+			pagefctdropdown.addclass('open');
 		} else {
 			pagefctbtn.delclass('open');
-			pagefctdropdown.hide();
+			pagefctdropdown.delclass('open');
 		}
 	};
 	//when mouse moved away, hide dropdown
@@ -38,20 +38,20 @@ window.addEventListener('load', function(){
 		if (!e.toElement) return;
 		if (!e.toElement.matches('#navigation ul > li.content-actions, #navigation ul > li.content-actions *')) {
 			pagefctbtn.delclass('open');
-			pagefctdropdown.hide();
+			pagefctdropdown.delclass('open');
 		}
 	};
 	//if user is logged in and toggle is showing, add dropdown functions
-	if (userfcttoggle = q('#navigation ul > li.account-nav > a.user-info')) {
+	if (userfcttoggle = q('#navigation ul > li.account-nav > a.dropdown-toggle')) {
 		//if username toggle clicked, display dropdown
 		var userfctdropdown = q('#navigation ul > li.account-nav > ul.dropdown');
 		userfcttoggle.onclick = function() {
-			if (userfctdropdown.style.display != 'block') {
+			if (!userfctdropdown.classList.contains('open')) {
 				userfcttoggle.addclass('open');
-				userfctdropdown.show();
+				userfctdropdown.addclass('open');
 			} else {
 				userfcttoggle.delclass('open');
-				userfctdropdown.hide();
+				userfctdropdown.delclass('open');
 			}
 		};
 		q('#navigation ul > li.account-nav').onmouseout = function(e) {
@@ -60,7 +60,7 @@ window.addEventListener('load', function(){
 			if (!e.toElement) return;
 			if (!e.toElement.matches('#navigation ul > li.account-nav, #navigation ul > li.account-nav *')) {
 				userfcttoggle.delclass('open');
-				userfctdropdown.hide();
+				userfctdropdown.delclass('open');
 			}
 		};
 	};

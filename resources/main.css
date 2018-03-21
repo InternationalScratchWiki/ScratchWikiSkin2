@@ -338,7 +338,7 @@ dl dd {
 }
 
 #navigation .logo a,
-#navigation .content-actions .user-info {
+#navigation .content-actions .dropdown-toggle {
     display: block;
     transition: .15s ease all;
     border: 0;
@@ -358,7 +358,7 @@ dl dd {
 }
 
 #navigation .logo a:hover,
-#navigation .content-actions .user-info:hover {
+#navigation .content-actions .dropdown-toggle:hover {
     transition: .15s ease all;
 }
 
@@ -366,7 +366,7 @@ dl dd {
     background-size: 100%;
 }
 
-#navigation .content-actions .user-info:hover {
+#navigation .content-actions .dropdown-toggle:hover {
     background-size: 27.5px 27.5px;
 }
 
@@ -463,8 +463,8 @@ dl dd {
     height: 2.25rem;
 }
 
-#navigation .account-nav .user-info,
-#navigation .content-actions .user-info {
+#navigation .account-nav .dropdown-toggle,
+#navigation .content-actions .dropdown-toggle {
     padding-top: 14px;
 }
 
@@ -488,7 +488,12 @@ dl dd {
     background-color: rgba(0, 0, 0, 0.1);
 }
 
-#navigation .account-nav>a:after {
+#navigation .account-nav>a:after,
+#navigation .create>a:after,
+#navigation .explore>a:after,
+#navigation .discuss>a:after,
+#navigation .tips>a:after,
+#navigation .about>a:after {
     display: inline-block;
     margin-left: 8px;
     background-image: url("https://scratch.mit.edu/images/dropdown.png");
@@ -502,7 +507,12 @@ dl dd {
 }
 
 #navigation .account-nav .dropdown,
-#navigation .content-actions .dropdown {
+#navigation .content-actions .dropdown,
+#navigation .create .dropdown,
+#navigation .explore .dropdown,
+#navigation .discuss .dropdown,
+#navigation .tips .dropdown,
+#navigation .about .dropdown {
     top: 50px;
     padding: 0;
     margin-top: 0;
@@ -645,7 +655,7 @@ dl dd {
     margin-top: 20px;
 }
 
-#navigation ul>li.content-actions>a.user-info {
+#navigation ul>li.content-actions>a.dropdown-toggle {
     /* @embed */
     background: url("Edit-pencil.png") no-repeat scroll center center transparent;
     background-size: 25px 25px;

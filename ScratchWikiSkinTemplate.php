@@ -27,13 +27,26 @@ class ScratchWikiSkinTemplate extends BaseTemplate {
 		<ul>
 			<li class="logo"><a aria-label="Scratch" href="https://scratch.mit.edu/"></a></li>
 			<li class="link create">
-				<a href="https://scratch.mit.edu/projects/editor/"><span><?=wfMessage( 'scratchwikiskin-create' )->escaped() ?></span></a>
+				<a class="dropdown-toggle"><span><?=wfMessage('scratchwikiskin-create')->escaped()?></span></a>
+				<ul class="dropdown">
+					<li><a href="https://scratch.mit.edu/projects/editor/"><span><?=wfMessage( 'scratchwikiskin-create-project' )->escaped() ?></span></a></li>
+					<li><a href="<?=Title::newFromText(wfMessage('scratchwikiskin-create-page-url')->text())->getLocalURL()?>"><span><?=wfMessage('scratchwikiskin-create-page')->escaped()?></span></a></li>
+				</ul>
 			</li>
 			<li class="link explore">
-				<a href="https://scratch.mit.edu/explore/projects/all"><span><?=wfMessage( 'scratchwikiskin-explore' )->escaped() ?></span></a>
+				<a class="dropdown-toggle"><span><?=wfMessage('scratchwikiskin-explore')->escaped()?></span></a>
+				<ul class="dropdown">
+					<li><a href="https://scratch.mit.edu/explore/projects/all"><span><?=wfMessage( 'scratchwikiskin-explore-projects' )->escaped() ?></span></a></li>
+					<li><a href="<?=wfMessage('randompage-url')->escaped()?>"><span><?=wfMessage('randompage')->escaped()?></span></a></li>
+				</ul>
 			</li>
 			<li class="link discuss">
-				<a href="https://scratch.mit.edu/discuss"><span><?=wfMessage( 'scratchwikiskin-discuss' )->escaped() ?></span></a>
+				<a class="dropdown-toggle"><span><?=wfMessage('scratchwikiskin-discuss')->escaped()?></span></a>
+				<ul class="dropdown">
+					<li><a href="https://scratch.mit.edu/discuss"><span><?=wfMessage( 'scratchwikiskin-discuss-text' )->escaped() ?></span></a></li>
+					<li><a href="<?=wfMessage('scratchwikiskin-discuss-wiki')->escaped()?>"><span><?=wfMessage('scratchwikiskin-discuss-wiki-text')->escaped()?></span></a></li>
+					<li><a href="<?=wfMessage('portal-url')->escaped()?>"><span><?=wfMessage('portal')->escaped()?></span></a></li>
+				</ul>
 			</li>
 			<li class="link tips">
 				<a href="https://scratch.mit.edu/tips"><span><?=wfMessage( 'scratchwikiskin-tips' )->escaped() ?></span></a>
@@ -54,7 +67,7 @@ class ScratchWikiSkinTemplate extends BaseTemplate {
 				</form>
 			</li>
 			<li class="link right content-actions">
-				<a class="user-info"></a>
+				<a class="dropdown-toggle"></a>
 				<ul class="dropdown">
 <?php foreach ($this->data['content_actions'] as $key => $tab) { ?>
 					<?=$this->makeListItem($key, $tab)?>
@@ -64,12 +77,12 @@ class ScratchWikiSkinTemplate extends BaseTemplate {
 				</ul>
 			</li>
 			<li class="link right account-nav">
-				<a class="user-info">
+				<a class="dropdown-toggle">
 					<span class="profile-name"><?php if (!$wgUser->isLoggedIn()) { ?><?=wfMessage( 'scratchwikiskin-notloggedin' )->escaped()?><?php } else { ?><?=htmlspecialchars($wgUser->mName)?><?php } ?></span>
 				</a>
 				<ul class="dropdown">
 <?php foreach ($this->data['personal_urls'] as $key => $tab) { ?>
-					<li <?php if ($tab['class']) { ?>class="<?=htmlspecialchars($tab['class'])?>"<?php } ?>><a name="<?=htmlspecialchars($key)?>" href="<?=htmlspecialchars($tab['href'])?>"><span><?=htmlspecialchars($tab['text'])?></span></a></li>
+					<?=$this->makeListItem($key, $tab)?>
 
 <?php } ?>
 
