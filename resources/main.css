@@ -214,6 +214,7 @@ dl dd {
 
 .dropdown.open {
     display: block;
+    white-space:nowrap;
 }
 
 .dropdown a:link,
