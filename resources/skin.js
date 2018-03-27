@@ -27,10 +27,10 @@ window.addEventListener('load', function(){
 			if (!e) e = window.event;
 			if (!e.toElement) e.toElement = e.relatedTarget;
 			if (!e.toElement) return;
-			if (e.toElement.matches('#navigation .link, #navigation .link > a, #navigation .link > a *')) {
-				e.toElement.click()
-			}
 			if (!btn.parentElement.contains(e.toElement)) {
+				if (e.toElement.matches('#navigation .link, #navigation .link>a, #navigation .link>a *')) {
+					e.toElement.click();
+				}
 				btn.delclass('open');
 				dropdown.delclass('open');
 			}
