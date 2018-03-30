@@ -8,7 +8,7 @@
 
 class ScratchWikiSkinTemplate extends BaseTemplate {
 	public function execute() {
-		global $wgRequest, $wgStylePath, $wgUser, $wgLogo, $wgRightsPage, $wgRightsUrl, $wgRightsIcon;
+		global $wgRequest, $wgStylePath, $wgUser, $wgLogo, $wgRightsPage, $wgRightsUrl, $wgRightsIcon, $wgLang;
 		$skin = $this->data['skin'];
 		wfSuppressWarnings();
 		$this->html('headelement');
