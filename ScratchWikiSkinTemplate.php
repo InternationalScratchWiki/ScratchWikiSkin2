@@ -8,7 +8,7 @@
 
 class ScratchWikiSkinTemplate extends BaseTemplate {
 	public function execute() {
-		global $wgRequest, $wgStylePath, $wgUser, $wgLogo, $wgLang;
+		global $wgRequest, $wgStylePath, $wgUser, $wgLogo, $wgRightsPage, $wgRightsUrl, $wgRightsIcon, $wgLang;
 		$skin = $this->data['skin'];
 		wfSuppressWarnings();
 		$this->html('headelement');
@@ -161,6 +161,7 @@ if (!$wgUser->isLoggedIn()) { ?>
 <?php foreach ( $this->getFooterLinks('flat') as $key ) { ?>
 					<li><?php $this->html( $key ) ?></li>
 <?php } ?>
+					<?php if(!empty($wgRightsIcon)){ ?><br><a href="<?php if(!empty($wgRightsPage)){echo Title::newFromText($wgRightsPage)->getLocalURL();}else{echo $wgRightsUrl;} ?>"><img src="<?php echo $wgRightsIcon ?>"></a><?php } ?>
 				</ul>
 			</div>
 		</div>
