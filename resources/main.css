@@ -746,6 +746,11 @@ dl dd {
     border-radius: 3px;
     font-family: monospace;
 }
+#content code.blocks,
+#content pre.blocks {
+    border: none;
+    background: none;
+}
 
 #content .mw-editsection {
     float: right;
