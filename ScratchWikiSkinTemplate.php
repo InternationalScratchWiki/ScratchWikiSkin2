@@ -226,7 +226,7 @@ if (!$wgUser->isLoggedIn()) { ?>
 			<p><span><?=wfMessage('scratchwikiskin-footer-llk')->inLanguage( $wgLang )->parse()?></span></p>
 		</div>
 	</div>
-</div><span style="background-color:white">;</span>
+</div><div style="background-color:white">;</div>
 <?php $this->printTrail();
 	}
 }
