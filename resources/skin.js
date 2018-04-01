@@ -7,6 +7,7 @@ function mod(el) {
 	if (!el) return el;
 	el.addclass = function(c) {this.classList.add(c);};
 	el.delclass = function(c) {this.classList.remove(c);};
+	el.hasclass = function(c) {return this.classList.contains(c);};
 }
 
 window.addEventListener('load', function(){
@@ -28,6 +29,11 @@ window.addEventListener('load', function(){
 			if (!e.toElement) e.toElement = e.relatedTarget;
 			if (!e.toElement) return;
 			if (!btn.parentElement.contains(e.toElement)) {
+				if (btn.hasclass('open')) {
+					if (e.toElement.matches('#navigation .link, #navigation .link>a, #navigation .link>a *')) {
+						e.toElement.click();
+					}
+				}
 				btn.delclass('open');
 				dropdown.delclass('open');
 			}
