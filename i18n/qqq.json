@@ -59,5 +59,6 @@
 	"scratchwikiskin-footer-foundation": "Scratch Foundation link in footer",
 	"scratchwikiskin-footer-llk": "Disclaimer that Scratch is a project of MIT LLK",
 	"scratchwikiskin-notloggedin": "Text for username when not logged in",
-	"scratchwikiskin-pref-color": "Prompt for header color option"
+	"scratchwikiskin-pref-color": "Prompt for header color option",
+	"scratchwikiskin-search": "Placeholder of the search box"
 }
