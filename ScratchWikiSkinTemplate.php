@@ -67,7 +67,7 @@ class ScratchWikiSkinTemplate extends BaseTemplate {
 					<button class="button btn-search"></button>
 					<div class="form-group row no-label">
 						<div class="col-sm-9">
-							<input type="text" class="input" id="searchInput" accesskey="<?=wfMessage( 'accesskey-search' )->inLanguage( $wgLang )->text() ?>" title="Search Scratch Wiki [alt-shift-<?=wfMessage( 'accesskey-search' )->inLanguage( $wgLang )->text()?>]" name="search" autocomplete="off" placeholder="Search the Wiki" />
+							<input type="text" class="input" id="searchInput" accesskey="<?=wfMessage( 'accesskey-search' )->inLanguage( $wgLang )->text() ?>" title="Search Scratch Wiki [alt-shift-<?=wfMessage( 'accesskey-search' )->inLanguage( $wgLang )->text()?>]" name="search" autocomplete="off" placeholder="<?=wfMessage( 'scratchwikiskin-search' )->inLanguage( $wgLang )->escaped() ?>" />
 							<input type="hidden" value="Special:Search" name="title" />
 							<span class="help-block">Not Required</span>
 						</div>
