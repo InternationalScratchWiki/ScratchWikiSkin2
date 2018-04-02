@@ -70,6 +70,7 @@ class SkinScratchWikiSkin extends SkinTemplate {
 			'mediawiki.skinning.interface', 'skins.scratchwikiskin2'
 		] );
 	}
+
 	static function onGetPreferences( $user, &$preferences ) {
 		HTMLForm::$typeMappings['color'] = HTMLColorField::class;
 		$origpref = $user->getOption( 'scratchwikiskin-header-color' );

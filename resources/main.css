@@ -708,6 +708,10 @@ dl dd {
     font-size: 1rem;
     float: right;
 }
+.mw-indicator {
+    display: inline-block;
+    font-size: 1rem;
+}
 
 
 /* MASTER ARTICLE STYLE */
