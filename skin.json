@@ -29,12 +29,6 @@
 					"media": "screen"
 				}
 			}
-		},
-		"skins.scratchwikiskin2.js": {
-			"scripts": [
-				"resources/skin.js"
-			],
-			"position": "bottom"
 		}
 	},
 	"ResourceFileModulePaths": {

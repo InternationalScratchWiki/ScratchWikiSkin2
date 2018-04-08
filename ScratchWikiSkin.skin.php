@@ -49,17 +49,6 @@ class SkinScratchWikiSkin extends SkinTemplate {
 		$template = 'ScratchWikiSkinTemplate', $useHeadElement = true;
 
 	/**
-	 * This function adds JavaScript via ResourceLoader
-	 *
-	 * @param OutputPage $out
-	 */
-
-	public function initPage( OutputPage $out ) {
-		parent::initPage( $out );
-		$out->addModules( 'skins.scratchwikiskin2.js' );
-	}
-
-	/**
 	 * Add CSS via ResourceLoader
 	 *
 	 * @param $out OutputPage
