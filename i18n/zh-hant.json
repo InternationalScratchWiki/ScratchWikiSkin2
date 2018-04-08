@@ -1,4 +1,4 @@
-{
+﻿{
 	"@metadata": {
 		"authors": [
 			"Kenny2scratch"
@@ -7,17 +7,25 @@
 	"skinname-scratchwikiskin2": "Scratch 維基皮膚",
 	"scratchwikiskin-desc": "Scratch 維基的皮膚",
 	"scratchwikiskin-create": "創造",
+	"scratchwikiskin-create-project": "創造一個專案",
+	"scratchwikiskin-create-page": "創作一個頁面",
+	"scratchwikiskin-create-page-url": "Project:創造頁面",
 	"scratchwikiskin-explore": "探索",
+	"scratchwikiskin-explore-projects": "探索專案",
 	"scratchwikiskin-discuss": "討論",
+	"scratchwikiskin-discuss-text": "討論 Scratch",
+	"scratchwikiskin-discuss-wiki": "https://scratch.mit.edu/discuss/topic/285167/",
+	"scratchwikiskin-discuss-wiki-text": "維基論壇題目",
 	"scratchwikiskin-tips": "技巧",
+	"scratchwikiskin-tips-text": "Scratch 技巧",
+	"scratchwikiskin-faq-page": "維基常問問題",
 	"scratchwikiskin-about": "關於",
+	"scratchwikiskin-about-text": "關於 Scratch",
 	"scratchwikiskin-helpthewiki": "幫助這個維基！",
 	"scratchwikiskin-madeforscratchers": "Scratch 維基是 Scratch 用戶寫給 Scratch 用戶看。想參加嗎？",
 	"scratchwikiskin-becomeacontributor-page": "Project:Become a contributor",
 	"scratchwikiskin-learnaboutjoining": "詳細了解怎樣成為一個維基用戶！",
 	"scratchwikiskin-seeportal": "看社群首頁的討論",
-	"scratchwikiskin-howtopage-title": "指導頁面",
-	"scratchwikiskin-howtopage-text": "這頁會提供一步一步的指示，為了新來的用戶。",
 	"scratchwikiskin-footer-about-title": "關於",
 	"scratchwikiskin-footer-about": "關於 Scratch",
 	"scratchwikiskin-footer-parents": "致家長",
@@ -49,5 +57,7 @@
 	"scratchwikiskin-footer-conference": "Scratch 會議",
 	"scratchwikiskin-footer-foundation": "Scratch 基金會",
 	"scratchwikiskin-footer-llk": "Scratch 是麻省理工學院終生幼兒園團隊底下的一個計畫",
-	"scratchwikiskin-notloggedin": "未登入"
+	"scratchwikiskin-notloggedin": "未登入",
+	"scratchwikiskin-pref-color": "頁定顏色：",
+	"scratchwikiskin-search": "搜尋維基"
 }
