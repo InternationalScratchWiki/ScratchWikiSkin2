@@ -502,7 +502,8 @@ dl dd {
 #navigation .about>a:after {
     display: inline-block;
     margin-left: 8px;
-    background-image: url("https://scratch.mit.edu/images/dropdown.png");
+    /* @embed */
+    background-image: url("dropdown.png");
     background-repeat: no-repeat;
     background-position: center center;
     background-size: 50%;
