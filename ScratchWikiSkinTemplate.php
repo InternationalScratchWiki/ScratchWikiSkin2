@@ -241,6 +241,14 @@ function mod(el) {
 }
 
 window.addEventListener('load', function(){
+	(function(){
+		var nameColon = decodeURIComponent(document.URL);
+		if (document.domain != "en.scratch-wiki.info" || mw.config.get("wgPageName") != "Special:Search") return;
+		if (nameColon.toLowerCase().indexOf("%3a") > -1) {
+			nameColon = nameColon.replace("%3A", ":").replace("%3a", ":");
+			window.location.href = nameColon;
+		}
+	})()
         for (let btn of document.querySelectorAll('#navigation a.dropdown-toggle')) {
                 let dropdown = btn.nextElementSibling;
                 mod(btn);
@@ -290,18 +298,6 @@ window.addEventListener('load', function(){
 window.addEventListener('hashchange', function(){
         window.scrollBy(0, -50);
 });
-function checkColon(e){
-    var nameColon = decodeURIComponent(document.URL);
-    if (document.domain != "en.scratch-wiki.info" || mw.config.get("wgPageName") != "Special:Search"){
-        return;
-    }
-    if (nameColon.toLowerCase().indexOf("%3a") > -1){
-        nameColon = nameColon.replace("%3A",":").replace("%3a",":");
-        location.href = nameColon;
-    }
-}
-
-window.addEventListener("load",checkColon);
 </script>
 <?php $this->printTrail();
 	}
