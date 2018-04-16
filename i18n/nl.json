@@ -1,6 +1,8 @@
 {
 	"@metadata": {
-		"authors": ["Smrman"]
+		"authors": [
+			"Smrman"
+		]
 	},
 	"skinname-scratchwikiskin2": "ScratchWikiSkin",
 	"scratchwikiskin-desc": "Een skin voor de Scratch Wiki.",
