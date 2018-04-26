@@ -22,7 +22,7 @@ class ScratchWikiSkinTemplate extends BaseTemplate {
 	background-color: <?=htmlspecialchars(str_replace([';', '}'], '', $wgUser->getOption( 'scratchwikiskin-header-color' )))?>;
 }
 </style>
-<div id="navigation">
+<div id="navigation" role="banner">
 	<div class="inner">
 		<ul>
 			<li class="logo"><a aria-label="Scratch" href="https://scratch.mit.edu/"></a></li>
@@ -63,7 +63,7 @@ class ScratchWikiSkinTemplate extends BaseTemplate {
 				</ul>
 			</li>
 			<li class="search">
-				<form class="form" action="<?php $this->text( 'wgScript' ) ?>">
+				<form class="form" action="<?php $this->text( 'wgScript' ) ?>" role="search" aria-label="<?=wfMessage( 'scratchwikiskin-search' )->inLanguage( $wgLang )->escaped()?>">
 					<button class="button btn-search"></button>
 					<div class="form-group row no-label">
 						<div class="col-sm-9">
@@ -104,9 +104,8 @@ class ScratchWikiSkinTemplate extends BaseTemplate {
 		<div class="inner mod-splash">
 			<div class="left">
 				<div class="wikilogo_space"><a class="wikilogo" href="<?=htmlspecialchars($this->data['nav_urls']['mainpage']['href'])?>" title="<?=wfMessage( 'mainpage' )->inLanguage( $wgLang )->escaped()?>"></a></div>
-<?php foreach ($this->getSidebar() as $box) {
-	if ($box['header'] != 'Toolbox' || $wgUser->isLoggedIn()) { ?>
-				<div class="box">
+<?php foreach ($this->getSidebar() as $box) { ?>
+				<div class="box" role="navigation" aria-label="<?=$box['header']?>">
 					<div class="box-header">
 						<h4><?=htmlspecialchars($box['header'])?></h4>
 					</div>
@@ -125,9 +124,8 @@ class ScratchWikiSkinTemplate extends BaseTemplate {
 					</div>
 				</div>
 <?php }
-}
 if (!$wgUser->isLoggedIn()) { ?>
-				<div class="box">
+				<div class="box" role="complementary" aria-label="<?=wfMessage( 'scratchwikiskin-helpthewiki' )->inLanguage( $wgLang )->escaped()?>">
 					<div class="box-header">
 						<h4><?=wfMessage( 'scratchwikiskin-helpthewiki' )->inLanguage( $wgLang )->escaped()?></h4>
 					</div>
@@ -146,7 +144,7 @@ if (!$wgUser->isLoggedIn()) { ?>
 					<div class="box-header">
 						<h1 id="firstHeading" class="firstHeading"><?php $this->html('title')?><?=$this->getIndicators()?></h1>
 					</div>
-					<div class="box-content" id="content">
+					<div class="box-content" id="content" role="main">
 <p id="siteSub"><?=wfMessage( 'tagline' )->inLanguage( $wgLang )->escaped()?></p>
 <?php if ($this->data['subtitle']) { ?><p id="contentSub"><?php $this->html('subtitle') ?></p><?php } ?>
 <?php if ($this->data['undelete']) { ?><p><?php $this->html('undelete') ?></p><?php } ?>
@@ -178,7 +176,7 @@ if (!$wgUser->isLoggedIn()) { ?>
 		</div>
 	</div>
 </div>
-<div id="footer">
+<div id="footer" role="contentinfo">
 	<div class="inner">
 		<div class="lists">
 			<dl>
