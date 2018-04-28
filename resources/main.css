@@ -3,6 +3,28 @@
     width: 942px;
 }
 
+/* Fonts */
+
+@font-face {
+    font-family: "Liberation Sans";
+    src: url("LiberationSans-Regular.ttf");
+}
+@font-face {
+    font-family: "Liberation Sans";
+    src: url("LiberationSans-Bold.ttf");
+    font-weight: bold;
+}
+@font-face {
+    font-family: "Liberation Sans";
+    src: url("LiberationSans-Italic.ttf");
+    font-style: italic;
+}
+@font-face {
+    font-family: "Liberation Sans";
+    src: url("LiberationSans-BoldItalic.ttf");
+    font-style: italic;
+    font-weight: bold;
+}
 
 /* Tags */
 
@@ -13,7 +35,7 @@ body {
     background-color: #0c9ce4;
     padding: 0;
     color: #6b6b6b;
-    font-family: "Helvetica Neue", "Helvetica", Arial, sans-serif;
+    font-family: "Liberation Sans", "Helvetica Neue", "Helvetica", Arial, sans-serif;
 }
 
 
@@ -719,7 +741,7 @@ dl dd {
 
 #content {
     display: block;
-    font-family: "Helvetica Neue", "Helvetica", Arial, sans-serif;
+    font-family: "Liberation Sans", "Helvetica Neue", "Helvetica", Arial, sans-serif;
     color: black;
     overflow-x: auto;
 }
