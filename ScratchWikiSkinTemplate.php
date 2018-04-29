@@ -238,14 +238,14 @@ function mod(el) {
 	el.hasclass = function(c) {return this.classList.contains(c);};
 }
 
-(function(){
+window.addEventListener('load', function(){
 	var nameColon = decodeURIComponent(document.URL);
 	if (document.domain != "en.scratch-wiki.info" || mw.config.get("wgPageName") != "Special:Search") return;
 	if (nameColon.toLowerCase().indexOf("%3a") > -1) {
 		nameColon = nameColon.replace("%3A", ":").replace("%3a", ":");
 		window.location.href = nameColon;
 	}
-})();
+});
 (function () {
 	for (let btn of document.querySelectorAll('#navigation a.dropdown-toggle')) {
 		let dropdown = btn.nextElementSibling;
