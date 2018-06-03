@@ -247,7 +247,9 @@ window.addEventListener('load', function(){
 	}
 });
 (function () {
-	for (let btn of document.querySelectorAll('#navigation a.dropdown-toggle')) {
+	let selected = document.querySelectorAll('#navigation a.dropdown-toggle');
+	for (var i = 0; i < selected.length; i++) {
+		let btn = selected[i];
 		let dropdown = btn.nextElementSibling;
 		mod(btn);
 		mod(dropdown);
@@ -282,14 +284,18 @@ window.addEventListener('load', function (){
 	};
 });
 document.querySelector('#searchInput').onfocus = function () {
-	for (let link of document.querySelectorAll('#navigation .link')) {
+	let selected = document.querySelectorAll('#navigation .link');
+	for (var i = 0; i < selected.length; i++) {
+		let link = selected[i];
 		if (!link.classList.contains('right')) {
 			link.style.display = 'none';
 		}
 	}
 };
 document.querySelector('#searchInput').onblur = function () {
-	for (let link of document.querySelectorAll('#navigation .link')) {
+	let selected = document.querySelectorAll('#navigation .link');
+	for (var i = 0; i < selected.length; i++) {
+		let link = selected[i];
 		if (!link.classList.contains('right')) {
 			link.style.display = '';
 		}
