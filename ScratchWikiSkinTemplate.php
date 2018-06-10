@@ -206,12 +206,6 @@ if (!$wgUser->isLoggedIn()) { ?>
 <dd><span><a href="https://secure.donationpay.org/scratchfoundation/"><?=wfMessage('scratchwikiskin-footer-donate')->inLanguage( $wgLang )->escaped()?></a></span></dd>
 			</dl>
 			<dl>
-				<dt><span><?=wfMessage('scratchwikiskin-footer-legal-title')->inLanguage( $wgLang )->escaped()?></span></dt>
-<dd><span><a href="https://scratch.mit.edu/terms_of_use"><?=wfMessage('scratchwikiskin-footer-tos')->inLanguage( $wgLang )->escaped()?></a></span></dd>
-<dd><span><a href="https://scratch.mit.edu/privacy_policy"><?=wfMessage('scratchwikiskin-footer-privacy')->inLanguage( $wgLang )->escaped()?></a></span></dd>
-<dd><span><a href="https://scratch.mit.edu/DMCA"><?=wfMessage('scratchwikiskin-footer-dmca')->inLanguage( $wgLang )->escaped()?></a></span></dd>
-			</dl>
-			<dl>
 				<dt><span><?=wfMessage('scratchwikiskin-footer-family-title')->inLanguage( $wgLang )->escaped()?></span></dt>
 <dd><span><a href="http://scratched.gse.harvard.edu"><?=wfMessage('scratchwikiskin-footer-scratched')->inLanguage( $wgLang )->escaped()?></a></span></dd>
 <dd><span><a href="https://www.scratchjr.org"><?=wfMessage('scratchwikiskin-footer-scratchjr')->inLanguage( $wgLang )->escaped()?></a></span></dd>
