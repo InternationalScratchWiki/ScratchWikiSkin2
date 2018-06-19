@@ -211,6 +211,7 @@ if (!$wgUser->isLoggedIn()) { ?>
 				<dt><span><?=wfMessage('scratchwikiskin-footer-legal-title')-inLanguage( $wgLang )->escaped()?></span></dt>
 <dd><span><a href="<?=Title::newFromText(wfMessage('privacypage')->inContentLanguage()->text())->getCanonicalURL()?>"><?=wfMessage('privacy')->inLanguage( $wgLang )->escaped()?></a></span></dd>
 <dd><span><a href="<?=Title::newFromText(wfMessage('disclaimerpage')->inContentLanguage()->text())->getCanonicalURL()?>"><?=wfMessage('disclaimer')->inLanguage( $wgLang )->escaped()?></a></span></dd>
+			</dl>
 			<dl>
 				<dt><span><?=wfMessage('scratchwikiskin-footer-family-title')->inLanguage( $wgLang )->escaped()?></span></dt>
 <dd><span><a href="http://scratched.gse.harvard.edu"><?=wfMessage('scratchwikiskin-footer-scratched')->inLanguage( $wgLang )->escaped()?></a></span></dd>
