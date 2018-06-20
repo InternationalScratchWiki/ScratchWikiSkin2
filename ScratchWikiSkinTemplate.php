@@ -200,9 +200,9 @@ if (!$wgUser->isLoggedIn()) { ?>
 			</dl>
 			<dl>
 				<dt><span><?=wfMessage('scratchwikiskin-footer-support-title')->inLanguage( $wgLang )->escaped()?></span></dt>
-<dd><span><a href="<=wfMessage('helppage')->inContentLanguage()->text()?>"><?=wfMessage('scratchwikiskin-footer-help')->inLanguage( $wgLang )->escaped()?></a></span></dd>
+<dd><span><a href="<?=Title::newFromText(wfMessage('scratchwikiskin-footer-help-page-url')->inContentLanguage()->text())->getCanonicalURL()?>"><?=wfMessage('scratchwikiskin-footer-help')->inLanguage( $wgLang )->escaped()?></a></span></dd>
 <dd><span><a href="https://scratch.mit.edu/tips"><?=wfMessage('scratchwikiskin-footer-tips')->inLanguage( $wgLang )->escaped()?></a></span></dd>
-<dd><span><a href="<?=Title::newFromText(wfMessage('scratchwikiskin-faq-page-url')->inContentLanguage()->text())->getLocalURL()?>"><?=wfMessage('scratchwikiskin-faq-page')->inLanguage( $wgLang )->escaped()?></a></span></dd>
+<dd><span><a href="<?=Title::newFromText(wfMessage('scratchwikiskin-faq-page-url')->inContentLanguage()->text())->getCanonicalURL()?>"><?=wfMessage('scratchwikiskin-faq-page')->inLanguage( $wgLang )->escaped()?></a></span></dd>
 <dd><span><a href="https://scratch.mit.edu/download"><?=wfMessage('scratchwikiskin-footer-offline')->inLanguage( $wgLang )->escaped()?></a></span></dd>
 <dd><span><a href="https://scratch.mit.edu/store"><?=wfMessage('scratchwikiskin-footer-store')->inLanguage( $wgLang )->escaped()?></a></span></dd>
 <dd><span><a href="https://secure.donationpay.org/scratchfoundation/"><?=wfMessage('scratchwikiskin-footer-donate')->inLanguage( $wgLang )->escaped()?></a></span></dd>
