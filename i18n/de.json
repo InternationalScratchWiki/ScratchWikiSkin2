@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Mtwoll"
+			"Mtwoll",
+			"LiFaytheGoblin"
 		]
 	},
 	"skinname-scratchwikiskin2": "ScratchWikiSkin",
@@ -32,22 +33,28 @@
 	"scratchwikiskin-footer-parents": "F\u00fcr Eltern",
 	"scratchwikiskin-footer-educators": "F\u00fcr Leherer",
 	"scratchwikiskin-footer-developers": "F\u00fcr Entwickler",
-	"scratchwikiskin-footer-credits": "Danke",
-	"scratchwikiskin-footer-jobs": "Arbeitspl\u00e4tze",
+	"scratchwikiskin-footer-credits": "Scratch Team",
+	"scratchwikiskin-footer-jobs": "Arbeitspl\u00e4tze bei Scratch",
 	"scratchwikiskin-footer-press": "Presse",
 	"scratchwikiskin-footer-community-title": "Gemeinschaft",
 	"scratchwikiskin-footer-cgs": "Regeln",
 	"scratchwikiskin-footer-discuss": "Diskussionsforen",
 	"scratchwikiskin-footer-wiki": "Scratch Wiki",
 	"scratchwikiskin-footer-stats": "Statistiken",
-	"scratchwikiskin-footer-support-title": "Unterst\u00fctzung",
+	"scratchwikiskin-footer-cp": "Community Portal",
+	"scratchwikiskin-footer-support-title": "Scratch-Wiki:Hilfe:Inhaltsverzeichnis",
+	"scratchwikiskin-footer-help-page-url": "Help:Contents",
++	"scratchwikiskin-footer-help": "Hilfe für Autoren",
 	"scratchwikiskin-footer-tips": "Tipps",
 	"scratchwikiskin-footer-faq": "FAQ",
 	"scratchwikiskin-footer-offline": "Offline Editor",
-	"scratchwikiskin-footer-contact": "Kontaktiere das Scratch Team",
 	"scratchwikiskin-footer-store": "Scratch Laden",
-	"scratchwikiskin-footer-donate": "Spenden",
+	"scratchwikiskin-footer-donate": "An Scratch spenden",
++	"scratchwikiskin-footer-legal-title": "Rechtliches",
++	"scratchwikiskin-footer-privacy": "Datenschutz",
++	"scratchwikiskin-footer-dmca": "Impressum",
 	"scratchwikiskin-footer-family-title": "Scratch Familie",
+	"scratchwikiskin-footer-scratchsite": "Scratch-Webseite",
 	"scratchwikiskin-footer-scratched": "ScratchEd",
 	"scratchwikiskin-footer-scratchjr": "ScratchJr",
 	"scratchwikiskin-footer-scratchday": "Scratch Day",
