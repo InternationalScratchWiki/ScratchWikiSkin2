@@ -773,6 +773,11 @@ dl dd {
     border-radius: 3px;
     font-family: monospace;
 }
+
+#content pre {
+    white-space: pre;
+}
+
 #content code.blocks,
 #content pre.blocks {
     border: none;
