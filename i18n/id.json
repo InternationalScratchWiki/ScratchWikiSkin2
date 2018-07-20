@@ -4,7 +4,7 @@
 			"Rumanti"
 		]
 	},
-	"skinname-scratchwikiskin2": "{{optional}}",
+	"skinname-scratchwikiskin2": "ScratchWikiSkin",
 	"scratchwikiskin-desc": "{{desc|what=skin|name=ScratchWikiSkin2|url=https://github.com/InternationalScratchWiki/ScratchWikiSkin2}}",
 	"scratchwikiskin-create": "Buat",
 	"scratchwikiskin-create-project": "Buat karya baru",
@@ -35,7 +35,7 @@
 	"scratchwikiskin-footer-credits": "Scratch Team",
 	"scratchwikiskin-footer-jobs": "Lowongan",
 	"scratchwikiskin-footer-press": "Pers",
-	"scratchwikiskin-footer-community-title": "Komunitas,
+	"scratchwikiskin-footer-community-title": "Komunitas",
 	"scratchwikiskin-footer-cgs": "Pedoman Komunitas",
 	"scratchwikiskin-footer-discuss": "Forum Pembahasan",
 	"scratchwikiskin-footer-wiki": "Scratch Wiki",
