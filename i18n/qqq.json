@@ -51,6 +51,7 @@
 	"scratchwikiskin-footer-donate": "Donate to Scratch link in footer",
 	"scratchwikiskin-footer-legal-title": "Legal title in footer",
 	"scratchwikiskin-footer-privacy": "Privacy Policy link in footer",
+	"scratchwikiskin-footer-dmca": "{{optional}}",
 	"scratchwikiskin-footer-family-title": "Scratch Family link in footer",
 	"scratchwikiskin-footer-scratchsite": "Scratch Website link in footer",
 	"scratchwikiskin-footer-scratched": "{{optional}}",
