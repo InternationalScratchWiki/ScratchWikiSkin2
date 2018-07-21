@@ -34,7 +34,7 @@ body {
     margin: 0;
     background-color: #0c9ce4;
     padding: 0;
-    color: #6b6b6b;
+    color: #575e75;
     font-family: "Liberation Sans", "Helvetica Neue", "Helvetica", Arial, sans-serif;
 }
 
@@ -83,19 +83,19 @@ strong {
 
 a {
     cursor: pointer;
-    color: #25aff4;
+    color: #4d97ff;
 }
 
 a:link,
 a:visited,
 a:active {
     text-decoration: none;
-    color: #25aff4;
+    color: #4d97ff;
 }
 
 a:hover {
     text-decoration: none;
-    color: #0a85c2;
+    color: #4280d7;
 }
 
 
@@ -107,11 +107,11 @@ h3,
 h4,
 h5 {
     line-height: 1.7em;
-    color: black;
+    color: #575e75;
 }
 
 p {
-    color: black;
+    color: #575e75;
 }
 
 .box-content {
@@ -119,11 +119,11 @@ p {
 }
 
 ::-moz-selection {
-    background-color: #b6e4fb;
+    background-color: #e6f0ff;
 }
 
 ::selection {
-    background-color: #b6e4fb;
+    background-color: #e6f0ff;
 }
 
 ol,
@@ -135,15 +135,15 @@ ul {
 dl {
     line-height: 1.5rem;
     font-size: 1rem;
-    font-weight: 300;
+    font-weight: normal;
 }
 
 dl dt {
-    font-weight: 700;
+    font-weight: bold;
 }
 
 dl dd {
-    margin: 0;
+    margin: 5px 0;
 }
 
 #view {
@@ -746,6 +746,10 @@ dl dd {
     overflow-x: auto;
 }
 
+#content p {
+    color: inherit;
+}
+
 #content b,
 #content strong {
     font-weight: bold;
@@ -825,6 +829,7 @@ dl dd {
 #content h4,
 #content h5 {
     margin-bottom: 1em;
+    color: inherit;
 }
 
 #content dl {
