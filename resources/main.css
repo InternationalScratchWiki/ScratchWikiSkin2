@@ -148,12 +148,11 @@ dl dd {
 
 #view {
     display: inline-block;
-    /* NOTE: Margin should match height in navigation.scss */
     margin-top: 50px;
     background-color: #fcfcfc;
     padding: 20px 0;
     min-width: 100%;
-    min-height: 768px;
+    min-height: calc(100vh - 328px);
 }
 
 #view .left {
@@ -186,8 +185,6 @@ dl dd {
     color: #fff;
     font-size: .8rem;
     font-weight: bold;
-    /* USER BUTTON STATES */
-    /* DATA BUTTON STATES */
 }
 
 .button:hover {
@@ -271,7 +268,6 @@ dl dd {
     height: 3rem;
     color: #6b6b6b;
     font-size: .875rem;
-    /* IE10/11-specific style resets */
 }
 
 .input:focus {
@@ -299,7 +295,6 @@ dl dd {
     box-shadow: 0 0 3px rgba(0, 0, 0, 0.25);
     background-color: #7953c4;
     width: 100%;
-    /* NOTE: Height should match offset settings in main.scss file */
     height: 50px;
 }
 
