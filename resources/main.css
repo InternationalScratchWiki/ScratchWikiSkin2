@@ -1,6 +1,5 @@
 .inner {
     margin: 0 auto;
-    width: 982px;
 }
 
 /* Fonts */
@@ -150,7 +149,6 @@ dl dd {
     display: inline-block;
     margin-top: 50px;
     background-color: #fcfcfc;
-    padding: 20px 0;
     min-width: 100%;
     min-height: calc(100vh - 328px);
 }
@@ -516,7 +514,8 @@ dl dd {
 #navigation .explore>a:after,
 #navigation .discuss>a:after,
 #navigation .tips>a:after,
-#navigation .about>a:after {
+#navigation .about>a:after,
+#navigation .content-actions>a:after {
     display: inline-block;
     margin-left: 8px;
     /* @embed */
@@ -680,11 +679,8 @@ dl dd {
 }
 
 #navigation ul>li.content-actions>a.dropdown-toggle {
-    /* @embed */
-    background: url("Edit-pencil.png") no-repeat scroll center center transparent;
-    background-size: 25px 25px;
     height: 25px;
-    width: 25px;
+    width: auto;
     padding: 12.5px;
 }
 
@@ -707,10 +703,6 @@ dl dd {
     list-style: none;
     display: inline;
     margin-right: 10px;
-}
-
-#view {
-    padding: 0;
 }
 
 .inner.mod-splash {
@@ -881,5 +873,88 @@ dl dd {
 }
 
 #mw-input-wpscratchwikiskin-header-color {
-	font-family: monospace;
+    font-family: monospace;
+}
+
+/* Mobile design */
+
+@media only screen and (max-width: 405px) {
+    #navigation .inner .tips,
+    #footer .inner .legal {
+        display: none;
+    }
+}
+
+@media only screen and (max-width: 519px) {
+    .inner {
+        width: 100%;
+    }
+    #navigation .inner .discuss,
+    #navigation .inner .explore,
+    #navigation .inner .search,
+    #navigation .inner .about,
+    #footer .inner .community,
+    #footer .inner .support,
+    #footer .inner .family {
+        display: none;
+    }
+    #footer .lists {
+        -webkit-justify-content: space-around;
+        justify-content: space-around;
+    }
+    #navigation .content-actions>a:after {
+        display:none;
+    }
+    #navigation .content-actions>a.dropdown-toggle {
+        width: 25px;
+    }
+    #view {
+        padding: 0 10px;
+        min-width: calc(100% - 20px);
+    }
+}
+@media only screen and (min-width: 520px) and (max-width: 679px) {
+    .inner {
+        width: 520px;
+    }
+    #navigation .inner .discuss,
+    #navigation .inner .explore,
+    #navigation .inner .search,
+    #footer .inner .support,
+    #footer .inner .family {
+        display: none;
+    }
+}
+@media only screen and (min-width: 680px) and (max-width: 981px) {
+    .inner {
+        width: 680px;
+    }
+    #navigation .inner .explore,
+    #navigation .inner .search,
+    #footer .inner .family {
+        display: none;
+    }
+}
+@media only screen and (min-width: 982px) {
+    .inner {
+        width: 982px;
+    }
+}
+
+@media only screen and (max-width: 981px) {
+    #view .left {
+        position: fixed;
+        background-color: rgba(255, 255, 255, 0.9);
+        left: -185px;
+        top: 0px;
+        padding: 0 10px;
+        height: 100%;
+        z-index: 11;
+        transition: left 0.5s;
+        overflow-y: auto;
+    }
+    #view .right {
+        margin: auto 0;
+        width: 100%;
+    }
 }

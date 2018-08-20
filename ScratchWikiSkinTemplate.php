@@ -75,7 +75,9 @@ class ScratchWikiSkinTemplate extends BaseTemplate {
 				</form>
 			</li>
 			<li class="link right content-actions">
-				<a class="dropdown-toggle"></a>
+				<a class="dropdown-toggle">
+					<img src="<?=$wgStylePath?>/ScratchWikiSkin2/resources/Edit-pencil.png" width="25" height="25" />
+				</a>
 				<ul class="dropdown">
 <?php foreach ($this->data['content_actions'] as $key => $tab) { ?>
 					<?=$this->makeListItem($key, $tab)?>
@@ -179,7 +181,7 @@ if (!$wgUser->isLoggedIn()) { ?>
 <div id="footer" role="contentinfo">
 	<div class="inner">
 		<div class="lists">
-			<dl>
+			<dl class="about">
 				<dt><span><?=wfMessage('scratchwikiskin-footer-about-title')->inLanguage( $wgLang )->escaped()?></span></dt>
 <dd><span><a href="https://scratch.mit.edu/about/"><?=wfMessage('scratchwikiskin-footer-about')->inLanguage( $wgLang )->escaped()?></a></span></dd>
 <dd><span><a href="<?=Title::newFromText(wfMessage('aboutpage')->inContentLanguage()->text())->getCanonicalURL()?>"><?=wfMessage('aboutsite')->inLanguage( $wgLang )->escaped()?></a></span></dd>
@@ -190,7 +192,7 @@ if (!$wgUser->isLoggedIn()) { ?>
 <dd><span><a href="https://scratch.mit.edu/jobs"><?=wfMessage('scratchwikiskin-footer-jobs')->inLanguage( $wgLang )->escaped()?></a></span></dd>
 <dd><span><a href="https://en.scratch-wiki.info/wiki/Scratch_Press"><?=wfMessage('scratchwikiskin-footer-press')->inLanguage( $wgLang )->escaped()?></a></span></dd>
 			</dl>
-			<dl>
+			<dl class="community">
 				<dt><span><?=wfMessage('scratchwikiskin-footer-community-title')->inLanguage( $wgLang )->escaped()?></span></dt>
 <dd><span><a href="https://scratch.mit.edu/community_guidelines"><?=wfMessage('scratchwikiskin-footer-cgs')->inLanguage( $wgLang )->escaped()?></a></span></dd>
 <dd><span><a href="https://scratch.mit.edu/discuss/"><?=wfMessage('scratchwikiskin-footer-discuss')->inLanguage( $wgLang )->escaped()?></a></span></dd>
@@ -198,7 +200,7 @@ if (!$wgUser->isLoggedIn()) { ?>
 <dd><span><a href="https://scratch.mit.edu/statistics/"><?=wfMessage('scratchwikiskin-footer-stats')->inLanguage( $wgLang )->escaped()?></a></span></dd>
 <dd><span><a href="<?=Title::newFromText(wfMessage('portal-url')->inContentLanguage()->text())->getCanonicalURL()?>"><?=wfMessage('portal')->inLanguage( $wgLang )->escaped()?></a></span></dd>
 			</dl>
-			<dl>
+			<dl class="support">
 				<dt><span><?=wfMessage('scratchwikiskin-footer-support-title')->inLanguage( $wgLang )->escaped()?></span></dt>
 <dd><span><a href="<?=Title::newFromText(wfMessage('scratchwikiskin-footer-help-page-url')->inContentLanguage()->text())->getCanonicalURL()?>"><?=wfMessage('scratchwikiskin-footer-help')->inLanguage( $wgLang )->escaped()?></a></span></dd>
 <dd><span><a href="https://scratch.mit.edu/tips"><?=wfMessage('scratchwikiskin-footer-tips')->inLanguage( $wgLang )->escaped()?></a></span></dd>
@@ -207,12 +209,12 @@ if (!$wgUser->isLoggedIn()) { ?>
 <dd><span><a href="https://scratch.mit.edu/store"><?=wfMessage('scratchwikiskin-footer-store')->inLanguage( $wgLang )->escaped()?></a></span></dd>
 <dd><span><a href="https://secure.donationpay.org/scratchfoundation/"><?=wfMessage('scratchwikiskin-footer-donate')->inLanguage( $wgLang )->escaped()?></a></span></dd>
 			</dl>
-			<dl>
+			<dl class="legal">
 				<dt><span><?=wfMessage('scratchwikiskin-footer-legal-title')->inLanguage( $wgLang )->escaped()?></span></dt>
 <dd><span><a href="<?=Title::newFromText(wfMessage('privacypage')->inContentLanguage()->text())->getCanonicalURL()?>"><?=wfMessage('privacy')->inLanguage( $wgLang )->escaped()?></a></span></dd>
 <dd><span><a href="<?=Title::newFromText(wfMessage('disclaimerpage')->inContentLanguage()->text())->getCanonicalURL()?>"><?=wfMessage('disclaimers')->inLanguage( $wgLang )->escaped()?></a></span></dd>
 			</dl>
-			<dl>
+			<dl class="family">
 				<dt><span><?=wfMessage('scratchwikiskin-footer-family-title')->inLanguage( $wgLang )->escaped()?></span></dt>
 <dd><span><a href="https://scratch.mit.edu"><?=wfMessage('scratchwikiskin-footer-scratchsite')->inLanguage( $wgLang )->escaped()?></a></span></dd>
 <dd><span><a href="http://scratched.gse.harvard.edu"><?=wfMessage('scratchwikiskin-footer-scratched')->inLanguage( $wgLang )->escaped()?></a></span></dd>
@@ -306,6 +308,33 @@ document.querySelector('#searchInput').onblur = function () {
 window.addEventListener('hashchange', function(){
 	window.scrollBy(0, -50);
 });
+var lastXTouch = null;
+var lastYTouch = null;
+
+window.addEventListener('touchstart', function(evt){
+	var touches = evt.touches || evt.originalEvent.touches;
+	lastXTouch = touches[0].clientX;
+	lastYTouch = touches[0].clientY;
+}, false);
+
+window.addEventListener('touchmove', function(evt){
+	if (!lastXTouch || !lastYTouch) return;
+	if (window.outerWidth > 981) return;
+	var xUp = evt.touches[0].clientX;
+	var yUp = evt.touches[0].clientY;
+	var xDiff = lastXTouch - xUp;
+	var yDiff = lastYTouch - yUp;
+	if (Math.abs(xDiff) > Math.abs(yDiff)) {
+		if (xDiff > 0) {
+			document.querySelector('#view .inner .left').style.left = null;
+		} else {
+			document.querySelector('#view .inner .left').style.left = '0';
+		}
+		evt.preventDefault();
+	}
+	lastXTouch = null;
+	lastYTouch = null;
+}, {passive: false, capture: false});
 </script>
 <?php $this->printTrail();
 	}
