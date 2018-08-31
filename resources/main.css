@@ -879,21 +879,22 @@ dl dd {
 /* Mobile design */
 
 @media only screen and (max-width: 405px) {
-    #navigation .inner .tips,
-    #footer .inner .legal {
+    #footer .inner .support,
+    #footer .inner .family,
+    #footer .inner .community {
         display: none;
     }
 }
 
-@media only screen and (max-width: 519px) {
+@media only screen and (max-width: 519.4px) {
     .inner {
         width: 100%;
     }
     #navigation .inner .discuss,
     #navigation .inner .explore,
-    #navigation .inner .search,
+    #navigation .inner .tips,
     #navigation .inner .about,
-    #footer .inner .community,
+    #navigation .inner .create,
     #footer .inner .support,
     #footer .inner .family {
         display: none;
@@ -913,35 +914,35 @@ dl dd {
         min-width: calc(100% - 20px);
     }
 }
-@media only screen and (min-width: 520px) and (max-width: 679px) {
+@media only screen and (min-width: 519.5px) and (max-width: 679.4px) {
     .inner {
         width: 520px;
     }
     #navigation .inner .discuss,
     #navigation .inner .explore,
-    #navigation .inner .search,
-    #footer .inner .support,
+    #navigation .inner .about,
+    #navigation .inner .tips,
     #footer .inner .family {
         display: none;
     }
 }
-@media only screen and (min-width: 680px) and (max-width: 981px) {
+@media only screen and (min-width: 679.5px) and (max-width: 981.4px) {
     .inner {
         width: 680px;
     }
     #navigation .inner .explore,
-    #navigation .inner .search,
-    #footer .inner .family {
+    #navigation .inner .about,
+    #navigation .inner .discuss {
         display: none;
     }
 }
-@media only screen and (min-width: 982px) {
+@media only screen and (min-width: 981.5px) {
     .inner {
         width: 982px;
     }
 }
 
-@media only screen and (max-width: 981px) {
+@media only screen and (max-width: 981.4px) {
     #view .left {
         position: fixed;
         background-color: rgba(255, 255, 255, 0.9);
