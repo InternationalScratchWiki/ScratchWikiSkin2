@@ -247,7 +247,9 @@ if (window.innerWidth < 981) {
 	if (!tutored) {
 		box = document.createElement('div');
 		box.className = 'touch-tutorial';
-		box.innerHTML = <?=var_export(wfMessage( 'scratchwikiskin-js-swiperight' )->escaped(), true)?>;
+		var span = document.createElement('span');
+		span.innerHTML = <?=var_export(wfMessage( 'scratchwikiskin-js-swiperight' )->escaped(), true)?>;
+		box.appendChild(span);
 		document.body.appendChild(box);
 	}
 }
@@ -326,7 +328,7 @@ window.addEventListener('touchstart', function(evt){
 
 window.addEventListener('touchmove', function(evt){
 	if (!lastXTouch || !lastYTouch) return;
-	if (window.outerWidth > 981) return;
+	if (window.innerWidth >= 981) return;
 	var xUp = evt.touches[0].clientX;
 	var yUp = evt.touches[0].clientY;
 	var xDiff = lastXTouch - xUp;
@@ -334,15 +336,15 @@ window.addEventListener('touchmove', function(evt){
 	if (Math.abs(xDiff) > Math.abs(yDiff)) {
 		if (xDiff > 0) {
 			document.querySelector('#view .inner .left').style.left = null;
-			if (!tutored) {
+			if (box) {
 				window.localStorage.setItem('scratchwikiskin-tutored', true);
 				tutored = true;
-				box.remove()
+				box.remove();
 			}
 		} else {
 			document.querySelector('#view .inner .left').style.left = '0';
-			if (!tutored) {
-				box.innerHTML = <?=var_export(wfMessage( 'scratchwikiskin-js-swipeleft' )->escaped(), true)?>;
+			if (box) {
+				box.firstElementChild.innerHTML = <?=var_export(wfMessage( 'scratchwikiskin-js-swipeleft' )->escaped(), true)?>;
 			}
 		}
 		evt.preventDefault();

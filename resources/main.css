@@ -884,12 +884,17 @@ dl dd {
     top: 0;
     width: 100vw;
     height: 100vh;
-    z-index: 11;
+    z-index: 13;
     background-color: rgba(255, 255, 255, 0.5);
     text-align: center;
     line-height: 100vh;
     text-shadow: white 0 0 1px;
-    font-size: 1.8em;
+    font-size: 5vh;
+}
+.touch-tutorial span {
+    display: inline-block;
+    line-height: normal;
+    vertical-align: middle;
 }
 
 @media only screen and (max-width: 405px) {
