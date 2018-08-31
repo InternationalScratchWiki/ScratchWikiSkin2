@@ -241,13 +241,25 @@ function mod(el) {
 	el.delclass = function(c) {this.classList.remove(c);};
 	el.hasclass = function(c) {return this.classList.contains(c);};
 }
-
+var tutored = window.localStorage.getItem('scratchwikiskin-tutored');
+var box;
+if (window.innerWidth < 981) {
+	if (!tutored) {
+		box = document.createElement('div');
+		box.className = 'touch-tutorial';
+		box.innerHTML = <?=var_export(wfMessage( 'scratchwikiskin-js-swiperight' )->escaped(), true)?>;
+		document.body.appendChild(box);
+	}
+}
 window.addEventListener('load', function(){
 	var nameColon = decodeURIComponent(document.URL);
 	if (document.domain != "en.scratch-wiki.info" || mw.config.get("wgPageName") != "Special:Search") return;
 	if (nameColon.toLowerCase().indexOf("%3a") > -1) {
 		nameColon = nameColon.replace("%3A", ":").replace("%3a", ":");
 		window.location.href = nameColon;
+	}
+	if (document.querySelector(':target') !== null) {
+		window.scrollBy(0, -50);
 	}
 });
 (function () {
@@ -282,11 +294,6 @@ window.addEventListener('load', function(){
 		};
 	};
 })();
-window.addEventListener('load', function (){
-	if (document.querySelector(':target') !== null) {
-		window.scrollBy(0, -50);
-	};
-});
 document.querySelector('#searchInput').onfocus = function () {
 	let selected = document.querySelectorAll('#navigation .link');
 	for (var i = 0; i < selected.length; i++) {
@@ -327,8 +334,16 @@ window.addEventListener('touchmove', function(evt){
 	if (Math.abs(xDiff) > Math.abs(yDiff)) {
 		if (xDiff > 0) {
 			document.querySelector('#view .inner .left').style.left = null;
+			if (!tutored) {
+				window.localStorage.setItem('scratchwikiskin-tutored', true);
+				tutored = true;
+				box.remove()
+			}
 		} else {
 			document.querySelector('#view .inner .left').style.left = '0';
+			if (!tutored) {
+				box.innerHTML = <?=var_export(wfMessage( 'scratchwikiskin-js-swipeleft' )->escaped(), true)?>;
+			}
 		}
 		evt.preventDefault();
 	}

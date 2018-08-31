@@ -878,6 +878,20 @@ dl dd {
 
 /* Mobile design */
 
+.touch-tutorial {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 11;
+    background-color: rgba(255, 255, 255, 0.5);
+    text-align: center;
+    line-height: 100vh;
+    text-shadow: white 0 0 1px;
+    font-size: 1.8em;
+}
+
 @media only screen and (max-width: 405px) {
     #footer .inner .support,
     #footer .inner .family,
@@ -950,7 +964,7 @@ dl dd {
         top: 0px;
         padding: 0 10px;
         height: 100%;
-        z-index: 11;
+        z-index: 12;
         transition: left 0.5s;
         overflow-y: auto;
     }
