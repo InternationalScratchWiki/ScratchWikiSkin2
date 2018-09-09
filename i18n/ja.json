@@ -64,5 +64,7 @@
 	"scratchwikiskin-footer-llk": "ScratchはMITメディアラボ ライフロングキンダーガーテングループのプロジェクトです。",
 	"scratchwikiskin-notloggedin": "未ログイン",
 	"scratchwikiskin-pref-color":"ヘッダーの色",
-	"scratchwikiskin-search": "検索"
+	"scratchwikiskin-search": "検索",
+	"scratchwikiskin-js-swiperight": "右にスワイプしてサイドバーを表示",
+	"scratchwikiskin-js-swipeleft": "左にスワイプして隠す"
 }
