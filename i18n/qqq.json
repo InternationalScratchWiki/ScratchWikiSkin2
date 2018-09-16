@@ -62,5 +62,7 @@
 	"scratchwikiskin-footer-llk": "Disclaimer that Scratch is by MIT LLK",
 	"scratchwikiskin-notloggedin": "Text for username when not logged in",
 	"scratchwikiskin-pref-color": "Prompt to set header color",
-	"scratchwikiskin-search": "Placeholder for search box"
+	"scratchwikiskin-search": "Placeholder for search box",
+	"scratchwikiskin-js-swipeleft": "Tutorial message on touch devices to instruct users to swipe left to show the sidebar",
+	"scratchwikiskin-js-swiperight": "Tutorial message on touch devices to instruct users to swipe right to hide the sidebar"
 }
