@@ -118,11 +118,11 @@ p {
 }
 
 ::-moz-selection {
-    background-color: #e6f0ff;
+    background-color: rgba(77, 151, 255, 0.25);
 }
 
 ::selection {
-    background-color: #e6f0ff;
+    background-color: rgba(77, 151, 255, 0.25);
 }
 
 ol,
