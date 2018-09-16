@@ -347,7 +347,6 @@ window.addEventListener('touchmove', function(evt){
 				box.firstElementChild.innerHTML = <?=var_export(wfMessage( 'scratchwikiskin-js-swipeleft' )->escaped(), true)?>;
 			}
 		}
-		evt.preventDefault();
 	}
 	lastXTouch = null;
 	lastYTouch = null;
