@@ -25,6 +25,7 @@ class ScratchWikiSkinTemplate extends BaseTemplate {
 <div id="navigation" role="banner">
 	<div class="inner">
 		<ul>
+			<li class="sidebar-toggle"><a></a></li>
 			<li class="logo"><a aria-label="Scratch" href="https://scratch.mit.edu/"></a></li>
 			<li class="link create">
 				<a class="dropdown-toggle"><span><?=wfMessage('scratchwikiskin-create')->inLanguage( $wgLang )->escaped()?></span></a>
@@ -241,18 +242,6 @@ function mod(el) {
 	el.delclass = function(c) {this.classList.remove(c);};
 	el.hasclass = function(c) {return this.classList.contains(c);};
 }
-var tutored = window.localStorage.getItem('scratchwikiskin-tutored');
-var box;
-if (window.innerWidth < 981) {
-	if (!tutored) {
-		box = document.createElement('div');
-		box.className = 'touch-tutorial';
-		var span = document.createElement('span');
-		span.innerHTML = <?=var_export(wfMessage( 'scratchwikiskin-js-swiperight' )->escaped(), true)?>;
-		box.appendChild(span);
-		document.body.appendChild(box);
-	}
-}
 window.addEventListener('load', function(){
 	var nameColon = decodeURIComponent(document.URL);
 	if (document.domain != "en.scratch-wiki.info" || mw.config.get("wgPageName") != "Special:Search") return;
@@ -317,40 +306,18 @@ document.querySelector('#searchInput').onblur = function () {
 window.addEventListener('hashchange', function(){
 	window.scrollBy(0, -50);
 });
-var lastXTouch = null;
-var lastYTouch = null;
 
-window.addEventListener('touchstart', function(evt){
-	var touches = evt.touches || evt.originalEvent.touches;
-	lastXTouch = touches[0].clientX;
-	lastYTouch = touches[0].clientY;
-}, false);
+var sidebarShown = false;
 
-window.addEventListener('touchmove', function(evt){
-	if (!lastXTouch || !lastYTouch) return;
+document.querySelector('#navigation .sidebar-toggle').addEventListener('click', function(){
 	if (window.innerWidth >= 981) return;
-	var xUp = evt.touches[0].clientX;
-	var yUp = evt.touches[0].clientY;
-	var xDiff = lastXTouch - xUp;
-	var yDiff = lastYTouch - yUp;
-	if (Math.abs(xDiff) > Math.abs(yDiff)) {
-		if (xDiff > 0) {
-			document.querySelector('#view .inner .left').style.left = null;
-			if (box) {
-				window.localStorage.setItem('scratchwikiskin-tutored', true);
-				tutored = true;
-				box.remove();
-			}
-		} else {
-			document.querySelector('#view .inner .left').style.left = '0';
-			if (box) {
-				box.firstElementChild.innerHTML = <?=var_export(wfMessage( 'scratchwikiskin-js-swipeleft' )->escaped(), true)?>;
-			}
-		}
+	if (!sidebarShown) {
+		document.querySelector('#view .inner .left').style.left = '0';
+	} else {
+		document.querySelector('#view .inner .left').style.left = null;
 	}
-	lastXTouch = null;
-	lastYTouch = null;
-}, {passive: false, capture: false});
+	sidebarShown = !sidebarShown;
+});
 </script>
 <?php $this->printTrail();
 	}
