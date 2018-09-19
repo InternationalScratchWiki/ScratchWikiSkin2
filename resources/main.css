@@ -767,6 +767,7 @@ dl dd {
 
 #content pre {
     white-space: pre;
+    overflow-x: auto;
 }
 
 #content code.blocks,
