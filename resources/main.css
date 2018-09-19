@@ -145,6 +145,16 @@ dl dd {
     margin: 5px 0;
 }
 
+table {
+    display: flex;
+    overflow-x: scroll;
+}
+
+code .blocks {
+    overflow-x: scroll;
+    display: flex;
+}
+
 #view {
     display: inline-block;
     margin-top: 50px;
