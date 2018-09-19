@@ -945,6 +945,9 @@ dl dd {
         padding: 0 10px;
         min-width: calc(100% - 20px);
     }
+    #footer .lsists {
+        display: grid;
+    }
 }
 @media only screen and (min-width: 519.5px) and (max-width: 679.4px) {
     .inner {
