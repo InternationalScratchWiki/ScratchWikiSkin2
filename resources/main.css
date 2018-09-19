@@ -731,7 +731,7 @@ dl dd {
     display: block;
     font-family: "Liberation Sans", "Helvetica Neue", "Helvetica", Arial, sans-serif;
     color: black;
-    overflow-x: auto;
+    overflow-x: hidden;
 }
 
 #content p {
