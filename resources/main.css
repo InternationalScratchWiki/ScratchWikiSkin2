@@ -559,9 +559,9 @@ dl dd {
     -webkit-flex-direction: row;
     -ms-flex-direction: row;
     flex-direction: row;
-    -webkit-flex-wrap: nowrap;
-    -ms-flex-wrap: nowrap;
-    flex-wrap: nowrap;
+    -webkit-flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
     -webkit-justify-content: space-between;
     -ms-flex-pack: justify;
     justify-content: space-between;
@@ -572,6 +572,7 @@ dl dd {
     vertical-align: top;
     text-align: left;
     font-size: .8rem;
+    margin: 0 10px;
 }
 
 #footer .lists dt {
@@ -898,14 +899,6 @@ dl dd {
     vertical-align: middle;
 }
 
-@media only screen and (max-width: 405px) {
-    #footer .inner .support,
-    #footer .inner .family,
-    #footer .inner .community {
-        display: none;
-    }
-}
-
 @media only screen and (max-width: 519.4px) {
     .inner {
         width: calc(100vw - 20px);
@@ -914,9 +907,7 @@ dl dd {
     #navigation .inner .explore,
     #navigation .inner .tips,
     #navigation .inner .about,
-    #navigation .inner .create,
-    #footer .inner .support,
-    #footer .inner .family {
+    #navigation .inner .create {
         display: none;
     }
     #footer .lists {
@@ -962,8 +953,7 @@ dl dd {
     #navigation .inner .discuss,
     #navigation .inner .explore,
     #navigation .inner .about,
-    #navigation .inner .tips,
-    #footer .inner .family {
+    #navigation .inner .tips {
         display: none;
     }
 }
@@ -993,7 +983,7 @@ dl dd {
         left: -185px;
         top: 0px;
         padding: 0 10px;
-        height: 100%;
+        height: calc(100% - 50px);
         z-index: 11;
         transition: left 0.5s;
         overflow-y: auto;
