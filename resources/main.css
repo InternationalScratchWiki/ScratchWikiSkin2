@@ -766,7 +766,7 @@ dl dd {
 }
 
 #content pre {
-    white-space: pre;
+    white-space: pre-line;
     overflow-x: auto;
 }
 
