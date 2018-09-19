@@ -945,7 +945,7 @@ dl dd {
         padding: 0 10px;
         min-width: calc(100% - 20px);
     }
-    #footer .lsists {
+    #footer .lists {
         display: grid;
     }
 }
