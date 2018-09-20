@@ -145,7 +145,7 @@ dl dd {
     margin: 5px 0;
 }
 
-table {
+table.wikitable {
     display: flex;
     overflow-x: scroll;
 }
