@@ -141,10 +141,6 @@ dl dt {
     font-weight: bold;
 }
 
-dl dd {
-    margin: 5px 0;
-}
-
 #view {
     display: inline-block;
     margin-top: 50px;
