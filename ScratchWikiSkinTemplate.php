@@ -189,7 +189,7 @@ if (!$wgUser->isLoggedIn()) { ?>
 <dd><span><a href="https://scratch.mit.edu/parents/"><?=wfMessage('scratchwikiskin-footer-parents')->inLanguage( $wgLang )->escaped()?></a></span></dd>
 <dd><span><a href="https://scratch.mit.edu/educators/"><?=wfMessage('scratchwikiskin-footer-educators')->inLanguage( $wgLang )->escaped()?></a></span></dd>
 <dd><span><a href="https://scratch.mit.edu/developers/"><?=wfMessage('scratchwikiskin-footer-developers')->inLanguage( $wgLang )->escaped()?></a></span></dd>
-<dd><span><a href="https://scratch.mit.edu/info/credits"><?=wfMessage('scratchwikiskin-footer-credits')->inLanguage( $wgLang )->escaped()?></a></span></dd>
+<dd><span><a href="https://scratch.mit.edu/credits"><?=wfMessage('scratchwikiskin-footer-credits')->inLanguage( $wgLang )->escaped()?></a></span></dd>
 <dd><span><a href="https://scratch.mit.edu/jobs"><?=wfMessage('scratchwikiskin-footer-jobs')->inLanguage( $wgLang )->escaped()?></a></span></dd>
 <dd><span><a href="https://en.scratch-wiki.info/wiki/Scratch_Press"><?=wfMessage('scratchwikiskin-footer-press')->inLanguage( $wgLang )->escaped()?></a></span></dd>
 			</dl>
