@@ -766,6 +766,9 @@ dl dt {
     white-space: pre;
     overflow-x: auto;
 }
+#content pre[class^=CodeMirror], #content pre[class*=CodeMirror] {
+    white-space: pre-wrap;
+}
 
 #content code.blocks,
 #content pre.blocks {
