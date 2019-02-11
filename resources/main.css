@@ -873,6 +873,10 @@ dl dt {
     outline: none;
 }
 
+#firstHeading {
+    overflow-wrap: break-word;
+}
+
 #mw-input-wpscratchwikiskin-header-color {
     font-family: monospace;
 }

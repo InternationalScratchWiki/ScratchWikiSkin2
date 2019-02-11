@@ -145,7 +145,8 @@ if (!$wgUser->isLoggedIn()) { ?>
 				<?php if ($this->data['sitenotice']) { ?><div id="siteNotice"><?php $this->html('sitenotice'); ?></div><?php } ?>
 				<div class="box">
 					<div class="box-header">
-						<h1 id="firstHeading" class="firstHeading"><?php $this->html('title')?><?=$this->getIndicators()?></h1>
+						<?=$this->getIndicators()?>
+						<h1 id="firstHeading" class="firstHeading"><?php $this->html('title')?></h1>
 					</div>
 					<div class="box-content" id="content" role="main">
 <p id="siteSub"><?=wfMessage( 'tagline' )->inLanguage( $wgLang )->escaped()?></p>
