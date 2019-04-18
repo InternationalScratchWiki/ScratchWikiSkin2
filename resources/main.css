@@ -770,8 +770,8 @@ dl dt {
     white-space: pre-wrap;
 }
 
-#content code.blocks,
-#content pre.blocks {
+#content code[class^=blocks],
+#content pre[class^=blocks] {
     border: none;
     background: none;
 }
