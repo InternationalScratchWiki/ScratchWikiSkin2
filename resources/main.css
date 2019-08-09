@@ -131,6 +131,11 @@ ul {
     font-weight: 300;
 }
 
+.mw-content-ltr ol,
+.mw-content-ltr ul {
+    margin-left: 3.2em;
+}
+
 dl {
     line-height: 1.5rem;
     font-size: 1rem;
