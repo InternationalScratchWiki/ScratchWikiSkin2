@@ -226,9 +226,6 @@ if (!$wgUser->isLoggedIn()) { ?>
 <dd><span><a href="https://www.scratchfoundation.org"><?=wfMessage('scratchwikiskin-footer-foundation')->inLanguage( $wgLang )->escaped()?></a></span></dd>
 			</dl>
 		</div>
-		<div class="copyright">
-			<p><span><?=wfMessage('scratchwikiskin-footer-llk')->inLanguage( $wgLang )->parse()?></span></p>
-		</div>
 	</div>
 </div><?php if (date('m j') == '04 1') { ?><div style="background-color:white">;</div><?php } ?>
 <script>
