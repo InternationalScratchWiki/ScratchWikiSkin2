@@ -316,6 +316,8 @@ document.querySelector('#navigation .sidebar-toggle').addEventListener('click', 
 	}
 	sidebarShown = !sidebarShown;
 });
+
+document.querySelector('#view').style.minHeight = 'calc(100vh - ' + (document.querySelector('#footer').getBoundingClientRect().height + document.querySelector('#navigation').getBoundingClientRect().height) + 'px)';
 </script>
 <?php $this->printTrail();
 	}
