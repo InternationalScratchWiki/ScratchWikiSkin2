@@ -6,6 +6,10 @@
  * @ingroup Skins
  */
 
+define('SKIN_CHOICE_PREF', 'skin');
+define('DARK_THEME_PREF', 'scratchwikiskin-dark-theme');
+define('HEADER_COLOR_PREF', 'scratchwikiskin-header-color');
+
 class HTMLColorField extends HTMLFormField {
 
 	public function getInputHTML( $value ) {
@@ -62,15 +66,28 @@ class SkinScratchWikiSkin extends SkinTemplate {
 		$out->addMeta('viewport', 'user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height');
 	}
 
-	static function onGetPreferences( $user, &$preferences ) {
+	public static function onOutputPageBodyAttributes( $out, $skin, &$bodyAttrs ) {
+		global $wgUser;
+		if ($wgUser->getOption( DARK_THEME_PREF )) {
+			$bodyAttrs['class'] .= ' dark-theme';
+		}
+	}
+
+	public static function onGetPreferences( $user, &$preferences ) {
 		HTMLForm::$typeMappings['color'] = HTMLColorField::class;
-		$origpref = $user->getOption( 'scratchwikiskin-header-color' );
-		$preferences['scratchwikiskin-header-color'] = [
+		if ($user->getOption( SKIN_CHOICE_PREF ) !== 'scratchwikiskin2') return true;
+		$origpref = $user->getOption( HEADER_COLOR_PREF );
+		$preferences[HEADER_COLOR_PREF] = [
 			'type' => 'color',
 			'pattern' => '#[0-9A-Za-z]{6}',
 			'label-message' => 'scratchwikiskin-pref-color',
 			'section' => 'rendering/skin',
-			'default' => ($origpref ? $origpref : '#7953c4'),
+			'default' => ($origpref ?: '#7953c4'),
+		];
+		$preferences[DARK_THEME_PREF] = [
+			'type' => 'check',
+			'label-message' => 'scratchwikiskin-pref-dark',
+			'section' => 'rendering/skin',
 		];
 		return true;
 	}

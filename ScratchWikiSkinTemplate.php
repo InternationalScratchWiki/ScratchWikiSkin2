@@ -63,17 +63,15 @@ class ScratchWikiSkinTemplate extends BaseTemplate {
 					<li><a href="<?=Title::newFromText(wfMessage('aboutpage')->inContentLanguage()->text())->getLocalURL()?>"><span><?=wfMessage('aboutsite')->inLanguage( $wgLang )->escaped()?></span></a></li>
 				</ul>
 			</li>
-			<li class="search">
-				<form class="form" action="<?php $this->text( 'wgScript' ) ?>" role="search" aria-label="<?=wfMessage( 'scratchwikiskin-search' )->inLanguage( $wgLang )->escaped()?>">
-					<button class="button btn-search"></button>
-					<div class="form-group row no-label">
-						<div class="col-sm-9">
-							<input type="text" class="input" id="searchInput" accesskey="<?=wfMessage( 'accesskey-search' )->inLanguage( $wgLang )->text() ?>" title="Search Scratch Wiki [alt-shift-<?=wfMessage( 'accesskey-search' )->inLanguage( $wgLang )->text()?>]" name="search" autocomplete="off" placeholder="<?=wfMessage( 'scratchwikiskin-search' )->inLanguage( $wgLang )->escaped() ?>" />
-							<input type="hidden" value="Special:Search" name="title" />
-							<span class="help-block">Not Required</span>
-						</div>
-					</div>
-				</form>
+			<li class="link search">
+				<a class="dropdown-toggle">
+					<span><button class="button btn-search"></button></span>
+					<span style="padding-left: 2em;"><?=wfMessage('search')->inLanguage( $wgLang )->escaped()?></span>
+				</a>
+				<ul class="dropdown" style="height: fit-content"><li><form class="form" action="<?php $this->text( 'wgScript' ) ?>" role="search" aria-label="<?=wfMessage( 'scratchwikiskin-search' )->inLanguage( $wgLang )->escaped()?>">
+					<input type="text" class="input" id="searchInput" accesskey="<?=wfMessage( 'accesskey-search' )->inLanguage( $wgLang )->text() ?>" title="Search Scratch Wiki [alt-shift-<?=wfMessage( 'accesskey-search' )->inLanguage( $wgLang )->text()?>]" name="search" autocomplete="off" placeholder="<?=wfMessage( 'scratchwikiskin-search' )->inLanguage( $wgLang )->escaped() ?>" />
+					<input type="hidden" value="Special:Search" name="title" />
+				</form></li></ul>
 			</li>
 			<li class="link right content-actions">
 				<a class="dropdown-toggle">
@@ -242,6 +240,11 @@ function mod(el) {
 	el.addclass = function(c) {this.classList.add(c);};
 	el.delclass = function(c) {this.classList.remove(c);};
 	el.hasclass = function(c) {return this.classList.contains(c);};
+	return el;
+}
+var body = mod(document.body);
+if (window.matchMedia('(prefers-color-scheme: dark)') && !body.hasclass('dark-theme')) {
+	body.addclass('dark-theme');
 }
 window.addEventListener('load', function(){
 	var nameColon = decodeURIComponent(document.URL);
@@ -274,7 +277,9 @@ window.addEventListener('load', function(){
 			if (!e) e = window.event;
 			if (!e.toElement) e.toElement = e.relatedTarget;
 			if (!e.toElement) return;
-			if (!btn.parentElement.contains(e.toElement)) {
+			if (!btn.parentElement.contains(e.toElement)
+				&& !document.querySelector('.suggestions').contains(e.toElement)
+			) {
 				if (btn.hasclass('open')) {
 					if (e.toElement.matches('#navigation .link, #navigation .link>a, #navigation .link>a *')) {
 						e.toElement.click();
@@ -290,6 +295,7 @@ document.querySelector('#searchInput').onfocus = function () {
 	let selected = document.querySelectorAll('#navigation .link');
 	for (var i = 0; i < selected.length; i++) {
 		let link = selected[i];
+		if (link.classList.contains('search')) continue;
 		if (!link.classList.contains('right')) {
 			link.style.display = 'none';
 		}
