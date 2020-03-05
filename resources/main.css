@@ -163,7 +163,7 @@ dl dt {
     margin-top: 50px;
     background-color: #fcfcfc;
     min-width: 100%;
-    min-height: calc(100vh - 328px);
+    min-height: calc(100vh - 316px);
 }
 .dark-theme #view {
     background-color: #23272a;
