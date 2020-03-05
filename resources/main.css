@@ -101,19 +101,23 @@ a:active {
     text-decoration: none;
     color: #4d97ff;
 }
-.dark-theme a:link,
-.dark-theme a:visited,
-.dark-theme a:active {
-    color: #0096cf;
-}
-
 a:hover {
     text-decoration: none;
     color: #4280d7;
 }
+
+.dark-theme a:link,
+.dark-theme a:active {
+    color: #00aff5;
+}
+.dark-theme a:visited,
+.dark-theme #content a:visited {
+    text-decoration: underline;
+    color: #00aff5;
+}
 .dark-theme a:hover {
     text-decoration: underline;
-    color: #0096cf;
+    color: #00aff5;
 }
 
 /* Classes */
@@ -271,7 +275,7 @@ dl dt {
 }
 
 .dropdown>li a:hover {
-    background-color: rgba(0, 0, 0, 0.1);
+    background-color: rgba(0, 0, 0, 0.3);
     text-decoration: none;
 }
 
@@ -791,12 +795,14 @@ dl dt {
 #content a.new {
     color: #ba0000;
 }
+#content a.new:visited {
+    color: #a55858;
+}
 .dark-theme #content a.new {
     color: #ffab1a;
 }
-
-#content a.new:visited {
-    color: #a55858;
+.dark-theme #content a.new:visited {
+    color: #aaaa00;
 }
 
 #content a.new:hover {
@@ -949,7 +955,8 @@ dl dt {
 }
 
 .dark-theme textarea,
-.dark-theme input {
+.dark-theme input,
+.dark-theme select {
     background-color: #2c2f33;
     color: #eee;
     border: 1px solid #1f1f1f;
@@ -960,6 +967,14 @@ dl dt {
 .dark-theme .editOptions {
     background-color: #36393f;
     border: 1px solid #1f1f1f;
+}
+
+.dark-theme #mw-indicator-mw-helplink a {
+    filter: invert(100%);
+    color: #ff6930; /* hack to invert the black question mark */
+}
+.dark-theme .mw-plusminus-pos {
+    color: #00bb00; /* lighten it cuz */
 }
 
 /* Mobile design */
