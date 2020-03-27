@@ -404,6 +404,7 @@ dl dt {
     margin: 0 6px 0 0;
     width: 81px;
     height: 50px;
+    filter: brightness(0.9);
 }
 
 #navigation .logo a:hover,
@@ -698,7 +699,7 @@ dl dt {
     padding: 8px 20px;
 }
 .dark-theme .right .box .box-content {
-    background-color: #36393f;
+    background-color: #2f3136;
 }
 
 .left .box-content {
@@ -799,7 +800,7 @@ dl dt {
     color: #a55858;
 }
 .dark-theme #content a.new {
-    color: #ffab1a;
+    color: #ef916c;
 }
 .dark-theme #content a.new:visited {
     color: #aaaa00;
@@ -1087,6 +1088,9 @@ dl dt {
         transition: left 0.5s;
         overflow-y: auto;
         margin-top: 50px;
+    }
+    .dark-theme #view .left {
+        background-color: rgba(31, 31, 31, 0.9);
     }
     #view .right {
         margin: auto 0;
