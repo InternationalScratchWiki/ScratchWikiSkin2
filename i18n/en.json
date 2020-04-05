@@ -63,5 +63,6 @@
 	"scratchwikiskin-notloggedin": "Not logged in",
 	"scratchwikiskin-pref-color": "ScratchWikiSkin Header color:",
 	"scratchwikiskin-pref-dark": "Use ScratchWikiSkin dark theme",
-	"scratchwikiskin-search": "Search the Wiki"
+	"scratchwikiskin-search": "Search the Wiki",
+	"scratchwikiskin-search-title": "Search Scratch Wiki [alt-shift-$1]"
 }

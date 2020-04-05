@@ -63,15 +63,26 @@ class ScratchWikiSkinTemplate extends BaseTemplate {
 					<li><a href="<?=Title::newFromText(wfMessage('aboutpage')->inContentLanguage()->text())->getLocalURL()?>"><span><?=wfMessage('aboutsite')->inLanguage( $wgLang )->escaped()?></span></a></li>
 				</ul>
 			</li>
-			<li class="link search">
-				<a class="dropdown-toggle">
-					<span><button class="button btn-search"></button></span>
-					<span style="padding-left: 2em;"><?=wfMessage('search')->inLanguage( $wgLang )->escaped()?></span>
-				</a>
-				<ul class="dropdown" style="height: fit-content"><li><form class="form" action="<?php $this->text( 'wgScript' ) ?>" role="search" aria-label="<?=wfMessage( 'scratchwikiskin-search' )->inLanguage( $wgLang )->escaped()?>">
-					<input type="text" class="input" id="searchInput" accesskey="<?=wfMessage( 'accesskey-search' )->inLanguage( $wgLang )->text() ?>" title="Search Scratch Wiki [alt-shift-<?=wfMessage( 'accesskey-search' )->inLanguage( $wgLang )->text()?>]" name="search" autocomplete="off" placeholder="<?=wfMessage( 'scratchwikiskin-search' )->inLanguage( $wgLang )->escaped() ?>" />
-					<input type="hidden" value="Special:Search" name="title" />
-				</form></li></ul>
+			<li class="search">
+				<form class="form" action="<?php $this->text( 'wgScript' ) ?>" role="search" aria-label="<?=wfMessage( 'scratchwikiskin-search' )->inLanguage( $wgLang )->escaped()?>">
+					<button class="button btn-search"></button>
+					<div class="form-group row no-label">
+						<div class="col-sm-9">
+							<input
+								type="text" class="input" id="searchInput"
+								accesskey="<?=wfMessage( 'accesskey-search' )->inLanguage( $wgLang )->text() ?>"
+								title="<?=wfMessage(
+									'scratchwikiskin-search-title',
+									wfMessage( 'accesskey-search' )->inLanguage( $wgLang )->text()
+								)->inLanguage( $wgLang )->text()?>"
+								name="search" autocomplete="off"
+								placeholder="<?=wfMessage( 'scratchwikiskin-search' )->inLanguage( $wgLang )->escaped() ?>"
+							/>
+							<input type="hidden" value="Special:Search" name="title" />
+							<span class="help-block">Not Required</span>
+						</div>
+					</div>
+				</form>
 			</li>
 			<li class="link right content-actions">
 				<a class="dropdown-toggle">
@@ -291,17 +302,20 @@ window.addEventListener('load', function(){
 		};
 	};
 })();
+var searchExpanded = false;
 document.querySelector('#searchInput').onfocus = function () {
 	let selected = document.querySelectorAll('#navigation .link');
 	for (var i = 0; i < selected.length; i++) {
 		let link = selected[i];
-		if (link.classList.contains('search')) continue;
 		if (!link.classList.contains('right')) {
 			link.style.display = 'none';
 		}
 	}
+	searchExpanded = true;
 };
-document.querySelector('#searchInput').onblur = function () {
+window.addEventListener('click', function (e) {
+	if (!searchExpanded) return;
+	if (document.querySelector('#navigation .search').contains(e.target)) return;
 	let selected = document.querySelectorAll('#navigation .link');
 	for (var i = 0; i < selected.length; i++) {
 		let link = selected[i];
@@ -309,7 +323,8 @@ document.querySelector('#searchInput').onblur = function () {
 			link.style.display = '';
 		}
 	}
-};
+	searchExpanded = false;
+});
 window.addEventListener('hashchange', function(){
 	window.scrollBy(0, -50);
 });
