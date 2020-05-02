@@ -107,15 +107,15 @@ a:hover {
 }
 
 .dark-theme a:link,
+.dark-theme a:visited,
 .dark-theme a:active {
-    color: #00aff5;
+    color: #5ec4f7;
 }
 .dark-theme #content a:visited {
-    color: #a558ec;
+    color: #339cff;
 }
 .dark-theme a:hover {
     text-decoration: underline;
-    color: #00aff5;
 }
 
 /* Classes */
