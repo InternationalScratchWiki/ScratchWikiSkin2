@@ -86,7 +86,7 @@ class ScratchWikiSkinTemplate extends BaseTemplate {
 			</li>
 			<li class="link right content-actions">
 				<a class="dropdown-toggle">
-					<img src="<?=$wgStylePath?>/ScratchWikiSkin2/resources/Edit-pencil.png" width="25" height="25" />
+					<img src="<?=$wgStylePath?>/ScratchWikiSkin2/resources/img/edit pencil.svg" width="25" height="25" />
 				</a>
 				<ul class="dropdown">
 <?php foreach ($this->data['content_actions'] as $key => $tab) { ?>

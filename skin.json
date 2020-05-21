@@ -24,7 +24,7 @@
 			"class": "ResourceLoaderSkinModule",
 			"position": "top",
 			"styles": {
-				"resources/main.css": {
+				"resources/css/main.css": {
 					"media": "screen"
 				}
 			}
