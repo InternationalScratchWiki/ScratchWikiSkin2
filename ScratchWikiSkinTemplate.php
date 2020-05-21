@@ -200,7 +200,7 @@ if (!$wgUser->isLoggedIn()) { ?>
 <dd><span><a href="https://scratch.mit.edu/educators/"><?=wfMessage('scratchwikiskin-footer-educators')->inLanguage( $wgLang )->escaped()?></a></span></dd>
 <dd><span><a href="https://scratch.mit.edu/developers/"><?=wfMessage('scratchwikiskin-footer-developers')->inLanguage( $wgLang )->escaped()?></a></span></dd>
 <dd><span><a href="https://scratch.mit.edu/credits"><?=wfMessage('scratchwikiskin-footer-credits')->inLanguage( $wgLang )->escaped()?></a></span></dd>
-<dd><span><a href="https://scratch.mit.edu/jobs"><?=wfMessage('scratchwikiskin-footer-jobs')->inLanguage( $wgLang )->escaped()?></a></span></dd>
+<dd><span><a href="https://www.scratchfoundation.org/opportunities"><?=wfMessage('scratchwikiskin-footer-jobs')->inLanguage( $wgLang )->escaped()?></a></span></dd>
 <dd><span><a href="https://en.scratch-wiki.info/wiki/Scratch_Press"><?=wfMessage('scratchwikiskin-footer-press')->inLanguage( $wgLang )->escaped()?></a></span></dd>
 			</dl>
 			<dl class="community">
@@ -234,9 +234,6 @@ if (!$wgUser->isLoggedIn()) { ?>
 <dd><span><a href="https://scratch.mit.edu/conference"><?=wfMessage('scratchwikiskin-footer-conference')->inLanguage( $wgLang )->escaped()?></a></span></dd>
 <dd><span><a href="https://www.scratchfoundation.org"><?=wfMessage('scratchwikiskin-footer-foundation')->inLanguage( $wgLang )->escaped()?></a></span></dd>
 			</dl>
-		</div>
-		<div class="copyright">
-			<p><span><?=wfMessage('scratchwikiskin-footer-llk')->inLanguage( $wgLang )->parse()?></span></p>
 		</div>
 	</div>
 </div><?php if (date('m j') == '04 1') { ?><div style="background-color:white">;</div><?php } ?>
@@ -340,6 +337,8 @@ document.querySelector('#navigation .sidebar-toggle').addEventListener('click', 
 	}
 	sidebarShown = !sidebarShown;
 });
+
+document.querySelector('#view').style.minHeight = 'calc(100vh - ' + (document.querySelector('#footer').getBoundingClientRect().height + document.querySelector('#navigation').getBoundingClientRect().height) + 'px)';
 </script>
 <?php $this->printTrail();
 	}
