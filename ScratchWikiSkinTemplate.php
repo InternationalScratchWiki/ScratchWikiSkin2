@@ -22,7 +22,7 @@ class ScratchWikiSkinTemplate extends BaseTemplate {
 	background-color: <?=htmlspecialchars(str_replace([';', '}'], '', $wgUser->getOption( 'scratchwikiskin-header-color' )))?>;
 }
 </style>
-<div id="navigation" role="banner">
+<div id="navigation" role="banner" class="<?=$wgUser->getOption( 'scratchwikiskin-dark-header' ) ? 'preserve' : ''?>">
 	<div class="inner">
 		<ul>
 			<li class="sidebar-toggle"><a></a></li>
@@ -251,9 +251,6 @@ function mod(el) {
 	return el;
 }
 var body = mod(document.body);
-if (window.matchMedia('(prefers-color-scheme: dark)') && !body.hasclass('dark-theme')) {
-	body.addclass('dark-theme');
-}
 window.addEventListener('load', function(){
 	var nameColon = decodeURIComponent(document.URL);
 	if (document.domain != "en.scratch-wiki.info" || mw.config.get("wgPageName") != "Special:Search") return;

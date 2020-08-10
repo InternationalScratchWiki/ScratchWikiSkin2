@@ -8,6 +8,7 @@
 
 define('SKIN_CHOICE_PREF', 'skin');
 define('DARK_THEME_PREF', 'scratchwikiskin-dark-theme');
+define('DARK_THEME_HEADER', 'scratchwikiskin-dark-header');
 define('HEADER_COLOR_PREF', 'scratchwikiskin-header-color');
 
 class HTMLColorField extends HTMLFormField {
@@ -49,8 +50,10 @@ class HTMLColorField extends HTMLFormField {
 }
 
 class SkinScratchWikiSkin extends SkinTemplate {
-	var $skinname = 'scratchwikiskin2', $stylename = 'ScratchWikiSkin',
-		$template = 'ScratchWikiSkinTemplate', $useHeadElement = true;
+    var $skinname = 'scratchwikiskin2',
+        $stylename = 'ScratchWikiSkin',
+        $template = 'ScratchWikiSkinTemplate',
+        $useHeadElement = true;
 
 	/**
 	 * Add CSS via ResourceLoader
@@ -67,29 +70,62 @@ class SkinScratchWikiSkin extends SkinTemplate {
 	}
 
 	public static function onOutputPageBodyAttributes( $out, $skin, &$bodyAttrs ) {
-		global $wgUser;
-		if ($wgUser->getOption( DARK_THEME_PREF )) {
-			$bodyAttrs['class'] .= ' dark-theme';
-		}
+        global $wgUser;
+        $time = false;
+        switch ($wgUser->getOption( DARK_THEME_PREF )) {
+            case 'on':
+                $bodyAttrs['class'] .= ' dark-theme';
+                break;
+            case 'system':
+                $bodyAttrs['class'] .= ' system-dark-theme';
+                break;
+            case 'time':
+                $bodyAttrs['class'] .= !$time ?: ' dark-theme';
+                break;
+        }
 	}
 
 	public static function onGetPreferences( $user, &$preferences ) {
 		HTMLForm::$typeMappings['color'] = HTMLColorField::class;
 		if ($user->getOption( SKIN_CHOICE_PREF ) !== 'scratchwikiskin2') return true;
-		$origpref = $user->getOption( HEADER_COLOR_PREF );
+
+        /**
+         * Header color setting
+         */
 		$preferences[HEADER_COLOR_PREF] = [
 			'type' => 'color',
 			'pattern' => '#[0-9A-Za-z]{6}',
 			'label-message' => 'scratchwikiskin-pref-color',
 			'section' => 'rendering/skin',
-			'default' => ($origpref ?: '#7953c4'),
-		];
+			'default' => $user->getOption( HEADER_COLOR_PREF ) ?: '#7953c4',
+        ];
+        
+        /**
+         * Dark mode enabled setting
+         */
 		$preferences[DARK_THEME_PREF] = [
-			'type' => 'check',
+			'type' => 'radio',
 			'label-message' => 'scratchwikiskin-pref-dark',
-			'section' => 'rendering/skin',
+            'section' => 'rendering/skin',
+            'options' => [
+                'Always On' => 'on',
+                'Always Off' => 'off',
+                'Automatic (Based on system preferences)' => 'system',
+                //'Automatic (Based on time of the day)' => 'time', // disabled for now, can't get the user's local time
+            ],
+            'default' => $user->getOption( DARK_THEME_PREF ) ?: 'time',
+        ];
+
+        /**
+         * Header color with dark mode setting
+         */
+        $preferences[DARK_THEME_HEADER] = [
+			'type' => 'check',
+			'label-message' => 'scratchwikiskin-pref-dark-header',
+            'section' => 'rendering/skin',
+            'default' => $user->getOption( DARK_THEME_HEADER ) ?: false,
 		];
+        
 		return true;
 	}
 }
-

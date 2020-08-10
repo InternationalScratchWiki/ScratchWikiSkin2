@@ -1,6 +1,6 @@
 {
 	"name": "ScratchWikiSkin",
-	"author": "Original skin by JSO. Rewrite to update style and registration by Kenny2scratch. Contributions made from jvvg, blob8108, scmb1, -PRO-,",
+	"author": "Original skin by JSO. Rewrite to update style and registration by Kenny2scratch. Contributions made from jvvg, blob8108, scmb1, -PRO-, Smrman",
 	"url": "https://github.com/InternationalScratchWiki/ScratchWikiSkin2",
 	"descriptionmsg": "scratchwikiskin-desc",
 	"namemsg": "skinname-scratchwikiskin2",
@@ -14,7 +14,8 @@
 		"ScratchWikiSkinTemplate": "ScratchWikiSkinTemplate.php"
 	},
 	"Hooks": {
-		"GetPreferences": "SkinScratchWikiSkin::onGetPreferences"
+        "GetPreferences": "SkinScratchWikiSkin::onGetPreferences",
+        "OutputPageBodyAttributes": "SkinScratchWikiSkin::onOutputPageBodyAttributes"
 	},
 	"MessagesDirs": {
 		"ScratchWikiSkin": "i18n"
@@ -25,6 +26,9 @@
 			"position": "top",
 			"styles": {
 				"resources/css/main.css": {
+					"media": "screen"
+                },
+                "resources/css/darktheme.css": {
 					"media": "screen"
 				}
 			}

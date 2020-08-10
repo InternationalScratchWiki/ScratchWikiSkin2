@@ -1,0 +1,320 @@
+/**
+ * Variables referenced here are to be found in the main.css file
+ * When adding a new rule, don't forget to add it to the big media query at the bottom of the file too.
+ * This media query is responsible for the "automatic" dark theme, depending on the system preferences
+ */
+
+body.dark-theme {
+    color: var(--veeeeee);
+}
+
+.dark-theme h1,
+.dark-theme h2,
+.dark-theme h3,
+.dark-theme h4,
+.dark-theme h5,
+.dark-theme h6 {
+    color: var(--veeeeee);
+}
+
+.dark-theme a:link,
+.dark-theme a:visited,
+.dark-theme a:active {
+    color: var(--v5ec4f7);
+}
+
+.dark-theme #content a:visited {
+    color: var(--blue-link-visited);
+}
+
+.dark-theme a:hover {
+    text-decoration: underline;
+}
+
+.dark-theme p {
+    color: var(--veeeeee);
+}
+
+.dark-theme #view {
+    background-color: var(--v23272a);
+}
+
+.dark-theme .dropdown>li a:hover {
+    background-color: var(--v0000004d);
+}
+
+.dark-theme #navigation:not(.preserve),
+.dark-theme #navigation:not(.preserve) .dropdown {
+    background-color: var(--v1f1f1f);
+    /* Sorry, but less colors go well with dark than light */
+    filter: drop-shadow(2px 4px 6px var(--black));
+}
+
+.dark-theme #navigation:not(.preserve) .inner>ul>li.right a:hover {
+    background-color: var(--v0000004d);
+}
+
+.dark-theme #navigation:not(.preserve) .link>a:hover {
+    background-color: var(--v0000004d);
+}
+
+.dark-theme #navigation:not(.preserve) .inner>ul>li.search .input {
+    background-color: var(--v0000004d);
+}
+
+.dark-theme #footer {
+    background-color: var(--v202225);
+    color: var(--veeeeee);
+}
+
+.dark-theme .box {
+    background-color: var(--v2c2f33);
+    border-color: var(--black);
+}
+
+.dark-theme .box .box-header {
+    background-color: var(--v1f1f1f);
+    border-top-color: var(--v1f1f1f);
+    border-bottom-color: var(--black);
+}
+
+.dark-theme .right .box .box-content {
+    background-color: var(--v2f3136);
+}
+
+.dark-theme #content {
+    color: var(--veeeeee);
+}
+
+.dark-theme #content a.new {
+    color: var(--vef916c);
+}
+
+.dark-theme #content a.new:visited {
+    color: var(--vaaaa00);
+}
+
+
+.dark-theme #content pre,
+.dark-theme #content code {
+    border-color: var(--v1f1f1f);
+    background-color: var(--v23272a);
+    color: var(--veeeeee);
+}
+
+.dark-theme .mw-notification {
+    background-color: var(--v2c2f33);
+    color: var(--veeeeee);
+    border: 1px solid var(--white)
+}
+
+.dark-theme textarea,
+.dark-theme input,
+.dark-theme select {
+    background-color: var(--v2c2f33);
+    color: var(--veeeeee);
+    border: 1px solid var(--v1f1f1f);
+}
+
+.dark-theme textarea {
+    border: 1px solid var(--v1f1f1f) !important;
+}
+
+.dark-theme .editOptions {
+    background-color: var(--v36393f);
+    border: 1px solid var(--v1f1f1f);
+}
+
+.dark-theme #mw-indicator-mw-helplink a {
+    filter: invert(100%);
+    color: var(--vff6930);
+    /* hack to invert the black question mark */
+}
+
+.dark-theme .mw-plusminus-pos {
+    color: var(--v00bb00);
+    /* lighten it cuz */
+}
+
+.dark-theme .oo-ui-icon-search {
+    filter: invert(1);
+}
+
+.dark-theme .oo-ui-inputWidget-input[type=search] {
+    box-shadow: none;
+    border: 1px solid var(--black);
+    background-color: var(--v1f1f1f);
+}
+
+.dark-theme .mw-search-profile-tabs {
+    background-color: var(--v1f1f1f);
+    border-color: var(--black);
+}
+
+@media only screen and (max-width: 981.4px) {
+
+    .dark-theme #view .left {
+        background-color: var(--v1f1f1fe6);
+    }
+
+
+}
+
+
+@media (prefers-color-scheme: dark) {
+    body.system-dark-theme {
+        color: var(--veeeeee);
+    }
+    
+    .system-dark-theme h1,
+    .system-dark-theme h2,
+    .system-dark-theme h3,
+    .system-dark-theme h4,
+    .system-dark-theme h5,
+    .system-dark-theme h6 {
+        color: var(--veeeeee);
+    }
+    
+    .system-dark-theme a:link,
+    .system-dark-theme a:visited,
+    .system-dark-theme a:active {
+        color: var(--v5ec4f7);
+    }
+    
+    .system-dark-theme #content a:visited {
+        color: var(--blue-link-visited);
+    }
+    
+    .system-dark-theme a:hover {
+        text-decoration: underline;
+    }
+    
+    .system-dark-theme p {
+        color: var(--veeeeee);
+    }
+    
+    .system-dark-theme #view {
+        background-color: var(--v23272a);
+    }
+    
+    .system-dark-theme .dropdown>li a:hover {
+        background-color: var(--v0000004d);
+    }
+    
+    .system-dark-theme #navigation:not(.preserve),
+    .system-dark-theme #navigation:not(.preserve) .dropdown {
+        background-color: var(--v1f1f1f);
+        /* Sorry, but less colors go well with dark than light */
+        filter: drop-shadow(2px 4px 6px var(--black));
+    }
+    
+    .system-dark-theme #navigation:not(.preserve) .inner>ul>li.right a:hover {
+        background-color: var(--v0000004d);
+    }
+    
+    .system-dark-theme #navigation:not(.preserve) .link>a:hover {
+        background-color: var(--v0000004d);
+    }
+    
+    .system-dark-theme #navigation:not(.preserve) .inner>ul>li.search .input {
+        background-color: var(--v0000004d);
+    }
+    
+    .system-dark-theme #footer {
+        background-color: var(--v202225);
+        color: var(--veeeeee);
+    }
+    
+    .system-dark-theme .box {
+        background-color: var(--v2c2f33);
+        border-color: var(--black);
+    }
+    
+    .system-dark-theme .box .box-header {
+        background-color: var(--v1f1f1f);
+        border-top-color: var(--v1f1f1f);
+        border-bottom-color: var(--black);
+    }
+    
+    .system-dark-theme .right .box .box-content {
+        background-color: var(--v2f3136);
+    }
+    
+    .system-dark-theme #content {
+        color: var(--veeeeee);
+    }
+    
+    .system-dark-theme #content a.new {
+        color: var(--vef916c);
+    }
+    
+    .system-dark-theme #content a.new:visited {
+        color: var(--vaaaa00);
+    }
+    
+    
+    .system-dark-theme #content pre,
+    .system-dark-theme #content code {
+        border-color: var(--v1f1f1f);
+        background-color: var(--v23272a);
+        color: var(--veeeeee);
+    }
+    
+    .system-dark-theme .mw-notification {
+        background-color: var(--v2c2f33);
+        color: var(--veeeeee);
+        border: 1px solid var(--white)
+    }
+    
+    .system-dark-theme textarea,
+    .system-dark-theme input,
+    .system-dark-theme select {
+        background-color: var(--v2c2f33);
+        color: var(--veeeeee);
+        border: 1px solid var(--v1f1f1f);
+    }
+    
+    .system-dark-theme textarea {
+        border: 1px solid var(--v1f1f1f) !important;
+    }
+    
+    .system-dark-theme .editOptions {
+        background-color: var(--v36393f);
+        border: 1px solid var(--v1f1f1f);
+    }
+    
+    .system-dark-theme #mw-indicator-mw-helplink a {
+        filter: invert(100%);
+        color: var(--vff6930);
+        /* hack to invert the black question mark */
+    }
+    
+    .system-dark-theme .mw-plusminus-pos {
+        color: var(--v00bb00);
+        /* lighten it cuz */
+    }
+    
+    .system-dark-theme .oo-ui-icon-search {
+        filter: invert(1);
+    }
+    
+    .system-dark-theme .oo-ui-inputWidget-input[type=search] {
+        box-shadow: none;
+        border: 1px solid var(--black);
+        background-color: var(--v1f1f1f);
+    }
+    
+    .system-dark-theme .mw-search-profile-tabs {
+        background-color: var(--v1f1f1f);
+        border-color: var(--black);
+    }
+    
+    @media only screen and (max-width: 981.4px) {
+    
+        .system-dark-theme #view .left {
+            background-color: var(--v1f1f1fe6);
+        }
+    
+    
+    }
+}
