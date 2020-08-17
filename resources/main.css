@@ -791,6 +791,11 @@ dl dt {
     border-bottom: 1px solid #111;
 }
 
+#content p img {
+    max-width: 100%;
+    height: auto;
+}
+
 #content a.external {
     /* @embed */
     background-image: url("External_link.png");
