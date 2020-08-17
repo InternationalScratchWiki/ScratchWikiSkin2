@@ -803,6 +803,7 @@ dl dt {
     background-position: center right;
     background-repeat: no-repeat;
     padding-right: 13px;
+    word-break: break-all;
 }
 
 #content .plainlinks a {
