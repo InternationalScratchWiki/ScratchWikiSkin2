@@ -289,7 +289,7 @@ window.addEventListener('load', function(){
 			if (!e.toElement) e.toElement = e.relatedTarget;
 			if (!e.toElement) return;
 			if (!btn.parentElement.contains(e.toElement)
-				&& !document.querySelector('.suggestions').contains(e.toElement)
+				&& !document.querySelector('.suggestions')?.contains(e.toElement)
 			) {
 				if (btn.hasclass('open')) {
 					if (e.toElement.matches('#navigation .link, #navigation .link>a, #navigation .link>a *')) {
