@@ -289,7 +289,7 @@ dl dt {
     position: fixed;
     top: 0;
     left: 0;
-    z-index: 12;
+    z-index: 1;
     border-bottom: 1px solid rgba(0, 0, 0, 0.1);
     box-shadow: 0 0 3px rgba(0, 0, 0, 0.25);
     background-color: #7953c4;
@@ -978,11 +978,11 @@ dl dt {
         left: -185px;
         top: 0px;
         padding: 0 10px;
-        height: calc(100% - 50px);
-        z-index: 11;
+        height: calc(100% - 51px);
+        z-index: 1;
         transition: left 0.5s;
         overflow-y: auto;
-        margin-top: 50px;
+        margin-top: 51px;
     }
     #view .right {
         margin: auto 0;
