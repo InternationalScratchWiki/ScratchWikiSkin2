@@ -541,6 +541,7 @@ dl dt {
     top: 50px;
     padding: 0;
     margin-top: 0;
+    box-sizing: border-box;
     min-width: 100%;
 }
 
