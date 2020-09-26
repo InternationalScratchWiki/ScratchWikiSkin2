@@ -295,6 +295,7 @@ dl dt {
     background-color: #7953c4;
     width: 100%;
     height: 50px;
+    box-sizing: border-box;
 }
 
 #navigation .inner>ul {
@@ -540,7 +541,6 @@ dl dt {
     top: 50px;
     padding: 0;
     margin-top: 0;
-    box-sizing: border-box;
     min-width: 100%;
 }
 
