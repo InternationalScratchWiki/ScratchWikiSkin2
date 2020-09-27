@@ -87,7 +87,7 @@ class ScratchWikiSkinTemplate extends BaseTemplate {
 				</ul>
 			</li>
 			<li class="link right account-nav">
-				<a class="dropdown-toggle">
+				<a class="dropdown-toggle" href="<?php if (!$wgUser->isLoggedIn()) { ?><?=Title::newFromText( 'Special:UserLogin' )->fixSpecialName()->getLinkURL() ?><?php } else { ?><?=$wgUser->getUserPage()->getLinkURL()?><?php } ?>">
 					<span class="profile-name"><?php if (!$wgUser->isLoggedIn()) { ?><?=wfMessage( 'scratchwikiskin-notloggedin' )->inLanguage( $wgLang )->escaped()?><?php } else { ?><?=htmlspecialchars($wgUser->mName)?><?php } ?></span>
 				</a>
 				<ul class="dropdown">
@@ -246,7 +246,7 @@ function mod(el) {
 		let dropdown = btn.nextElementSibling;
 		mod(btn);
 		mod(dropdown);
-		btn.href = "#";
+		btn.removeAttribute('href');
 		btn.onclick = function(){
 			if (!dropdown.classList.contains('open')) {
 				btn.addclass('open');
