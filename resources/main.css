@@ -980,7 +980,7 @@ dl dt {
         top: 0px;
         padding: 0 10px;
         height: calc(100% - 50px);
-        z-index: 1;
+        z-index: 3;
         transition: left 0.5s;
         overflow-y: auto;
         margin-top: 50px;
