@@ -27,21 +27,21 @@ class ScratchWikiSkinTemplate extends BaseTemplate {
 			<li class="sidebar-toggle"><a></a></li>
 			<li class="logo"><a aria-label="Scratch" href="https://scratch.mit.edu/"></a></li>
 			<li class="link create">
-				<a class="dropdown-toggle"><span><?=wfMessage('scratchwikiskin-create')->inLanguage( $wgLang )->escaped()?></span></a>
+				<a class="dropdown-toggle" href="https://scratch.mit.edu/projects/editor/"><span><?=wfMessage('scratchwikiskin-create')->inLanguage( $wgLang )->escaped()?></span></a>
 				<ul class="dropdown">
 					<li><a href="https://scratch.mit.edu/projects/editor/"><span><?=wfMessage( 'scratchwikiskin-create-project' )->inLanguage( $wgLang )->escaped() ?></span></a></li>
 					<li><a href="<?=Title::newFromText(wfMessage('scratchwikiskin-create-page-url')->inContentLanguage()->text())->getLocalURL()?>"><span><?=wfMessage('scratchwikiskin-create-page')->inLanguage( $wgLang )->escaped()?></span></a></li>
 				</ul>
 			</li>
 			<li class="link explore">
-				<a class="dropdown-toggle"><span><?=wfMessage('scratchwikiskin-explore')->inLanguage( $wgLang )->escaped()?></span></a>
+				<a class="dropdown-toggle" href="https://scratch.mit.edu/explore/projects/all"><span><?=wfMessage('scratchwikiskin-explore')->inLanguage( $wgLang )->escaped()?></span></a>
 				<ul class="dropdown">
 					<li><a href="https://scratch.mit.edu/explore/projects/all"><span><?=wfMessage( 'scratchwikiskin-explore-projects' )->inLanguage( $wgLang )->escaped() ?></span></a></li>
 					<li><a href="<?=Title::newFromText(wfMessage('randompage-url')->inContentLanguage()->text())->getLocalURL()?>"><span><?=wfMessage('randompage')->inLanguage( $wgLang )->escaped()?></span></a></li>
 				</ul>
 			</li>
 			<li class="link discuss">
-				<a class="dropdown-toggle"><span><?=wfMessage('scratchwikiskin-discuss')->inLanguage( $wgLang )->escaped()?></span></a>
+				<a class="dropdown-toggle" href="https://scratch.mit.edu/discuss"><span><?=wfMessage('scratchwikiskin-discuss')->inLanguage( $wgLang )->escaped()?></span></a>
 				<ul class="dropdown">
 					<li><a href="https://scratch.mit.edu/discuss"><span><?=wfMessage( 'scratchwikiskin-discuss-text' )->inLanguage( $wgLang )->escaped() ?></span></a></li>
 					<li><a href="<?=wfMessage('scratchwikiskin-discuss-wiki')->inLanguage( $wgLang )->escaped()?>"><span><?=wfMessage('scratchwikiskin-discuss-wiki-text')->inLanguage( $wgLang )->escaped()?></span></a></li>
@@ -49,14 +49,14 @@ class ScratchWikiSkinTemplate extends BaseTemplate {
 				</ul>
 			</li>
 			<li class="link tips">
-				<a class="dropdown-toggle"><span><?=wfMessage('scratchwikiskin-ideas')->inLanguage( $wgLang )->escaped()?></span></a>
+				<a class="dropdown-toggle" href="https://scratch.mit.edu/ideas"><span><?=wfMessage('scratchwikiskin-ideas')->inLanguage( $wgLang )->escaped()?></span></a>
 				<ul class="dropdown">
 					<li><a href="https://scratch.mit.edu/ideas"><span><?=wfMessage( 'scratchwikiskin-ideas-text' )->inLanguage( $wgLang )->escaped() ?></span></a></li>
 					<li><a href="<?=Title::newFromText(wfMessage('scratchwikiskin-faq-page-url')->inContentLanguage()->text())->getLocalURL()?>"><span><?=wfMessage('scratchwikiskin-faq-page')->inLanguage( $wgLang )->escaped()?></span></a></li>
 				</ul>
 			</li>
 			<li class="link about">
-				<a class="dropdown-toggle"><span><?=wfMessage('scratchwikiskin-about')->inLanguage( $wgLang )->escaped()?></span></a>
+				<a class="dropdown-toggle" href="https://scratch.mit.edu/about"><span><?=wfMessage('scratchwikiskin-about')->inLanguage( $wgLang )->escaped()?></span></a>
 				<ul class="dropdown">
 					<li><a href="https://scratch.mit.edu/about"><span><?=wfMessage( 'scratchwikiskin-about-text' )->inLanguage( $wgLang )->escaped() ?></span></a></li>
 					<li><a href="<?=Title::newFromText(wfMessage('aboutpage')->inContentLanguage()->text())->getLocalURL()?>"><span><?=wfMessage('aboutsite')->inLanguage( $wgLang )->escaped()?></span></a></li>
@@ -75,7 +75,7 @@ class ScratchWikiSkinTemplate extends BaseTemplate {
 				</form>
 			</li>
 			<li class="link right content-actions">
-				<a class="dropdown-toggle">
+				<a class="dropdown-toggle" href="?action=edit">
 					<img src="<?=$wgStylePath?>/ScratchWikiSkin2/resources/Edit-pencil.png" width="25" height="25" />
 				</a>
 				<ul class="dropdown">
@@ -239,17 +239,6 @@ function mod(el) {
 	el.delclass = function(c) {this.classList.remove(c);};
 	el.hasclass = function(c) {return this.classList.contains(c);};
 }
-window.addEventListener('load', function(){
-	var nameColon = decodeURIComponent(document.URL);
-	if (document.domain != "en.scratch-wiki.info" || mw.config.get("wgPageName") != "Special:Search") return;
-	if (nameColon.toLowerCase().indexOf("%3a") > -1) {
-		nameColon = nameColon.replace("%3A", ":").replace("%3a", ":");
-		window.location.href = nameColon;
-	}
-	if (document.querySelector(':target') !== null) {
-		window.scrollBy(0, -50);
-	}
-});
 (function () {
 	let selected = document.querySelectorAll('#navigation a.dropdown-toggle');
 	for (var i = 0; i < selected.length; i++) {
@@ -257,6 +246,7 @@ window.addEventListener('load', function(){
 		let dropdown = btn.nextElementSibling;
 		mod(btn);
 		mod(dropdown);
+		btn.href = "#";
 		btn.onclick = function(){
 			if (!dropdown.classList.contains('open')) {
 				btn.addclass('open');
