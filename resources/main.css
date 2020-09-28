@@ -893,6 +893,13 @@ dl dt {
     font-family: monospace;
 }
 
+/* VisualEditor integration */
+/* make sure there's sufficient space in the editor for the menus to appear */
+/* TODO: find a way to allow the menus to overrun #content rather than forcing the size */
+.ve-init-target-visual {
+	min-height: 300px;
+}
+
 /* Mobile design */
 
 @media only screen and (max-width: 519.4px) {
