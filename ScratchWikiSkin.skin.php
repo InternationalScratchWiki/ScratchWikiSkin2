@@ -5,6 +5,8 @@
  * @file
  * @ingroup Skins
  */
+ 
+const ACTIVE_NOTIFICATION_CSS_CLASSES = ['mw-echo-alert', 'mw-echo-unseen-notifications'];
 
 class HTMLColorField extends HTMLFormField {
 
