@@ -86,16 +86,25 @@ class ScratchWikiSkinTemplate extends BaseTemplate {
 
 				</ul>
 			</li>
+			
+			<?php
+			$hasActiveNotifications = !empty(array_filter($this->data['personal_urls'], function($link) { 
+				return isset($link['class']) && 
+					(
+						(is_string($link['class']) && in_array($link['class'], ACTIVE_NOTIFICATION_CSS_CLASSES)) || 
+						(is_array($link['class']) && !empty(array_intersect(ACTIVE_NOTIFICATION_CSS_CLASSES, $link['class'])))
+					);
+				} ));
+			?>
+			
 			<li class="link right account-nav">
-				<a class="dropdown-toggle" href="<?php if (!$wgUser->isLoggedIn()) { ?><?=Title::newFromText( 'Special:UserLogin' )->fixSpecialName()->getLinkURL() ?><?php } else { ?><?=$wgUser->getUserPage()->getLinkURL()?><?php } ?>">
+				<a class="dropdown-toggle<?= $hasActiveNotifications ? ' has-active-notifications' : ''; ?>" href="<?php if (!$wgUser->isLoggedIn()) { ?><?=Title::newFromText( 'Special:UserLogin' )->fixSpecialName()->getLinkURL() ?><?php } else { ?><?=$wgUser->getUserPage()->getLinkURL()?><?php } ?>">
 					<span class="profile-name"><?php if (!$wgUser->isLoggedIn()) { ?><?=wfMessage( 'scratchwikiskin-notloggedin' )->inLanguage( $wgLang )->escaped()?><?php } else { ?><?=htmlspecialchars($wgUser->mName)?><?php } ?></span>
 				</a>
 				<ul class="dropdown">
-<?php foreach ($this->data['personal_urls'] as $key => $tab) { ?>
-					<?=$this->makeListItem($key, $tab)?>
-
-<?php } ?>
-
+					<?php foreach ($this->data['personal_urls'] as $key => $tab) { ?>
+						<?=$this->makeListItem($key, $tab)?>
+					<?php } ?>
 				</ul>
 			</li>
 		</ul>

@@ -906,6 +906,24 @@ dl dt {
 }
 
 /* Echo integration */
+/* show a white circle next to the user options menu if there is an active notification */
+.account-nav .has-active-notifications::before {
+	border-radius: 10px;
+	width: 10px;
+	height: 10px;
+	vertical-align: middle;
+	display: inline-block;
+	content: ' ';
+	margin-right: 5px;
+	background-color:#FFF;
+}
+
+/* emphasize unread Echo notifications */
+.account-nav .mw-echo-unseen-notifications {
+	/* TODO: add some styling for unseen Echo notification list items themselves */
+}
+
+/* make the icon for an Echo notifications link only show once, and offset the link text to fit it */
 .account-nav .mw-echo-notifications-badge {
 	background-repeat: no-repeat;
 	background-position-y: center;
