@@ -927,7 +927,7 @@ dl dt {
 .account-nav .mw-echo-notifications-badge {
 	background-repeat: no-repeat;
 	background-position-y: center;
-	background-position-x: left 15px;
+	background-position-x: 15px;
 }
 
 .account-nav .mw-echo-notifications-badge a {
