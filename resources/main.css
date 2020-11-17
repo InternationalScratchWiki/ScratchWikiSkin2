@@ -918,10 +918,15 @@ dl dt {
 	background-color:#FFF;
 }
 
-/* emphasize unread Echo notifications */
-.account-nav .mw-echo-unseen-notifications {
-	/* TODO: add some styling for unseen Echo notification list items themselves */
+@media only screen and (max-width: 519.4px) {
+	.account-nav .has-active-notifications::before {
+		filter: invert(100); /* we have to override the invert */
+		position: absolute;
+		right: 5px;
+		top: 5px;
+	}
 }
+
 
 /* make the icon for an Echo notifications link only show once, and offset the link text to fit it */
 .account-nav .mw-echo-notifications-badge {
@@ -934,6 +939,7 @@ dl dt {
 	padding-left: 45px;
 }
 
+/* make unread notifications bold and show a badge on the icon */
 .account-nav .mw-echo-unseen-notifications {
 	font-weight: bold;
 }
