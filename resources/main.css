@@ -934,6 +934,22 @@ dl dt {
 	padding-left: 45px;
 }
 
+.account-nav .mw-echo-unseen-notifications {
+	font-weight: bold;
+}
+
+.account-nav .mw-echo-unseen-notifications::before {
+	border-radius: 8px;
+	width: 8px;
+	height: 8px;
+	display: inline-block;
+	content: ' ';
+	background-color:#FFF;
+	position: absolute;
+	margin-left: 30px;
+	margin-top: 2px;
+}
+
 /* Mobile design */
 
 @media only screen and (max-width: 519.4px) {
