@@ -72,6 +72,8 @@ class SkinScratchWikiSkin extends SkinTemplate {
 			'label-message' => 'scratchwikiskin-pref-color',
 			'section' => 'rendering/skin',
 			'default' => ($origpref ? $origpref : '#7953c4'),
+			// Only expose background color preference when the skin is selected
+			'hide-if' => [ '!==', 'wpskin', 'scratchwikiskin2' ],
 		];
 		return true;
 	}
