@@ -51,9 +51,6 @@ class SkinScratchWikiSkin extends SkinTemplate {
 	/**
 	 * Add CSS via ResourceLoader
 	 *
-	 * Use this function if your skin has a JS file(s).
-	 * Otherwise you won't need this function and you can safely delete it.
-	 *
 	 * @param OutputPage $out
 	 */
 
