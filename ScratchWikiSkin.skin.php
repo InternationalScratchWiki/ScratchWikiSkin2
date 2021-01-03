@@ -51,10 +51,11 @@ class SkinScratchWikiSkin extends SkinTemplate {
 	/**
 	 * Add CSS via ResourceLoader
 	 *
-	 * @param $out OutputPage
+	 * @param OutputPage $out
 	 */
-	public function setupSkinUserCss( OutputPage $out ) {
-		parent::setupSkinUserCss( $out );
+
+	public function initPage( OutputPage $out ) {
+		parent::initPage( $out );
 		$out->addModuleStyles( [
 			'mediawiki.skinning.interface', 'skins.scratchwikiskin2'
 		] );
@@ -75,4 +76,3 @@ class SkinScratchWikiSkin extends SkinTemplate {
 		return true;
 	}
 }
-
