@@ -59,7 +59,6 @@ class SkinScratchWikiSkin extends SkinTemplate {
 
 	public function initPage( OutputPage $out ) {
 		parent::initPage( $out );
-		$out->addModules('skins.scratchwikiskin2.js');
 		$out->addModuleStyles( [
 			'mediawiki.skinning.interface', 'skins.scratchwikiskin2'
 		] );
