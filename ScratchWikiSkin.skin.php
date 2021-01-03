@@ -55,7 +55,7 @@ class SkinScratchWikiSkin extends SkinTemplate {
 	 */
 	public function initPage( OutputPage $out ) {
 		parent::initPage( $out );
-		$out->addModuleStyles( [
+		$out->addModules( [
 			'mediawiki.skinning.interface.js', 'skins.scratchwikiskin2.js'
 		] );
 		// make Chrome mobile testing work
