@@ -62,7 +62,6 @@ class SkinScratchWikiSkin extends SkinTemplate {
 		$out->addModules('skins.scratchwikiskin2.js');
 		$out->addModuleStyles( [
 			'mediawiki.skinning.interface', 'skins.scratchwikiskin2'
-			/* 'skins.foobar' is the name you used in your skin.json file */
 		 ] );
 		// make Chrome mobile testing work
 		$out->addMeta('viewport', 'user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height');
@@ -81,4 +80,3 @@ class SkinScratchWikiSkin extends SkinTemplate {
 		return true;
 	}
 }
-
