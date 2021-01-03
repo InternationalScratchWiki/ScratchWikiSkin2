@@ -49,7 +49,7 @@ class SkinScratchWikiSkin extends SkinTemplate {
 		$template = 'ScratchWikiSkinTemplate', $useHeadElement = true;
 
 	/**
-	 * This function adds JavaScript via ResourceLoader
+	 * Add CSS via ResourceLoader
 	 *
 	 * Use this function if your skin has a JS file(s).
 	 * Otherwise you won't need this function and you can safely delete it.
