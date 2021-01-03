@@ -49,15 +49,32 @@ class SkinScratchWikiSkin extends SkinTemplate {
 		$template = 'ScratchWikiSkinTemplate', $useHeadElement = true;
 
 	/**
-	 * Add CSS via ResourceLoader
+	 * This function adds JavaScript via ResourceLoader
 	 *
-	 * @param $out OutputPage
+	 * Use this function if your skin has a JS file(s).
+	 * Otherwise you won't need this function and you can safely delete it.
+	 *
+	 * @param OutputPage $out
 	 */
+
 	public function initPage( OutputPage $out ) {
 		parent::initPage( $out );
 		$out->addModules('skins.scratchwikiskin2.js');
 		// make Chrome mobile testing work
 		$out->addMeta('viewport', 'user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height');
+	}
+
+		/**
+	 * Add CSS via ResourceLoader
+	 *
+	 * @param OutputPage $out
+	 */
+	function setupSkinUserCss( OutputPage $out ) {
+		parent::setupSkinUserCss( $out );
+		$out->addModuleStyles( array(
+			'mediawiki.skinning.interface', 'skins.scratchwikiskin2'
+			/* 'skins.foobar' is the name you used in your skin.json file */
+		) );
 	}
 
 	static function onGetPreferences( $user, &$preferences ) {
