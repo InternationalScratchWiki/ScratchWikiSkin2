@@ -682,8 +682,13 @@ dl dt {
 
 #navigation ul>li.content-actions>a.dropdown-toggle {
     height: 25px;
-    width: auto;
+    width: 25px;
     padding: 12.5px;
+    /* @embed */
+    background-image: url('../Edit-pencil.png');
+    background-size: 25px 25px;
+    background-position: center;
+    background-repeat: no-repeat;
 }
 
 #lastmod {
