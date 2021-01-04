@@ -1,0 +1,45 @@
+.inner {
+    width: calc(100vw - 20px);
+}
+#navigation .inner .discuss,
+#navigation .inner .explore,
+#navigation .inner .tips,
+#navigation .inner .about,
+#navigation .inner .create {
+    display: none;
+}
+#footer .lists {
+    -webkit-justify-content: space-around;
+    justify-content: space-around;
+}
+#navigation .content-actions>a:after {
+    display: none;
+}
+#navigation .account-nav > a.dropdown-toggle {
+    display: block;
+    width: 50px;
+    height: 50px;
+    padding: 0;
+    /* @embed */
+    background-image: url("../User.svg");
+    background-size: 25px 25px;
+    background-position: center center;
+    background-repeat: no-repeat;
+    filter: invert(100%);
+}
+#navigation .account-nav .profile-name {
+    display: none;
+}
+#navigation .account-nav > a:after {
+    display: none;
+}
+#navigation .content-actions>a.dropdown-toggle {
+    width: 25px;
+}
+#navigation .inner > ul > li.search {
+    margin: 0;
+}
+#view {
+    padding: 0 10px;
+    min-width: calc(100% - 20px);
+}
