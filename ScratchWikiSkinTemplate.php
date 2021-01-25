@@ -21,11 +21,19 @@ class ScratchWikiSkinTemplate extends BaseTemplate {
 	background-color: <?=htmlspecialchars(str_replace([';', '}'], '', $wgUser->getOption( 'scratchwikiskin-header-color' )))?>;
 }
 </style>
+<?php
+$logos = ResourceLoaderSkinModule::getAvailableLogos( $this->getSkin()->getConfig() );
+$wordmark = $logos['wordmark']['src'] ?? 'https://scratch.mit.edu/images/logo_sm.png';
+$wordmarkW = $logos['wordmark']['width'] ?? 76;
+$wordmarkH = $logos['wordmark']['height'] ?? 28;
+?>
 <div id="navigation" role="banner">
 	<div class="inner">
 		<ul>
 			<li class="sidebar-toggle"><a></a></li>
-			<li class="logo"><a aria-label="Scratch" href="https://scratch.mit.edu/"></a></li>
+			<li class="logo"><a aria-label="Scratch" href="https://scratch.mit.edu/">
+				<img alt="<?=wfMessage('sitetitle')->inContentLanguage()->text()?>" src="<?=$wordmark ?>" height="<?= $wordmarkH ?>" width="<?= $wordmarkW ?>">
+			</a></li>
 			<li class="link create">
 				<a class="dropdown-toggle" href="https://scratch.mit.edu/projects/editor/"><span><?=wfMessage('scratchwikiskin-create')->inLanguage( $wgLang )->escaped()?></span></a>
 				<ul class="dropdown">

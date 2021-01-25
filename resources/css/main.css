@@ -367,16 +367,14 @@ dl dt {
 }
 
 #navigation .logo a {
-    background-size: 95%;
+    display: flex;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
 }
 
 #navigation .logo a {
-    background-image: url("https://scratch.mit.edu/images/logo_sm.png");
-    background-repeat: no-repeat;
-    background-position: center center;
     margin: 0 6px 0 0;
-    width: 81px;
-    height: 50px;
 }
 
 #navigation .logo a:hover,
@@ -384,8 +382,8 @@ dl dt {
     transition: .15s ease all;
 }
 
-#navigation .logo a:hover {
-    background-size: 100%;
+#navigation .logo a:hover img {
+    transform: scale(1.05, 1.05);
 }
 
 #navigation .content-actions .dropdown-toggle:hover {
