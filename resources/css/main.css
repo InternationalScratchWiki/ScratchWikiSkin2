@@ -36,7 +36,9 @@ body {
     color: #575e75;
     font-family: "Liberation Sans", "Helvetica Neue", "Helvetica", Arial, sans-serif;
 }
-
+body.dark-theme {
+    color: #eee;
+}
 
 /* Typography */
 
@@ -50,6 +52,13 @@ h5 {
     padding: 0;
     color: #6b6b6b;
     font-weight: bold;
+}
+.dark-theme h1,
+.dark-theme h2,
+.dark-theme h3,
+.dark-theme h4,
+.dark-theme h5 {
+    color: #eee;
 }
 
 h1 {
@@ -97,6 +106,15 @@ a:hover {
     color: #4280d7;
 }
 
+.dark-theme a:link,
+.dark-theme a:visited,
+.dark-theme a:active {
+    color: #5da8ed;
+}
+
+.dark-theme a:hover {
+    text-decoration: underline;
+}
 
 /* Classes */
 
@@ -111,6 +129,9 @@ h5 {
 
 p {
     color: #575e75;
+}
+.dark-theme p {
+    color: #eee;
 }
 
 .box-content {
@@ -151,7 +172,10 @@ dl dt {
     margin-top: 50px;
     background-color: #fcfcfc;
     min-width: 100%;
-    min-height: calc(100vh - 328px);
+    min-height: calc(100vh - 316px);
+}
+.dark-theme #view {
+    background-color: #23272a;
 }
 
 #view .left {
@@ -256,6 +280,9 @@ dl dt {
     background-color: rgba(0, 0, 0, 0.1);
     text-decoration: none;
 }
+.dark-theme .dropdown>li a:hover {
+    background-color: rgba(0, 0, 0, 0.3);
+}
 
 .input {
     transition: all .5s ease;
@@ -289,7 +316,7 @@ dl dt {
     position: fixed;
     top: 0;
     left: 0;
-    z-index: 12;
+    z-index: 8;
     border-bottom: 1px solid rgba(0, 0, 0, 0.1);
     box-shadow: 0 0 3px rgba(0, 0, 0, 0.25);
     background-color: #7953c4;
@@ -338,6 +365,9 @@ dl dt {
 
 #navigation .inner>ul>li.right a:hover {
     background-color: rgba(0, 0, 0, 0.1);
+}
+.dark-theme #navigation .inner>ul>li.right a:hover {
+    background-color: rgba(0, 0, 0, 0.3);
 }
 
 #navigation .link>a {
@@ -415,6 +445,9 @@ dl dt {
     border: 0;
     background-color: rgba(0, 0, 0, 0.1);
     height: 14px;
+}
+.dark-theme #navigation .inner>ul>li.search .input {
+    background-color: rgba(0, 0, 0, 0.3);
 }
 
 #navigation .inner>ul>li.search .input[type=text],
@@ -541,6 +574,11 @@ dl dt {
     box-sizing: border-box;
     min-width: 100%;
 }
+.dark-theme #navigation,
+.dark-theme #navigation .dropdown {
+    background-color: #1f1f1f; /* Sorry, but less colors go well with dark than light */
+    filter: drop-shadow(2px 4px 6px #000);
+}
 
 #footer {
     display: block;
@@ -548,6 +586,10 @@ dl dt {
     padding: 10px 0;
     color: #6b6b6b;
     font-size: .85rem;
+}
+.dark-theme #footer {
+    background-color: #202225;
+    color: #eee;
 }
 
 #footer .lists {
@@ -606,6 +648,10 @@ dl dt {
     background-color: #fff;
     width: 100%;
 }
+.dark-theme .box {
+    background-color: #2c2f33;
+    border-color: #000;
+}
 
 .box .box-header h4,
 .box .box-header h5 {
@@ -623,6 +669,11 @@ dl dt {
     background-color: #f2f2f2;
     padding: 8px 20px;
     overflow: hidden;
+}
+.dark-theme .box .box-header {
+    background-color: #1f1f1f;
+    border-top-color: #1f1f1f;
+    border-bottom-color: #000;
 }
 
 .box .box-header h4,
@@ -652,6 +703,9 @@ dl dt {
     clear: both;
     background-color: #fff;
     padding: 8px 20px;
+}
+.dark-theme .right .box .box-content {
+    background-color: #2f3136;
 }
 
 .left .box-content {
@@ -745,6 +799,9 @@ dl dt {
     color: black;
     overflow-x: auto;
 }
+.dark-theme #content {
+    color: #eee;
+}
 
 #content p {
     color: inherit;
@@ -758,9 +815,15 @@ dl dt {
 #content a.new {
     color: #ba0000;
 }
+.dark-theme #content a.new {
+    color: #ef916c;
+}
 
 #content a.new:visited {
     color: #a55858;
+}
+.dark-theme #content a.new:visited {
+    color: #aaaa00;
 }
 
 #content a.new:hover {
@@ -776,6 +839,12 @@ dl dt {
     border-color: #cecece;
     border-radius: 3px;
     font-family: monospace;
+}
+.dark-theme #content pre,
+.dark-theme #content code {
+    border-color: #1f1f1f;
+    background-color: #23272a;
+    color: #eee;
 }
 
 #content pre {
@@ -851,7 +920,9 @@ dl dt {
     text-decoration: none;
     color: #0a85c2;
 }
-
+.dark-theme #content a:visited {
+    color: #339cff;
+}
 
 /* MASTER ARTICLE STYLE END */
 
@@ -901,4 +972,60 @@ dl dt {
 
 #mw-input-wpscratchwikiskin-header-color {
     font-family: monospace;
+}
+
+.mw-notification {
+    border-radius: 5px;
+}
+.dark-theme .mw-notification {
+    background-color: #2c2f33;
+    color: #eee;
+    border: 1px solid #fff;
+}
+
+.dark-theme textarea,
+.dark-theme input,
+.dark-theme select {
+    background-color: #2c2f33;
+    color: #eee;
+    border: 1px solid #1f1f1f;
+}
+.dark-theme textarea {
+    border: 1px solid #1f1f1f !important;
+}
+.dark-theme .editOptions {
+    background-color: #36393f;
+    border: 1px solid #1f1f1f;
+}
+
+.dark-theme #mw-indicator-mw-helplink a {
+    filter: invert(100%);
+    color: #ff6930; /* hack to invert the black question mark */
+}
+.dark-theme .mw-plusminus-pos {
+    color: #00bb00; /* lighten it cuz */
+}
+.dark-theme .oo-ui-icon-search {
+    filter: invert(1);
+}
+.dark-theme .oo-ui-inputWidget-input[type=search] {
+    box-shadow: none;
+    border: 1px solid #000;
+    background-color: #1f1f1f;
+}
+.dark-theme .mw-search-profile-tabs {
+    background-color: #1f1f1f;
+    border-color: #000;
+}
+
+/* VisualEditor integration */
+/* make sure there's sufficient space in the editor for the menus to appear */
+/* TODO: find a way to allow the menus to overrun #content rather than forcing the size */
+.ve-init-target-visual {
+    min-height: 300px;
+}
+
+/* recent changes */
+.mw-rcfilters-ui-overlay {
+    z-index: 1;
 }
