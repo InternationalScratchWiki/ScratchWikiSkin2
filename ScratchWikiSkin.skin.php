@@ -55,10 +55,11 @@ class SkinScratchWikiSkin extends SkinTemplate {
 	/**
 	 * Add CSS via ResourceLoader
 	 *
-	 * @param $out OutputPage
+	 * @param OutputPage $out
 	 */
-	public function setupSkinUserCss( OutputPage $out ) {
-		parent::setupSkinUserCss( $out );
+
+	public function initPage( OutputPage $out ) {
+		parent::initPage( $out );
 		$out->addModuleStyles( [
 			'mediawiki.skinning.interface', 'skins.scratchwikiskin2'
 		] );
@@ -82,7 +83,9 @@ class SkinScratchWikiSkin extends SkinTemplate {
 			'pattern' => '#[0-9A-Za-z]{6}',
 			'label-message' => 'scratchwikiskin-pref-color',
 			'section' => 'rendering/skin',
-			'default' => ($origpref ?: '#7953c4'),
+			// Only expose background color preference when the skin is selected
+			'default' => ($origpref ? $origpref : '#7953c4'),
+			'hide-if' => [ '!==', 'wpskin', 'scratchwikiskin2' ],
 		];
 		$preferences[DARK_THEME_PREF] = [
 			'type' => 'check',
@@ -92,4 +95,3 @@ class SkinScratchWikiSkin extends SkinTemplate {
 		return true;
 	}
 }
-

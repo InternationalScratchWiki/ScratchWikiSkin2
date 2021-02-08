@@ -10,7 +10,6 @@ class ScratchWikiSkinTemplate extends BaseTemplate {
 	public function execute() {
 		global $wgRequest, $wgStylePath, $wgUser, $wgLogo, $wgRightsPage, $wgRightsUrl, $wgRightsIcon, $wgRightsText, $wgLang;
 		$skin = $this->data['skin'];
-		wfSuppressWarnings();
 		$this->html('headelement');
 		?>
 <style>
@@ -22,27 +21,35 @@ class ScratchWikiSkinTemplate extends BaseTemplate {
 	background-color: <?=htmlspecialchars(str_replace([';', '}'], '', $wgUser->getOption( 'scratchwikiskin-header-color' )))?>;
 }
 </style>
+<?php
+$logos = ResourceLoaderSkinModule::getAvailableLogos( $this->getSkin()->getConfig() );
+$wordmark = $logos['wordmark']['src'] ?? 'https://scratch.mit.edu/images/logo_sm.png';
+$wordmarkW = $logos['wordmark']['width'] ?? 76;
+$wordmarkH = $logos['wordmark']['height'] ?? 28;
+?>
 <div id="navigation" role="banner">
 	<div class="inner">
 		<ul>
 			<li class="sidebar-toggle"><a></a></li>
-			<li class="logo"><a aria-label="Scratch" href="https://scratch.mit.edu/"></a></li>
+			<li class="logo"><a aria-label="Scratch" href="https://scratch.mit.edu/">
+				<img alt="<?=wfMessage('sitetitle')->inContentLanguage()->text()?>" src="<?=$wordmark ?>" height="<?= $wordmarkH ?>" width="<?= $wordmarkW ?>">
+			</a></li>
 			<li class="link create">
-				<a class="dropdown-toggle"><span><?=wfMessage('scratchwikiskin-create')->inLanguage( $wgLang )->escaped()?></span></a>
+				<a class="dropdown-toggle" href="https://scratch.mit.edu/projects/editor/"><span><?=wfMessage('scratchwikiskin-create')->inLanguage( $wgLang )->escaped()?></span></a>
 				<ul class="dropdown">
 					<li><a href="https://scratch.mit.edu/projects/editor/"><span><?=wfMessage( 'scratchwikiskin-create-project' )->inLanguage( $wgLang )->escaped() ?></span></a></li>
 					<li><a href="<?=Title::newFromText(wfMessage('scratchwikiskin-create-page-url')->inContentLanguage()->text())->getLocalURL()?>"><span><?=wfMessage('scratchwikiskin-create-page')->inLanguage( $wgLang )->escaped()?></span></a></li>
 				</ul>
 			</li>
 			<li class="link explore">
-				<a class="dropdown-toggle"><span><?=wfMessage('scratchwikiskin-explore')->inLanguage( $wgLang )->escaped()?></span></a>
+				<a class="dropdown-toggle" href="https://scratch.mit.edu/explore/projects/all"><span><?=wfMessage('scratchwikiskin-explore')->inLanguage( $wgLang )->escaped()?></span></a>
 				<ul class="dropdown">
 					<li><a href="https://scratch.mit.edu/explore/projects/all"><span><?=wfMessage( 'scratchwikiskin-explore-projects' )->inLanguage( $wgLang )->escaped() ?></span></a></li>
 					<li><a href="<?=Title::newFromText(wfMessage('randompage-url')->inContentLanguage()->text())->getLocalURL()?>"><span><?=wfMessage('randompage')->inLanguage( $wgLang )->escaped()?></span></a></li>
 				</ul>
 			</li>
 			<li class="link discuss">
-				<a class="dropdown-toggle"><span><?=wfMessage('scratchwikiskin-discuss')->inLanguage( $wgLang )->escaped()?></span></a>
+				<a class="dropdown-toggle" href="https://scratch.mit.edu/discuss"><span><?=wfMessage('scratchwikiskin-discuss')->inLanguage( $wgLang )->escaped()?></span></a>
 				<ul class="dropdown">
 					<li><a href="https://scratch.mit.edu/discuss"><span><?=wfMessage( 'scratchwikiskin-discuss-text' )->inLanguage( $wgLang )->escaped() ?></span></a></li>
 					<li><a href="<?=wfMessage('scratchwikiskin-discuss-wiki')->inLanguage( $wgLang )->escaped()?>"><span><?=wfMessage('scratchwikiskin-discuss-wiki-text')->inLanguage( $wgLang )->escaped()?></span></a></li>
@@ -50,14 +57,14 @@ class ScratchWikiSkinTemplate extends BaseTemplate {
 				</ul>
 			</li>
 			<li class="link tips">
-				<a class="dropdown-toggle"><span><?=wfMessage('scratchwikiskin-ideas')->inLanguage( $wgLang )->escaped()?></span></a>
+				<a class="dropdown-toggle" href="https://scratch.mit.edu/ideas"><span><?=wfMessage('scratchwikiskin-ideas')->inLanguage( $wgLang )->escaped()?></span></a>
 				<ul class="dropdown">
 					<li><a href="https://scratch.mit.edu/ideas"><span><?=wfMessage( 'scratchwikiskin-ideas-text' )->inLanguage( $wgLang )->escaped() ?></span></a></li>
 					<li><a href="<?=Title::newFromText(wfMessage('scratchwikiskin-faq-page-url')->inContentLanguage()->text())->getLocalURL()?>"><span><?=wfMessage('scratchwikiskin-faq-page')->inLanguage( $wgLang )->escaped()?></span></a></li>
 				</ul>
 			</li>
 			<li class="link about">
-				<a class="dropdown-toggle"><span><?=wfMessage('scratchwikiskin-about')->inLanguage( $wgLang )->escaped()?></span></a>
+				<a class="dropdown-toggle" href="https://scratch.mit.edu/about"><span><?=wfMessage('scratchwikiskin-about')->inLanguage( $wgLang )->escaped()?></span></a>
 				<ul class="dropdown">
 					<li><a href="https://scratch.mit.edu/about"><span><?=wfMessage( 'scratchwikiskin-about-text' )->inLanguage( $wgLang )->escaped() ?></span></a></li>
 					<li><a href="<?=Title::newFromText(wfMessage('aboutpage')->inContentLanguage()->text())->getLocalURL()?>"><span><?=wfMessage('aboutsite')->inLanguage( $wgLang )->escaped()?></span></a></li>
@@ -85,9 +92,7 @@ class ScratchWikiSkinTemplate extends BaseTemplate {
 				</form>
 			</li>
 			<li class="link right content-actions">
-				<a class="dropdown-toggle">
-					<img src="<?=$wgStylePath?>/ScratchWikiSkin2/resources/Edit-pencil.png" width="25" height="25" />
-				</a>
+				<a class="dropdown-toggle" href="?action=edit"><div></div></a>
 				<ul class="dropdown">
 <?php foreach ($this->data['content_actions'] as $key => $tab) { ?>
 					<?=$this->makeListItem($key, $tab)?>
@@ -97,7 +102,7 @@ class ScratchWikiSkinTemplate extends BaseTemplate {
 				</ul>
 			</li>
 			<li class="link right account-nav">
-				<a class="dropdown-toggle">
+				<a class="dropdown-toggle" href="<?php if (!$wgUser->isLoggedIn()) { ?><?=Title::newFromText( 'Special:UserLogin' )->fixSpecialName()->getLinkURL() ?><?php } else { ?><?=$wgUser->getUserPage()->getLinkURL()?><?php } ?>">
 					<span class="profile-name"><?php if (!$wgUser->isLoggedIn()) { ?><?=wfMessage( 'scratchwikiskin-notloggedin' )->inLanguage( $wgLang )->escaped()?><?php } else { ?><?=htmlspecialchars($wgUser->mName)?><?php } ?></span>
 				</a>
 				<ul class="dropdown">
@@ -200,7 +205,7 @@ if (!$wgUser->isLoggedIn()) { ?>
 <dd><span><a href="https://scratch.mit.edu/educators/"><?=wfMessage('scratchwikiskin-footer-educators')->inLanguage( $wgLang )->escaped()?></a></span></dd>
 <dd><span><a href="https://scratch.mit.edu/developers/"><?=wfMessage('scratchwikiskin-footer-developers')->inLanguage( $wgLang )->escaped()?></a></span></dd>
 <dd><span><a href="https://scratch.mit.edu/credits"><?=wfMessage('scratchwikiskin-footer-credits')->inLanguage( $wgLang )->escaped()?></a></span></dd>
-<dd><span><a href="https://scratch.mit.edu/jobs"><?=wfMessage('scratchwikiskin-footer-jobs')->inLanguage( $wgLang )->escaped()?></a></span></dd>
+<dd><span><a href="https://www.scratchfoundation.org/opportunities"><?=wfMessage('scratchwikiskin-footer-jobs')->inLanguage( $wgLang )->escaped()?></a></span></dd>
 <dd><span><a href="https://en.scratch-wiki.info/wiki/Scratch_Press"><?=wfMessage('scratchwikiskin-footer-press')->inLanguage( $wgLang )->escaped()?></a></span></dd>
 			</dl>
 			<dl class="community">
@@ -235,9 +240,6 @@ if (!$wgUser->isLoggedIn()) { ?>
 <dd><span><a href="https://www.scratchfoundation.org"><?=wfMessage('scratchwikiskin-footer-foundation')->inLanguage( $wgLang )->escaped()?></a></span></dd>
 			</dl>
 		</div>
-		<div class="copyright">
-			<p><span><?=wfMessage('scratchwikiskin-footer-llk')->inLanguage( $wgLang )->parse()?></span></p>
-		</div>
 	</div>
 </div><?php if (date('m j') == '04 1') { ?><div style="background-color:white">;</div><?php } ?>
 <script>
@@ -257,17 +259,6 @@ var body = mod(document.body);
 if (window.matchMedia('(prefers-color-scheme: dark)') && !body.hasclass('dark-theme')) {
 	body.addclass('dark-theme');
 }
-window.addEventListener('load', function(){
-	var nameColon = decodeURIComponent(document.URL);
-	if (document.domain != "en.scratch-wiki.info" || mw.config.get("wgPageName") != "Special:Search") return;
-	if (nameColon.toLowerCase().indexOf("%3a") > -1) {
-		nameColon = nameColon.replace("%3A", ":").replace("%3a", ":");
-		window.location.href = nameColon;
-	}
-	if (document.querySelector(':target') !== null) {
-		window.scrollBy(0, -50);
-	}
-});
 (function () {
 	let selected = document.querySelectorAll('#navigation a.dropdown-toggle');
 	for (var i = 0; i < selected.length; i++) {
@@ -275,6 +266,7 @@ window.addEventListener('load', function(){
 		let dropdown = btn.nextElementSibling;
 		mod(btn);
 		mod(dropdown);
+		btn.removeAttribute('href');
 		btn.onclick = function(){
 			if (!dropdown.classList.contains('open')) {
 				btn.addclass('open');
@@ -340,6 +332,8 @@ document.querySelector('#navigation .sidebar-toggle').addEventListener('click', 
 	}
 	sidebarShown = !sidebarShown;
 });
+
+document.querySelector('#view').style.minHeight = 'calc(100vh - ' + (document.querySelector('#footer').getBoundingClientRect().height + document.querySelector('#navigation').getBoundingClientRect().height) + 'px)';
 </script>
 <?php $this->printTrail();
 	}

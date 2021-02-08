@@ -1,0 +1,9 @@
+.inner {
+    width: 520px;
+}
+#navigation .inner .discuss,
+#navigation .inner .explore,
+#navigation .inner .about,
+#navigation .inner .tips {
+    display: none;
+}
