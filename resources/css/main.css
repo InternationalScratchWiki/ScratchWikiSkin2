@@ -812,21 +812,24 @@ dl dt {
     font-weight: bold;
 }
 
-#content a.new {
+#content a.new, #content a.stub {
     color: #ba0000;
 }
-.dark-theme #content a.new {
+.dark-theme #content a.new, .dark-theme #content a.stub {
     color: #ef916c;
 }
 
-#content a.new:visited {
+#content a.new:visited,
+#content a.stub:visited {
     color: #a55858;
 }
-.dark-theme #content a.new:visited {
+.dark-theme #content a.new:visited,
+.dark-theme #content a.stub:visited {
     color: #aaaa00;
 }
 
-#content a.new:hover {
+#content a.new:hover,
+#content a.stub:hover {
     text-decoration: underline;
 }
 
@@ -1008,10 +1011,13 @@ dl dt {
 .dark-theme .oo-ui-icon-search {
     filter: invert(1);
 }
+.dark-theme .oo-ui-inputWidget-input {
+    color: #eee;
+    background-color: #1f1f1f;
+    border: 1px solid #000;
+}
 .dark-theme .oo-ui-inputWidget-input[type=search] {
     box-shadow: none;
-    border: 1px solid #000;
-    background-color: #1f1f1f;
 }
 .dark-theme .mw-search-profile-tabs {
     background-color: #1f1f1f;
@@ -1028,4 +1034,81 @@ dl dt {
 /* recent changes */
 .mw-rcfilters-ui-overlay {
     z-index: 1;
+}
+
+/* tables */
+.dark-theme table.wikitable,
+.dark-theme table.prettytable {
+    background-color: #1f1f1f;
+    border-color: #666;
+    color: #eee;
+}
+.dark-theme table.wikitable th,
+.dark-theme table.wikitable td.h13,
+.dark-theme table.wikitable th.h13,
+.dark-theme table.prettytable th,
+.dark-theme table.prettytable td.h13,
+.dark-theme table.prettytable th.h13 {
+    background-color: #102448
+}
+.dark-theme table.wikitable th,
+.dark-theme table.wikitable td,
+.dark-theme table.prettytable th,
+.dark-theme table.prettytable td {
+    border-color: #666;
+}
+
+.dark-theme #mw-searchoptions {
+    background-color: #1f1f1f;
+    border-color: #000;
+}
+.dark-theme .editOptions {
+    color: #eee;
+}
+.dark-theme #catlinks {
+    background-color: #1f1f1f;
+    border-color: #000;
+}
+.dark-theme .oo-ui-buttonElement-framed.oo-ui-widget-enabled > .oo-ui-buttonElement-button {
+    background-color: #1f1f1f;
+    color: #eee;
+    border-color: #000;
+}
+.dark-theme .oo-ui-buttonElement-framed.oo-ui-widget-enabled.oo-ui-flaggedElement-primary.oo-ui-flaggedElement-progressive > .oo-ui-buttonElement-button {
+    background-color: #0645ad;
+    border-color: #0645ad;
+}
+.dark-theme .oo-ui-dropdownWidget.oo-ui-widget-enabled .oo-ui-dropdownWidget-handle {
+    background-color: #1f1f1f;
+    color: #eee;
+}
+.dark-theme .oo-ui-tabSelectWidget-framed {
+    background-color: #262626;
+}
+.dark-theme .oo-ui-tabOptionWidget {
+    color: #ddd;
+}
+.dark-theme .oo-ui-tabSelectWidget-framed .oo-ui-tabOptionWidget.oo-ui-optionWidget-selected {
+    background-color: #000;
+    color: #eee;
+}
+.dark-theme .mw-prefs-buttons {
+    background-color: transparent;
+}
+.dark-theme .oo-ui-labelWidget.oo-ui-inline-help {
+    color: #ccc;
+}
+.dark-theme .oo-ui-buttonElement-framed.oo-ui-widget-disabled > .oo-ui-buttonElement-button {
+    background-color: transparent;
+    border-color: rgba(0, 0, 0, 0.5);
+}
+.dark-theme .oo-ui-dropdownWidget-handle {
+    border-color: #000;
+}
+.dark-theme .oo-ui-dropdownInputWidget.oo-ui-widget-enabled {
+    background-color: transparent;
+}
+.dark-theme .warningbox {
+    background-color: #251a06;
+    border-color: #000;
 }
