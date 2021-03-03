@@ -1047,6 +1047,9 @@ dl dt {
 .dark-theme table.mw-datatable td {
     background-color: transparent;
 }
+.dark-theme table.mw-datatable :hover td {
+    background-color: rgba(255, 255, 255, 0.1) !important;
+}
 .dark-theme table.wikitable th,
 .dark-theme table.wikitable td.h13,
 .dark-theme table.wikitable th.h13,
