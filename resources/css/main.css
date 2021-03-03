@@ -1038,23 +1038,32 @@ dl dt {
 
 /* tables */
 .dark-theme table.wikitable,
-.dark-theme table.prettytable {
+.dark-theme table.prettytable,
+.dark-theme table.mw-datatable {
     background-color: #1f1f1f;
     border-color: #666;
     color: #eee;
+}
+.dark-theme table.mw-datatable td {
+    background-color: transparent;
 }
 .dark-theme table.wikitable th,
 .dark-theme table.wikitable td.h13,
 .dark-theme table.wikitable th.h13,
 .dark-theme table.prettytable th,
 .dark-theme table.prettytable td.h13,
-.dark-theme table.prettytable th.h13 {
+.dark-theme table.prettytable th.h13,
+.dark-theme table.mw-datatable th,
+.dark-theme table.mw-datatable td.h13,
+.dark-theme table.mw-datatable th.h13 {
     background-color: #102448
 }
 .dark-theme table.wikitable th,
 .dark-theme table.wikitable td,
 .dark-theme table.prettytable th,
-.dark-theme table.prettytable td {
+.dark-theme table.prettytable td,
+.dark-theme table.mw-datatable th,
+.dark-theme table.mw-datatable td {
     border-color: #666;
 }
 
