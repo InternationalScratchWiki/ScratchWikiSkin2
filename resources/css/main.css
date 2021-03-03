@@ -1008,6 +1008,7 @@ dl dt {
 .dark-theme .mw-plusminus-pos {
     color: #00bb00; /* lighten it cuz */
 }
+/* OOUI hacks */
 .dark-theme .oo-ui-icon-search {
     filter: invert(1);
 }
@@ -1081,6 +1082,7 @@ dl dt {
     background-color: #1f1f1f;
     border-color: #000;
 }
+/* More OOUI hacks */
 .dark-theme .oo-ui-buttonElement-framed.oo-ui-widget-enabled > .oo-ui-buttonElement-button {
     background-color: #1f1f1f;
     color: #eee;
@@ -1123,4 +1125,15 @@ dl dt {
 .dark-theme .warningbox {
     background-color: #251a06;
     border-color: #000;
+}
+.dark-theme .oo-ui-menuSelectWidget {
+    background-color: #1f1f1f;
+    color: #eee;
+}
+.dark-theme .oo-ui-menuOptionWidget.oo-ui-widget-enabled.oo-ui-optionWidget {
+    color: #eee;
+}
+.dark-theme .oo-ui-menuOptionWidget.oo-ui-optionWidget-selected,
+.dark-theme .oo-ui-menuOptionWidget.oo-ui-optionWidget-highlighted {
+    background-color: rgba(255, 255, 255, 0.1);
 }
