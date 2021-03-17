@@ -7,6 +7,14 @@
  */
 
 class ScratchWikiSkinTemplate extends BaseTemplate {
+	private static function linkFromPipeSeparatedValue(string $value) {
+		$linkParts = explode('|', $value);
+		
+		return sizeof($linkParts) > 1 ? 
+			['href' => $linkParts[0], 'text' => $linkParts[1]] :
+			['href' => $linkParts[0], 'text' => $linkParts[0]];
+	}
+	
 	public function execute() {
 		global $wgRequest, $wgStylePath, $wgUser, $wgLogo, $wgRightsPage, $wgRightsUrl, $wgRightsIcon, $wgRightsText, $wgLang;
 		$skin = $this->data['skin'];
@@ -34,42 +42,30 @@ $wordmarkH = $logos['wordmark']['height'] ?? 28;
 			<li class="logo"><a aria-label="Scratch" href="https://scratch.mit.edu/">
 				<img alt="<?=wfMessage('sitetitle')->inContentLanguage()->text()?>" src="<?=$wordmark ?>" height="<?= $wordmarkH ?>" width="<?= $wordmarkW ?>">
 			</a></li>
-			<li class="link create">
-				<a class="dropdown-toggle" href="https://scratch.mit.edu/projects/editor/"><span><?=wfMessage('scratchwikiskin-create')->inLanguage( $wgLang )->escaped()?></span></a>
-				<ul class="dropdown">
-					<li><a href="https://scratch.mit.edu/projects/editor/"><span><?=wfMessage( 'scratchwikiskin-create-project' )->inLanguage( $wgLang )->escaped() ?></span></a></li>
-					<li><a href="<?=Title::newFromText(wfMessage('scratchwikiskin-create-page-url')->inContentLanguage()->text())->getLocalURL()?>"><span><?=wfMessage('scratchwikiskin-create-page')->inLanguage( $wgLang )->escaped()?></span></a></li>
-				</ul>
-			</li>
-			<li class="link explore">
-				<a class="dropdown-toggle" href="https://scratch.mit.edu/explore/projects/all"><span><?=wfMessage('scratchwikiskin-explore')->inLanguage( $wgLang )->escaped()?></span></a>
-				<ul class="dropdown">
-					<li><a href="https://scratch.mit.edu/explore/projects/all"><span><?=wfMessage( 'scratchwikiskin-explore-projects' )->inLanguage( $wgLang )->escaped() ?></span></a></li>
-					<li><a href="<?=Title::newFromText(wfMessage('randompage-url')->inContentLanguage()->text())->getLocalURL()?>"><span><?=wfMessage('randompage')->inLanguage( $wgLang )->escaped()?></span></a></li>
-				</ul>
-			</li>
-			<li class="link discuss">
-				<a class="dropdown-toggle" href="https://scratch.mit.edu/discuss"><span><?=wfMessage('scratchwikiskin-discuss')->inLanguage( $wgLang )->escaped()?></span></a>
-				<ul class="dropdown">
-					<li><a href="https://scratch.mit.edu/discuss"><span><?=wfMessage( 'scratchwikiskin-discuss-text' )->inLanguage( $wgLang )->escaped() ?></span></a></li>
-					<li><a href="<?=wfMessage('scratchwikiskin-discuss-wiki')->inLanguage( $wgLang )->escaped()?>"><span><?=wfMessage('scratchwikiskin-discuss-wiki-text')->inLanguage( $wgLang )->escaped()?></span></a></li>
-					<li><a href="<?=Title::newFromText(wfMessage('portal-url')->inContentLanguage()->text())->getLocalURL()?>"><span><?=wfMessage('portal')->inLanguage( $wgLang )->escaped()?></span></a></li>
-				</ul>
-			</li>
-			<li class="link tips">
-				<a class="dropdown-toggle" href="https://scratch.mit.edu/ideas"><span><?=wfMessage('scratchwikiskin-ideas')->inLanguage( $wgLang )->escaped()?></span></a>
-				<ul class="dropdown">
-					<li><a href="https://scratch.mit.edu/ideas"><span><?=wfMessage( 'scratchwikiskin-ideas-text' )->inLanguage( $wgLang )->escaped() ?></span></a></li>
-					<li><a href="<?=Title::newFromText(wfMessage('scratchwikiskin-faq-page-url')->inContentLanguage()->text())->getLocalURL()?>"><span><?=wfMessage('scratchwikiskin-faq-page')->inLanguage( $wgLang )->escaped()?></span></a></li>
-				</ul>
-			</li>
-			<li class="link about">
-				<a class="dropdown-toggle" href="https://scratch.mit.edu/about"><span><?=wfMessage('scratchwikiskin-about')->inLanguage( $wgLang )->escaped()?></span></a>
-				<ul class="dropdown">
-					<li><a href="https://scratch.mit.edu/about"><span><?=wfMessage( 'scratchwikiskin-about-text' )->inLanguage( $wgLang )->escaped() ?></span></a></li>
-					<li><a href="<?=Title::newFromText(wfMessage('aboutpage')->inContentLanguage()->text())->getLocalURL()?>"><span><?=wfMessage('aboutsite')->inLanguage( $wgLang )->escaped()?></span></a></li>
-				</ul>
-			</li>
+			<?php
+			foreach (Xml::listDropDownOptions(wfMessage('scratchwikiskin-headerlinks')->text()) as $groupTitle => $group) {
+				$groupTitleLink = self::linkFromPipeSeparatedValue($groupTitle);
+				?>
+				<li class="link menu-item-dropdown">
+					<a class="dropdown-toggle" href="<?php echo htmlspecialchars($groupTitleLink['href']); ?>"><?php echo htmlspecialchars($groupTitleLink['text']); ?></a>
+					<ul class="dropdown">
+						<?php
+						/*
+						
+						*/
+						foreach ($group as $groupItem) {
+							$groupItemLink = self::linkFromPipeSeparatedValue($groupItem);
+							
+							?>
+								<li><a href="<?php echo htmlspecialchars($groupItemLink['href']); ?>"><?php echo htmlspecialchars($groupItemLink['text']); ?></a></li>
+							<?php
+						}
+						?>
+					</ul>
+				</li>
+				<?php
+			}
+			?>
 			<li class="search">
 				<form class="form" action="<?php $this->text( 'wgScript' ) ?>" role="search" aria-label="<?=wfMessage( 'scratchwikiskin-search' )->inLanguage( $wgLang )->escaped()?>">
 					<button class="button btn-search"></button>

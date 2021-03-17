@@ -512,11 +512,7 @@ dl dt {
 }
 
 #navigation .account-nav>a:after,
-#navigation .create>a:after,
-#navigation .explore>a:after,
-#navigation .discuss>a:after,
-#navigation .tips>a:after,
-#navigation .about>a:after,
+#navigation .menu-item-dropdown>a:after,
 #navigation .content-actions>a:after {
     display: inline-block;
     margin-left: 8px;
@@ -533,11 +529,7 @@ dl dt {
 
 #navigation .account-nav .dropdown,
 #navigation .content-actions .dropdown,
-#navigation .create .dropdown,
-#navigation .explore .dropdown,
-#navigation .discuss .dropdown,
-#navigation .tips .dropdown,
-#navigation .about .dropdown {
+#navigation .menu-item-dropdown .dropdown {
     top: 50px;
     padding: 0;
     margin-top: 0;
