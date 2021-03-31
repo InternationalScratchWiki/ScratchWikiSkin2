@@ -97,8 +97,8 @@ $wordmarkH = $logos['wordmark']['height'] ?? 28;
 				</ul>
 			</li>
 			<li class="link right account-nav">
-				<a class="dropdown-toggle" href="<?php if (!$wgUser->isLoggedIn()) { ?><?=Title::newFromText( 'Special:UserLogin' )->fixSpecialName()->getLinkURL() ?><?php } else { ?><?=$wgUser->getUserPage()->getLinkURL()?><?php } ?>">
-					<span class="profile-name"><?php if (!$wgUser->isLoggedIn()) { ?><?=wfMessage( 'scratchwikiskin-notloggedin' )->inLanguage( $wgLang )->escaped()?><?php } else { ?><?=htmlspecialchars($wgUser->mName)?><?php } ?></span>
+				<a class="dropdown-toggle" href="<?php if ($wgUser->isAnon()) { ?><?=Title::newFromText( 'Special:UserLogin' )->fixSpecialName()->getLinkURL() ?><?php } else { ?><?=$wgUser->getUserPage()->getLinkURL()?><?php } ?>">
+					<span class="profile-name"><?php if ($wgUser->isAnon()) { ?><?=wfMessage( 'scratchwikiskin-notloggedin' )->inLanguage( $wgLang )->escaped()?><?php } else { ?><?=htmlspecialchars($wgUser->mName)?><?php } ?></span>
 				</a>
 				<ul class="dropdown">
 <?php foreach ($this->data['personal_urls'] as $key => $tab) { ?>
@@ -136,7 +136,7 @@ $wordmarkH = $logos['wordmark']['height'] ?? 28;
 					</div>
 				</div>
 <?php }
-if (!$wgUser->isLoggedIn()) { ?>
+if ($wgUser->isAnon()) { ?>
 				<div class="box" role="complementary" aria-label="<?=wfMessage( 'scratchwikiskin-helpthewiki' )->inLanguage( $wgLang )->escaped()?>">
 					<div class="box-header">
 						<h4><?=wfMessage( 'scratchwikiskin-helpthewiki' )->inLanguage( $wgLang )->escaped()?></h4>
