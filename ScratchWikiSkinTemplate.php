@@ -98,7 +98,7 @@ $wordmarkH = $logos['wordmark']['height'] ?? 28;
 			</li>
 			<li class="link right account-nav">
 				<a class="dropdown-toggle" href="<?php if ($wgUser->isAnon()) { ?><?=Title::newFromText( 'Special:UserLogin' )->fixSpecialName()->getLinkURL() ?><?php } else { ?><?=$wgUser->getUserPage()->getLinkURL()?><?php } ?>">
-					<span class="profile-name"><?php if ($wgUser->isAnon()) { ?><?=wfMessage( 'scratchwikiskin-notloggedin' )->inLanguage( $wgLang )->escaped()?><?php } else { ?><?=htmlspecialchars($wgUser->mName)?><?php } ?></span>
+					<span class="profile-name"><?php if ($wgUser->isAnon()) { ?><?=wfMessage( 'scratchwikiskin-notloggedin' )->inLanguage( $wgLang )->escaped()?><?php } else { ?><?=htmlspecialchars($wgUser->getName())?><?php } ?></span>
 				</a>
 				<ul class="dropdown">
 <?php foreach ($this->data['personal_urls'] as $key => $tab) { ?>
