@@ -90,7 +90,7 @@ $wordmarkH = $logos['wordmark']['height'] ?? 28;
 				<a class="dropdown-toggle" href="?action=edit"><div></div></a>
 				<ul class="dropdown">
 <?php foreach ($this->data['content_actions'] as $key => $tab) { ?>
-					<?=$this->makeListItem($key, $tab)?>
+					<?=$this->getSkin()->makeListItem($key, $tab)?>
 
 <?php } ?>
 
@@ -102,7 +102,7 @@ $wordmarkH = $logos['wordmark']['height'] ?? 28;
 				</a>
 				<ul class="dropdown">
 <?php foreach ($this->data['personal_urls'] as $key => $tab) { ?>
-					<?=$this->makeListItem($key, $tab)?>
+					<?=$this->getSkin()->makeListItem($key, $tab)?>
 
 <?php } ?>
 
@@ -125,7 +125,7 @@ $wordmarkH = $logos['wordmark']['height'] ?? 28;
 <?php if (is_array($box['content'])) { ?>
 						<ul>
 <?php foreach ($box['content'] as $name => $item) { ?>
-							<?=$this->makeListItem($name, $item)?>
+							<?=$this->getSkin()->makeListItem($name, $item)?>
 
 <?php } ?>
 
