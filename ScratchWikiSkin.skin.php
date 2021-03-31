@@ -5,6 +5,8 @@
  * @file
  * @ingroup Skins
  */
+ 
+use MediaWiki\MediaWikiServices;
 
 class HTMLColorField extends HTMLFormField {
 
@@ -65,7 +67,8 @@ class SkinScratchWikiSkin extends SkinTemplate {
 
 	static function onGetPreferences( $user, &$preferences ) {
 		HTMLForm::$typeMappings['color'] = HTMLColorField::class;
-		$origpref = $user->getOption( 'scratchwikiskin-header-color' );
+		$userOptionsLookup = MediaWikiServices::getInstance()->getUserOptionsLookup();
+		$origpref = $userOptionsLookup->getOption( $user, 'scratchwikiskin-header-color' );
 		$preferences['scratchwikiskin-header-color'] = [
 			'type' => 'color',
 			'pattern' => '#[0-9A-Za-z]{6}',
