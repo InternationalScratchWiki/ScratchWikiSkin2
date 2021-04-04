@@ -108,7 +108,8 @@ a:hover {
 
 .dark-theme a:link,
 .dark-theme a:visited,
-.dark-theme a:active {
+.dark-theme a:active,
+.dark-theme .toctogglelabel {
     color: #5da8ed;
 }
 
@@ -873,6 +874,10 @@ dl dt {
 #content h2 {
     border-bottom: 1px solid #111;
 }
+.dark-theme #content h1,
+.dark-theme #content h2 {
+    border-bottom-color: #eee;
+}
 
 #content p img {
     max-width: 100%;
@@ -1136,4 +1141,35 @@ dl dt {
 .dark-theme .oo-ui-menuOptionWidget.oo-ui-optionWidget-selected,
 .dark-theme .oo-ui-menuOptionWidget.oo-ui-optionWidget-highlighted {
     background-color: rgba(255, 255, 255, 0.1);
+}
+
+.dark-theme .toc {
+    background-color: #1f1f1f;
+    border-color: #000;
+}
+.dark-theme .tocnumber {
+    color: #eee;
+}
+
+.dark-theme .diff-context {
+    background-color: #1f1f1f;
+    border-color: #000;
+    color: #eee;
+}
+.dark-theme .diff-addedline {
+    background-color: #1f1f1f;
+    border-color: #859900;
+}
+.dark-theme .diff-deletedline {
+    background-color: #1f1f1f;
+    border-color: #dc322f;
+}
+.dark-theme .diffchange {
+    background-color: unset;
+    border: 1px solid #aaa;
+}
+
+.dark-theme #filetoc {
+    background-color: #1f1f1f;
+    border-color: #000;
 }
