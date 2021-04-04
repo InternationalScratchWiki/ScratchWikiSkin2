@@ -10,7 +10,7 @@ use MediaWiki\MediaWikiServices;
 
 class ScratchWikiSkinTemplate extends BaseTemplate {
 	public function execute() {
-		global $wgRequest, $wgStylePath, $wgUser, $wgLogo, $wgRightsPage, $wgRightsUrl, $wgRightsIcon, $wgRightsText, $wgLang;
+		global $wgRequest, $wgStylePath, $wgUser, $wgLogo, $wgRightsPage, $wgRightsUrl, $wgRightsIcon, $wgRightsText, $wgLang, $wgSWS2JoinBox;
 		$skin = $this->data['skin'];
 		$this->html('headelement');
 		$userOptionsLookup = MediaWikiServices::getInstance()->getUserOptionsLookup();
@@ -136,7 +136,7 @@ $wordmarkH = $logos['wordmark']['height'] ?? 28;
 					</div>
 				</div>
 <?php }
-if ($wgUser->isAnon()) { ?>
+if ($wgUser->isAnon() && $wgSWS2JoinBox) { ?>
 				<div class="box" role="complementary" aria-label="<?=wfMessage( 'scratchwikiskin-helpthewiki' )->inLanguage( $wgLang )->escaped()?>">
 					<div class="box-header">
 						<h4><?=wfMessage( 'scratchwikiskin-helpthewiki' )->inLanguage( $wgLang )->escaped()?></h4>

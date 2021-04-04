@@ -49,5 +49,8 @@
 		"localBasePath": "",
 		"remoteSkinPath": "ScratchWikiSkin2"
 	},
+	"config": {
+		"SWS2JoinBox": true
+	},
 	"manifest_version": 1
 }
