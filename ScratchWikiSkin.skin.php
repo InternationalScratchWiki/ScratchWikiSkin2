@@ -70,8 +70,8 @@ class SkinScratchWikiSkin extends SkinTemplate {
 	}
 
 	public static function onOutputPageBodyAttributes( $out, $skin, &$bodyAttrs ) {
-		global $wgUser;
-		if ($wgUser->getOption( DARK_THEME_PREF )) {
+		global $wgUser, $wgSWS2ForceDarkTheme;
+		if ($wgUser->getOption( DARK_THEME_PREF ) || $wgSWS2ForceDarkTheme) {
 			$bodyAttrs['class'] .= ' dark-theme';
 		}
 	}
