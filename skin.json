@@ -14,7 +14,8 @@
 		"ScratchWikiSkinTemplate": "ScratchWikiSkinTemplate.php"
 	},
 	"Hooks": {
-		"GetPreferences": "SkinScratchWikiSkin::onGetPreferences"
+		"GetPreferences": "SkinScratchWikiSkin::onGetPreferences",
+		"OutputPageBodyAttributes": "SkinScratchWikiSkin::onOutputPageBodyAttributes"
 	},
 	"MessagesDirs": {
 		"ScratchWikiSkin": "i18n"
