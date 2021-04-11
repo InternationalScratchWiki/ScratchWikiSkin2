@@ -175,6 +175,7 @@ if ($wgUser->isAnon() && $wgSWS2JoinBox) { ?>
 <?php if ($this->data['catlinks']) {
 	$this->html( 'catlinks' );
 } ?>
+					<div id="feet" style="margin: 0">The Wiki is working on a dark theme, and you're seeing it! Got feedback? Post on the <a href="https://scratch.mit.edu/discuss/topic/294197/" target="_new">forum Community Portal</a>.</div>
 					</div>
 				</div>
 				<ul id="feet">
