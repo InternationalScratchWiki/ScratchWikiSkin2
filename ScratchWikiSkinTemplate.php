@@ -36,7 +36,7 @@ $wordmarkH = $logos['wordmark']['height'] ?? 28;
 		<ul>
 			<li class="sidebar-toggle"><a></a></li>
 			<li class="logo"><a aria-label="Scratch" href="https://scratch.mit.edu/">
-				<img alt="<?=wfMessage('sitetitle')->inContentLanguage()->text()?>" src="<?=$wordmark ?>" height="<?= $wordmarkH ?>" width="<?= $wordmarkW ?>">
+				<img alt="<?=wfMessage('sitetitle')->inContentLanguage()->escaped()?>" src="<?=$wordmark ?>" height="<?= $wordmarkH ?>" width="<?= $wordmarkW ?>">
 			</a></li>
 			<li class="link create">
 				<a class="dropdown-toggle" href="https://scratch.mit.edu/projects/editor/"><span><?=wfMessage('scratchwikiskin-create')->inLanguage( $wgLang )->escaped()?></span></a>
