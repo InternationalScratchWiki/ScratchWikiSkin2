@@ -27,7 +27,7 @@ class ScratchWikiSkinTemplate extends BaseTemplate {
 </style>
 <?php
 $logos = ResourceLoaderSkinModule::getAvailableLogos( $this->getSkin()->getConfig() );
-$wordmark = $logos['wordmark']['src'] ?? 'https://scratch.mit.edu/images/logo_sm.png';
+$wordmark = $logos['wordmark']['src'] ?? $this->getSkin()->getSkinStylePath('resources/Scratch-logo-sm.png'); //FIXME: this uses the wrong directory (uses "ScratchWikiSkin" instead of "ScratchWikiSkin2")
 $wordmarkW = $logos['wordmark']['width'] ?? 76;
 $wordmarkH = $logos['wordmark']['height'] ?? 28;
 ?>
