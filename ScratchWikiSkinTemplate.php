@@ -27,7 +27,7 @@ class ScratchWikiSkinTemplate extends BaseTemplate {
 </style>
 <?php
 $logos = ResourceLoaderSkinModule::getAvailableLogos( $this->getSkin()->getConfig() );
-$wordmark = $logos['wordmark']['src'] ?? $this->getSkin()->getSkinStylePath('resources/Scratch-logo-sm.png'); //FIXME: this uses the wrong directory (uses "ScratchWikiSkin" instead of "ScratchWikiSkin2")
+$wordmark = $logos['wordmark']['src'] ?? $this->get('stylepath') . '/' . $this->getSkin()->stylename . '/resources/Scratch-logo-sm.png';
 $wordmarkW = $logos['wordmark']['width'] ?? 76;
 $wordmarkH = $logos['wordmark']['height'] ?? 28;
 ?>
@@ -36,7 +36,7 @@ $wordmarkH = $logos['wordmark']['height'] ?? 28;
 		<ul>
 			<li class="sidebar-toggle"><a></a></li>
 			<li class="logo"><a aria-label="Scratch" href="https://scratch.mit.edu/">
-				<img alt="<?=wfMessage('sitetitle')->inContentLanguage()->escaped()?>" src="<?=$wordmark ?>" height="<?= $wordmarkH ?>" width="<?= $wordmarkW ?>">
+				<img alt="<?=wfMessage('sitetitle')->inContentLanguage()->escaped()?>" src="<?=htmlspecialchars($wordmark) ?>" height="<?= $wordmarkH ?>" width="<?= $wordmarkW ?>">
 			</a></li>
 			<li class="link create">
 				<a class="dropdown-toggle" href="https://scratch.mit.edu/projects/editor/"><span><?=wfMessage('scratchwikiskin-create')->inLanguage( $wgLang )->escaped()?></span></a>
