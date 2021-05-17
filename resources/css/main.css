@@ -454,6 +454,7 @@ dl dt {
     position: absolute;
     box-shadow: none;
     background-color: transparent;
+    /* @embed */
     background-image: url("../nav-search-glass.png");
     background-repeat: no-repeat;
     background-position: center center;
