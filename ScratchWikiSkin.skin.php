@@ -47,7 +47,7 @@ class HTMLColorField extends HTMLFormField {
 }
 
 class SkinScratchWikiSkin extends SkinTemplate {
-	var $skinname = 'scratchwikiskin2', $stylename = 'ScratchWikiSkin',
+	var $skinname = 'scratchwikiskin2', $stylename = 'ScratchWikiSkin2',
 		$template = 'ScratchWikiSkinTemplate', $useHeadElement = true;
 
 	/**
