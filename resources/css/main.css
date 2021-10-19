@@ -557,26 +557,27 @@ dl dt {
 
 .explore-tabs .sub-nav li {
     display: inline-block;
+    list-style-type: none;
+    margin: 0;
+}
+
+.explore-tabs .sub-nav a {
+    display: inline-block;
     margin: 5px;
     border-radius: 50px;
     padding: .75em 1.5em;
     text-decoration: none;
-    list-style-type: none;
+    color: inherit;
     background-color: #d9d9d9;
 }
 
-.explore-tabs .sub-nav li:hover {
+.explore-tabs .sub-nav a:hover {
     background-color: #c2c2c2;
     transition: background-color .25s ease;
 }
 
-.explore-tabs .sub-nav li.selected {
+.explore-tabs .sub-nav .selected a {
     background-color: #0fbd8c;
-}
-
-.explore-tabs .sub-nav a {
-    color: inherit;
-    text-decoration: inherit;
 }
 
 .explore-tabs .sub-left {
