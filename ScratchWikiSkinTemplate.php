@@ -151,16 +151,18 @@ if ($wgUser->isAnon() && $wgSWS2JoinBox) { ?>
 			<div class="right">
 				<?php if ($this->data['newtalk']) { ?><div class="box"><div class="box-header"><h4><?php $this->html('newtalk') ?></h4></div></div><?php } ?>
 				<?php if ($this->data['sitenotice']) { ?><div id="siteNotice"><?php $this->html('sitenotice'); ?></div><?php } ?>
+<?php if (!$wgUser->isAnon()) { ?>
 				<div class="explore-tabs">
 					<div class="sub-nav sub-left">
 <?php foreach ($this->data['content_actions'] as $key => $tab) {
-	if ($key == 'edit') { ?>
+	if ($key == 'edit' || $key == 'viewsource') { ?>
 					</div><div class="sub-nav sub-right">
 	<?php }
 	echo $this->getSkin()->makeListItem($key, $tab);
 } ?>
 					</div>
 				</div>
+<?php } ?>
 				<div class="box">
 					<div class="box-header">
 						<?=$this->getIndicators()?>
