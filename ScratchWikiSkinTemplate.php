@@ -101,11 +101,10 @@ $wordmarkH = $logos['wordmark']['height'] ?? 28;
 					<span class="profile-name"><?php if ($wgUser->isAnon()) { ?><?=wfMessage( 'scratchwikiskin-notloggedin' )->inLanguage( $wgLang )->escaped()?><?php } else { ?><?=htmlspecialchars($wgUser->getName())?><?php } ?></span>
 				</a>
 				<ul class="dropdown">
-<?php foreach ($this->data['personal_urls'] as $key => $tab) { ?>
-					<?=$this->getSkin()->makeListItem($key, $tab)?>
-
-<?php } ?>
-
+<?php // TODO: Decide whether to remove this dropdown
+foreach ($this->data['personal_urls'] as $key => $tab) {
+	echo $this->getSkin()->makeListItem($key, $tab);
+} ?>
 				</ul>
 			</li>
 		</ul>
@@ -152,6 +151,16 @@ if ($wgUser->isAnon() && $wgSWS2JoinBox) { ?>
 			<div class="right">
 				<?php if ($this->data['newtalk']) { ?><div class="box"><div class="box-header"><h4><?php $this->html('newtalk') ?></h4></div></div><?php } ?>
 				<?php if ($this->data['sitenotice']) { ?><div id="siteNotice"><?php $this->html('sitenotice'); ?></div><?php } ?>
+				<div class="explore-tabs">
+					<div class="sub-nav sub-left">
+<?php foreach ($this->data['content_actions'] as $key => $tab) {
+	if ($key == 'edit') { ?>
+					</div><div class="sub-nav sub-right">
+	<?php }
+	echo $this->getSkin()->makeListItem($key, $tab);
+} ?>
+					</div>
+				</div>
 				<div class="box">
 					<div class="box-header">
 						<?=$this->getIndicators()?>

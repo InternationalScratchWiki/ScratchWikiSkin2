@@ -361,7 +361,7 @@ dl dt {
 }
 
 #navigation .logo a,
-#navigation .content-actions .dropdown-toggle {
+#navigation .content-actions > a {
     display: block;
     transition: .15s ease all;
     border: 0;
@@ -379,7 +379,7 @@ dl dt {
 }
 
 #navigation .logo a:hover,
-#navigation .content-actions .dropdown-toggle:hover {
+#navigation .content-actions > a:hover {
     transition: .15s ease all;
 }
 
@@ -387,7 +387,7 @@ dl dt {
     transform: scale(1.05, 1.05);
 }
 
-#navigation .content-actions .dropdown-toggle:hover {
+#navigation .content-actions > a:hover {
     background-size: 27.5px 27.5px;
 }
 
@@ -510,13 +510,7 @@ dl dt {
     background-color: rgba(0, 0, 0, 0.1);
 }
 
-#navigation .account-nav>a:after,
-#navigation .create>a:after,
-#navigation .explore>a:after,
-#navigation .discuss>a:after,
-#navigation .tips>a:after,
-#navigation .about>a:after,
-#navigation .content-actions>a:after {
+#navigation li>a.dropdown-toggle:after {
     display: inline-block;
     margin-left: 8px;
     /* @embed */
@@ -542,6 +536,55 @@ dl dt {
     margin-top: 0;
     box-sizing: border-box;
     min-width: 100%;
+}
+
+.explore-tabs {
+    display: flex;
+    margin: 0 auto;
+    padding: 8px 0;
+    justify-content: space-between;
+}
+
+.explore-tabs .sub-nav {
+    display: flex;
+    padding: 5px 0;
+    color: #fff;
+    font-size: .8rem;
+    font-weight: bold;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.explore-tabs .sub-nav li {
+    display: inline-block;
+    margin: 5px;
+    border-radius: 50px;
+    padding: .75em 1.5em;
+    text-decoration: none;
+    list-style-type: none;
+    background-color: #d9d9d9;
+}
+
+.explore-tabs .sub-nav li:hover {
+    background-color: #c2c2c2;
+    transition: background-color .25s ease;
+}
+
+.explore-tabs .sub-nav li.selected {
+    background-color: #0fbd8c;
+}
+
+.explore-tabs .sub-nav a {
+    color: inherit;
+    text-decoration: inherit;
+}
+
+.explore-tabs .sub-left {
+    justify-content: flex-start;
+}
+
+.explore-tabs .sub-right {
+    justify-content: flex-end;
 }
 
 #footer {
@@ -680,7 +723,7 @@ dl dt {
     margin-top: 20px;
 }
 
-#navigation ul>li.content-actions>a.dropdown-toggle {
+#navigation ul>li.content-actions>a {
     height: 25px;
     width: auto;
     min-width: 25px;
@@ -688,11 +731,11 @@ dl dt {
     /* @embed */
     background-image: url('../Edit-pencil.png');
     background-size: 25px 25px;
-    background-position: 12.5px center;
+    background-position: 12.5px center; /* TODO: change to center center if no pencil menu */
     background-repeat: no-repeat;
 }
 
-#navigation ul>li.content-actions>a.dropdown-toggle>div {
+#navigation ul>li.content-actions>a>div {
     height: 25px;
     width: 25px;
     display: inline-block;
