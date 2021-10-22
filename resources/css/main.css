@@ -582,6 +582,7 @@ dl dt {
 
 .explore-tabs .sub-left {
     justify-content: flex-start;
+    flex-wrap: nowrap;
 }
 
 .explore-tabs .sub-right {
