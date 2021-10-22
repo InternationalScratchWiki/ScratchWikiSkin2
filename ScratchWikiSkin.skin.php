@@ -5,7 +5,7 @@
  * @file
  * @ingroup Skins
  */
- 
+
 use MediaWiki\MediaWikiServices;
 
 class HTMLColorField extends HTMLFormField {
@@ -76,6 +76,13 @@ class SkinScratchWikiSkin extends SkinTemplate {
 			'section' => 'rendering/skin',
 			'default' => ($origpref ? $origpref : '#7953c4'),
 			// Only expose background color preference when the skin is selected
+			'hide-if' => [ '!==', 'wpskin', 'scratchwikiskin2' ],
+		];
+		$preferences['scratchwikiskin-hide-explore-tabs'] = [
+			'type' => 'toggle',
+			'section' => 'rendering/skin',
+			'label-message' => 'scratchwikiskin-pref-explore-tabs',
+			'help-message' => 'scratchwikiskin-pref-explore-tabs-help',
 			'hide-if' => [ '!==', 'wpskin', 'scratchwikiskin2' ],
 		];
 		return true;
