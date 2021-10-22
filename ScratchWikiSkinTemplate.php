@@ -33,6 +33,8 @@ $wordmarkH = $logos['wordmark']['height'] ?? 28;
 ?>
 <div id="navigation" role="banner">
 	<div class="inner">
+		<a class="jump-to" href="#logo" tabindex="0"><?=wfMessage('scratchwikiskin-jump-to-sidebar')->escaped()?></a>
+		<a class="jump-to" href="#firstHeading" tabindex="0"><?=wfMessage('scratchwikiskin-jump-to-content')->escaped()?></a>
 		<ul>
 			<li class="sidebar-toggle"><a></a></li>
 			<li class="logo"><a aria-label="Scratch" href="https://scratch.mit.edu/">
@@ -76,12 +78,11 @@ $wordmarkH = $logos['wordmark']['height'] ?? 28;
 			</li>
 			<li class="search">
 				<form class="form" action="<?php $this->text( 'wgScript' ) ?>" role="search" aria-label="<?=wfMessage( 'scratchwikiskin-search' )->inLanguage( $wgLang )->escaped()?>">
-					<button class="button btn-search"></button>
+					<button class="button btn-search" tabindex="-1"></button>
 					<div class="form-group row no-label">
 						<div class="col-sm-9">
 							<input type="text" class="input" id="searchInput" accesskey="<?=wfMessage( 'accesskey-search' )->inLanguage( $wgLang )->escaped() ?>" title="Search Scratch Wiki [alt-shift-<?=wfMessage( 'accesskey-search' )->inLanguage( $wgLang )->escaped()?>]" name="search" autocomplete="off" placeholder="<?=wfMessage( 'scratchwikiskin-search' )->inLanguage( $wgLang )->escaped() ?>" />
 							<input type="hidden" value="Special:Search" name="title" />
-							<span class="help-block">Not Required</span>
 						</div>
 					</div>
 				</form>
@@ -115,9 +116,9 @@ $wordmarkH = $logos['wordmark']['height'] ?? 28;
 	<div class="splash">
 		<div class="inner mod-splash">
 			<div class="left">
-				<div class="wikilogo_space"><a class="wikilogo" href="<?=htmlspecialchars($this->data['nav_urls']['mainpage']['href'])?>" title="<?=wfMessage( 'mainpage' )->inLanguage( $wgLang )->escaped()?>"></a></div>
+				<div class="wikilogo_space"><a id="logo" class="wikilogo" href="<?=htmlspecialchars($this->data['nav_urls']['mainpage']['href'])?>" title="<?=wfMessage( 'mainpage' )->inLanguage( $wgLang )->escaped()?>"></a></div>
 <?php foreach ($this->getSidebar() as $box) { ?>
-				<div class="box" role="navigation" aria-label="<?=$box['header']?>">
+				<div class="box" role="navigation" aria-label="<?=htmlspecialchars($box['header'])?>">
 					<div class="box-header">
 						<h4><?=htmlspecialchars($box['header'])?></h4>
 					</div>
