@@ -510,7 +510,7 @@ dl dt {
     background-color: rgba(0, 0, 0, 0.1);
 }
 
-#navigation li>a.dropdown-toggle:after {
+#navigation a.dropdown-toggle:after {
     display: inline-block;
     margin-left: 8px;
     /* @embed */
