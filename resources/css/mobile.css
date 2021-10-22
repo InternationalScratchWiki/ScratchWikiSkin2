@@ -25,3 +25,6 @@
     background-repeat: no-repeat;
     filter: invert(100%);
 }
+.explore-tabs {
+    display: none;
+}
