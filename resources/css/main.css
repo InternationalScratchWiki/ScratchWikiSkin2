@@ -565,15 +565,33 @@ dl dt {
     display: inline-block;
     margin: 5px;
     border-radius: 50px;
-    padding: .75em 1.5em;
+    min-height: 15px;
+    min-width: 15px;
+    padding: .75em;
     text-decoration: none;
     color: inherit;
     background-color: #d9d9d9;
+    /* @embed */
+    background-image: url('../dropdown.png');
+    background-size: 15px;
+    background-repeat: no-repeat;
+    background-position: .75em center;
+}
+.explore-tabs .sub-nav a span {
+    display: none;
 }
 
-.explore-tabs .sub-nav a:hover {
+.explore-tabs .sub-nav a:hover,
+.explore-tabs .sub-nav a:focus,
+.explore-tabs .sub-nav .selected a {
+    padding: .75em 1.5em .75em calc(1.5em + 15px);
     background-color: #c2c2c2;
     transition: background-color .25s ease;
+}
+.explore-tabs .sub-nav a:hover span,
+.explore-tabs .sub-nav a:focus span,
+.explore-tabs .sub-nav .selected a span {
+    display: inline;
 }
 
 .explore-tabs .sub-nav .selected a {
@@ -733,7 +751,7 @@ dl dt {
     /* @embed */
     background-image: url('../Edit-pencil.png');
     background-size: 25px 25px;
-    background-position: 12.5px center; /* TODO: change to center center if no pencil menu */
+    background-position: 12.5px center;
     background-repeat: no-repeat;
 }
 
