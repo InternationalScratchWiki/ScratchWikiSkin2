@@ -33,9 +33,9 @@ $wordmarkH = $logos['wordmark']['height'] ?? 28;
 ?>
 <div id="navigation" role="banner">
 	<div class="inner">
-		<a class="jump-to" href="#logo" tabindex="0"><?=wfMessage('scratchwikiskin-jump-to-sidebar')->escaped()?></a>
-		<a class="jump-to" href="#firstHeading" tabindex="0"><?=wfMessage('scratchwikiskin-jump-to-content')->escaped()?></a>
 		<ul>
+			<li class="link"><a class="jump-to" href="#logo" tabindex="0"><span><?=wfMessage('scratchwikiskin-jump-to-sidebar')->escaped()?></span></a></li>
+			<li class="link"><a class="jump-to" href="#firstHeading" tabindex="1"><span><?=wfMessage('scratchwikiskin-jump-to-content')->escaped()?></span></a></li>
 			<li class="sidebar-toggle"><a></a></li>
 			<li class="logo"><a aria-label="Scratch" href="https://scratch.mit.edu/">
 				<img alt="<?=wfMessage('sitetitle')->inContentLanguage()->escaped()?>" src="<?=htmlspecialchars($wordmark) ?>" height="<?= $wordmarkH ?>" width="<?= $wordmarkW ?>">

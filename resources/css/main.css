@@ -738,9 +738,6 @@ dl dt {
     font-size: 1rem;
 }
 
-.jump-to {
-    position: absolute;
-}
 .jump-to:not( :focus ) {
     display: block;
     position: absolute !important;
