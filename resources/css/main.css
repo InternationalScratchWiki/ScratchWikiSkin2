@@ -298,6 +298,10 @@ dl dt {
     height: 50px;
 }
 
+#navigation a, #navigation a:link {
+    color: #fff;
+}
+
 #navigation .inner>ul {
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -402,10 +406,6 @@ dl dt {
 
 #navigation .inner>ul>li.search .form {
     margin: 0;
-}
-
-#navigation .inner>ul>li.search .row .help-block {
-    display: none;
 }
 
 #navigation .inner>ul>li.search .input,
@@ -738,6 +738,17 @@ dl dt {
     font-size: 1rem;
 }
 
+.jump-to:not( :focus ) {
+    display: block;
+    position: absolute !important;
+    clip: rect(1px, 1px, 1px, 1px);
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    border: 0;
+    padding: 0;
+    overflow: hidden;
+}
 
 /* MASTER ARTICLE STYLE */
 
