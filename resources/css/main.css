@@ -37,6 +37,11 @@ body {
     font-family: "Liberation Sans", "Helvetica Neue", "Helvetica", Arial, sans-serif;
     font-size: 16px;
 }
+body {
+    display: flex;
+    height: 100vh;
+    flex-direction: column;
+}
 body.dark-theme {
     color: #eee;
 }
@@ -174,7 +179,7 @@ dl dt {
     margin-top: 50px;
     background-color: #fcfcfc;
     min-width: 100%;
-    min-height: calc(100vh - 316px);
+    flex: 1 0 auto;
 }
 .dark-theme #view {
     background-color: #23272a;
@@ -589,6 +594,7 @@ dl dt {
     padding: 10px 0;
     color: #6b6b6b;
     font-size: .85rem;
+    flex-shrink: 0;
 }
 .dark-theme #footer {
     background-color: #202225;
