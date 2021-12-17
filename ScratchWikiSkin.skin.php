@@ -92,6 +92,7 @@ class SkinScratchWikiSkin extends SkinTemplate {
 			'type' => 'check',
 			'label-message' => 'scratchwikiskin-pref-dark',
 			'section' => 'rendering/skin',
+			'hide-if' => [ '!==', 'wpskin', 'scratchwikiskin2' ],
 		];
 		return true;
 	}
