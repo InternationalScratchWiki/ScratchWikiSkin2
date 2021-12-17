@@ -8,7 +8,6 @@
 
 use MediaWiki\MediaWikiServices;
 
-define('SKIN_CHOICE_PREF', 'skin');
 define('DARK_THEME_PREF', 'scratchwikiskin-dark-theme');
 define('HEADER_COLOR_PREF', 'scratchwikiskin-header-color');
 
@@ -79,8 +78,8 @@ class SkinScratchWikiSkin extends SkinTemplate {
 	public static function onGetPreferences( $user, &$preferences ) {
 		HTMLForm::$typeMappings['color'] = HTMLColorField::class;
 		$userOptionsLookup = MediaWikiServices::getInstance()->getUserOptionsLookup();
-		$origpref = $userOptionsLookup->getOption( $user, 'scratchwikiskin-header-color' );
-		$preferences['scratchwikiskin-header-color'] = [
+		$origpref = $userOptionsLookup->getOption( $user, HEADER_COLOR_PREF );
+		$preferences[HEADER_COLOR_PREF] = [
 			'type' => 'color',
 			'pattern' => '#[0-9A-Za-z]{6}',
 			'label-message' => 'scratchwikiskin-pref-color',
