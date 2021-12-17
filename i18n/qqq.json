@@ -63,5 +63,7 @@
 	"scratchwikiskin-jump-to-content": "Jump to content link in header, hidden unless tabbed to",
 	"scratchwikiskin-notloggedin": "Text for username when not logged in",
 	"scratchwikiskin-pref-color": "Prompt to set header color",
-	"scratchwikiskin-search": "Placeholder for search box"
+	"scratchwikiskin-pref-dark": "Label for dark theme checkbox",
+	"scratchwikiskin-search": "Placeholder for search box",
+	"scratchwikiskin-search-title": "Hover text for search box; $1 is the access key"
 }
