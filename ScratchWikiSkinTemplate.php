@@ -27,16 +27,18 @@ class ScratchWikiSkinTemplate extends BaseTemplate {
 </style>
 <?php
 $logos = ResourceLoaderSkinModule::getAvailableLogos( $this->getSkin()->getConfig() );
-$wordmark = $logos['wordmark']['src'] ?? 'https://scratch.mit.edu/images/logo_sm.png';
+$wordmark = $logos['wordmark']['src'] ?? $this->get('stylepath') . '/' . $this->getSkin()->stylename . '/resources/Scratch-logo-sm.png';
 $wordmarkW = $logos['wordmark']['width'] ?? 76;
 $wordmarkH = $logos['wordmark']['height'] ?? 28;
 ?>
 <div id="navigation" role="banner">
 	<div class="inner">
 		<ul>
+			<li class="link"><a class="jump-to" href="#logo" tabindex="0"><span><?=wfMessage('scratchwikiskin-jump-to-sidebar')->escaped()?></span></a></li>
+			<li class="link"><a class="jump-to" href="#firstHeading" tabindex="1"><span><?=wfMessage('scratchwikiskin-jump-to-content')->escaped()?></span></a></li>
 			<li class="sidebar-toggle"><a></a></li>
 			<li class="logo"><a aria-label="Scratch" href="https://scratch.mit.edu/">
-				<img alt="<?=wfMessage('sitetitle')->inContentLanguage()->text()?>" src="<?=$wordmark ?>" height="<?= $wordmarkH ?>" width="<?= $wordmarkW ?>">
+				<img alt="<?=wfMessage('sitetitle')->inContentLanguage()->escaped()?>" src="<?=htmlspecialchars($wordmark) ?>" height="<?= $wordmarkH ?>" width="<?= $wordmarkW ?>">
 			</a></li>
 			<li class="link create">
 				<a class="dropdown-toggle" href="https://scratch.mit.edu/projects/editor/"><span><?=wfMessage('scratchwikiskin-create')->inLanguage( $wgLang )->escaped()?></span></a>
@@ -76,7 +78,7 @@ $wordmarkH = $logos['wordmark']['height'] ?? 28;
 			</li>
 			<li class="search">
 				<form class="form" action="<?php $this->text( 'wgScript' ) ?>" role="search" aria-label="<?=wfMessage( 'scratchwikiskin-search' )->inLanguage( $wgLang )->escaped()?>">
-					<button class="button btn-search"></button>
+					<button class="button btn-search" tabindex="-1"></button>
 					<div class="form-group row no-label">
 						<div class="col-sm-9">
 							<input
@@ -90,7 +92,6 @@ $wordmarkH = $logos['wordmark']['height'] ?? 28;
 								placeholder="<?=wfMessage( 'scratchwikiskin-search' )->inLanguage( $wgLang )->escaped() ?>"
 							/>
 							<input type="hidden" value="Special:Search" name="title" />
-							<span class="help-block">Not Required</span>
 						</div>
 					</div>
 				</form>
@@ -124,9 +125,9 @@ $wordmarkH = $logos['wordmark']['height'] ?? 28;
 	<div class="splash">
 		<div class="inner mod-splash">
 			<div class="left">
-				<div class="wikilogo_space"><a class="wikilogo" href="<?=htmlspecialchars($this->data['nav_urls']['mainpage']['href'])?>" title="<?=wfMessage( 'mainpage' )->inLanguage( $wgLang )->escaped()?>"></a></div>
+				<div class="wikilogo_space"><a id="logo" class="wikilogo" href="<?=htmlspecialchars($this->data['nav_urls']['mainpage']['href'])?>" title="<?=wfMessage( 'mainpage' )->inLanguage( $wgLang )->escaped()?>"></a></div>
 <?php foreach ($this->getSidebar() as $box) { ?>
-				<div class="box" role="navigation" aria-label="<?=$box['header']?>">
+				<div class="box" role="navigation" aria-label="<?=htmlspecialchars($box['header'])?>">
 					<div class="box-header">
 						<h4><?=htmlspecialchars($box['header'])?></h4>
 					</div>

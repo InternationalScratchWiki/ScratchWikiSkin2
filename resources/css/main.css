@@ -31,10 +31,11 @@ html,
 body {
     display: block;
     margin: 0;
-    background-color: #0c9ce4;
+    background-color: #4280d7;
     padding: 0;
     color: #575e75;
     font-family: "Liberation Sans", "Helvetica Neue", "Helvetica", Arial, sans-serif;
+    font-size: 16px;
 }
 body.dark-theme {
     color: #eee;
@@ -325,6 +326,10 @@ dl dt {
     height: 50px;
 }
 
+#navigation a, #navigation a:link {
+    color: #fff;
+}
+
 #navigation .inner>ul {
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -434,10 +439,6 @@ dl dt {
     margin: 0;
 }
 
-#navigation .inner>ul>li.search .row .help-block {
-    display: none;
-}
-
 #navigation .inner>ul>li.search .input,
 #navigation .inner>ul>li.search .button {
     display: inline-block;
@@ -488,7 +489,8 @@ dl dt {
     position: absolute;
     box-shadow: none;
     background-color: transparent;
-    background-image: url("https://scratch.mit.edu/images/nav-search-glass.png");
+    /* @embed */
+    background-image: url("../nav-search-glass.png");
     background-repeat: no-repeat;
     background-position: center center;
     background-size: 14px 14px;
@@ -791,6 +793,17 @@ dl dt {
     font-size: 1rem;
 }
 
+.jump-to:not( :focus ) {
+    display: block;
+    position: absolute !important;
+    clip: rect(1px, 1px, 1px, 1px);
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    border: 0;
+    padding: 0;
+    overflow: hidden;
+}
 
 /* MASTER ARTICLE STYLE */
 
