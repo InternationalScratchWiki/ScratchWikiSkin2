@@ -175,8 +175,13 @@ if ($wgUser->isAnon() && $wgSWS2JoinBox) { ?>
 <?php $this->html('dataAfterContent'); ?>
 <?php if ($this->data['catlinks']) {
 	$this->html( 'catlinks' );
-} ?>
-					<div id="feet" style="margin: 0">The Wiki is working on a dark theme, and you're seeing it! Got feedback? Post on the <a href="https://scratch.mit.edu/discuss/topic/294197/" target="_new">forum Community Portal</a>.</div>
+}
+$url = wfMessage('scratchwikiskin-discuss-wiki')->inLanguage( $wgLang )->escaped();
+$text = wfMessage('scratchwikiskin-discuss-wiki-text')->inLanguage( $wgLang )->escaped();
+$link = "<a href=\"$url\" target=\"_blank\">$text</a>";
+$line = wfMessage('scratchwikiskin-dark-theme-feedback')->rawParams( $link )->inLanguage( $wgLang )->escaped();
+?>
+					<div id="feet" style="margin: 0"><?=$line?></div>
 					</div>
 				</div>
 				<ul id="feet">
