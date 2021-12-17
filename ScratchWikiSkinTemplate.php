@@ -286,7 +286,8 @@ if (window.matchMedia('(prefers-color-scheme: dark)') && !body.hasclass('dark-th
 			if (!e) e = window.event;
 			if (!e.toElement) e.toElement = e.relatedTarget;
 			if (!e.toElement) return;
-			if (!btn.parentElement.contains(e.toElement)
+			if (
+				!btn.parentElement.contains(e.toElement)
 				&& !document.querySelector('.suggestions')?.contains(e.toElement)
 			) {
 				if (btn.hasclass('open')) {
