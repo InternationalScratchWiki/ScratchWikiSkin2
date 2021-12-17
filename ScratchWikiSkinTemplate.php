@@ -83,11 +83,11 @@ $wordmarkH = $logos['wordmark']['height'] ?? 28;
 						<div class="col-sm-9">
 							<input
 								type="text" class="input" id="searchInput"
-								accesskey="<?=wfMessage( 'accesskey-search' )->inLanguage( $wgLang )->text() ?>"
+								accesskey="<?=wfMessage( 'accesskey-search' )->inLanguage( $wgLang )->escaped() ?>"
 								title="<?=wfMessage(
 									'scratchwikiskin-search-title',
 									wfMessage( 'accesskey-search' )->inLanguage( $wgLang )->text()
-								)->inLanguage( $wgLang )->text()?>"
+								)->inLanguage( $wgLang )->escaped()?>"
 								name="search" autocomplete="off"
 								placeholder="<?=wfMessage( 'scratchwikiskin-search' )->inLanguage( $wgLang )->escaped() ?>"
 							/>
