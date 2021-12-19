@@ -63,5 +63,7 @@
 	"scratchwikiskin-jump-to-content": "Jump to content",
 	"scratchwikiskin-notloggedin": "Not logged in",
 	"scratchwikiskin-pref-color": "Header color:",
+	"scratchwikiskin-pref-explore-tabs": "Hide Explore-style tabs",
+	"scratchwikiskin-pref-explore-tabs-help": "All relevant functions can be found in the pencil menu next to your username, but the tabs are not hidden behind a button.",
 	"scratchwikiskin-search": "Search the Wiki"
 }

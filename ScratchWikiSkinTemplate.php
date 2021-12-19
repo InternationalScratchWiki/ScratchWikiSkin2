@@ -102,11 +102,10 @@ $wordmarkH = $logos['wordmark']['height'] ?? 28;
 					<span class="profile-name"><?php if ($wgUser->isAnon()) { ?><?=wfMessage( 'scratchwikiskin-notloggedin' )->inLanguage( $wgLang )->escaped()?><?php } else { ?><?=htmlspecialchars($wgUser->getName())?><?php } ?></span>
 				</a>
 				<ul class="dropdown">
-<?php foreach ($this->data['personal_urls'] as $key => $tab) { ?>
-					<?=$this->getSkin()->makeListItem($key, $tab)?>
-
-<?php } ?>
-
+<?php
+foreach ($this->data['personal_urls'] as $key => $tab) {
+	echo $this->getSkin()->makeListItem($key, $tab);
+} ?>
 				</ul>
 			</li>
 		</ul>
@@ -153,6 +152,23 @@ if ($wgUser->isAnon() && $wgSWS2JoinBox) { ?>
 			<div class="right">
 				<?php if ($this->data['newtalk']) { ?><div class="box"><div class="box-header"><h4><?php $this->html('newtalk') ?></h4></div></div><?php } ?>
 				<?php if ($this->data['sitenotice']) { ?><div id="siteNotice"><?php $this->html('sitenotice'); ?></div><?php } ?>
+<?php if (!$wgUser->isAnon() && !$userOptionsLookup->getOption( $wgUser, 'scratchwikiskin-hide-explore-tabs' )) { ?>
+				<div class="explore-tabs">
+					<div class="sub-nav sub-left">
+<?php foreach ($this->data['content_actions'] as $key => $tab) {
+	// I need a span to make icons work
+	$tab['text'] = '<span>' . $tab['text'] . '</span>';
+	if ($key == 'edit' || $key == 'viewsource') { ?>
+					</div><div class="sub-nav sub-right">
+	<?php }
+	$html = $this->getSkin()->makeListItem($key, $tab);
+	// incredibly illegal hack that un-escapes only the outermost span tags
+	// "outermost" is guaranteed by the use of a greedy qualifier
+	echo preg_replace( '%&lt;span&gt;(.*)&lt;/span&gt;%', '<span>$1</span>', $html );
+} ?>
+					</div>
+				</div>
+<?php } ?>
 				<div class="box">
 					<div class="box-header">
 						<?=$this->getIndicators()?>
