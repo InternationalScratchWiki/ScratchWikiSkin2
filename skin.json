@@ -14,7 +14,8 @@
 		"ScratchWikiSkinTemplate": "ScratchWikiSkinTemplate.php"
 	},
 	"Hooks": {
-		"GetPreferences": "SkinScratchWikiSkin::onGetPreferences"
+		"GetPreferences": "SkinScratchWikiSkin::onGetPreferences",
+		"OutputPageBodyAttributes": "SkinScratchWikiSkin::onOutputPageBodyAttributes"
 	},
 	"MessagesDirs": {
 		"ScratchWikiSkin": "i18n"
@@ -50,7 +51,8 @@
 		"remoteSkinPath": "ScratchWikiSkin2"
 	},
 	"config": {
-		"SWS2JoinBox": true
+		"SWS2JoinBox": true,
+		"SWS2ForceDarkTheme": false
 	},
 	"manifest_version": 1
 }

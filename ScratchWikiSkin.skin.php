@@ -5,8 +5,10 @@
  * @file
  * @ingroup Skins
  */
- 
+
 use MediaWiki\MediaWikiServices;
+
+require_once __DIR__ . '/consts.php';
 
 class HTMLColorField extends HTMLFormField {
 
@@ -65,17 +67,30 @@ class SkinScratchWikiSkin extends SkinTemplate {
 		$out->addMeta('viewport', 'user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height');
 	}
 
-	static function onGetPreferences( $user, &$preferences ) {
+	public static function onOutputPageBodyAttributes( $out, $skin, &$bodyAttrs ) {
+		global $wgUser, $wgSWS2ForceDarkTheme;
+		if ($wgUser->getOption( DARK_THEME_PREF ) || $wgSWS2ForceDarkTheme) {
+			$bodyAttrs['class'] .= ' dark-theme';
+		}
+	}
+
+	public static function onGetPreferences( $user, &$preferences ) {
 		HTMLForm::$typeMappings['color'] = HTMLColorField::class;
 		$userOptionsLookup = MediaWikiServices::getInstance()->getUserOptionsLookup();
-		$origpref = $userOptionsLookup->getOption( $user, 'scratchwikiskin-header-color' );
-		$preferences['scratchwikiskin-header-color'] = [
+		$origpref = $userOptionsLookup->getOption( $user, HEADER_COLOR_PREF );
+		$preferences[HEADER_COLOR_PREF] = [
 			'type' => 'color',
 			'pattern' => '#[0-9A-Za-z]{6}',
 			'label-message' => 'scratchwikiskin-pref-color',
 			'section' => 'rendering/skin',
-			'default' => ($origpref ? $origpref : '#7953c4'),
 			// Only expose background color preference when the skin is selected
+			'default' => ($origpref ? $origpref : '#7953c4'),
+			'hide-if' => [ '!==', 'wpskin', 'scratchwikiskin2' ],
+		];
+		$preferences[DARK_THEME_PREF] = [
+			'type' => 'check',
+			'label-message' => 'scratchwikiskin-pref-dark',
+			'section' => 'rendering/skin',
 			'hide-if' => [ '!==', 'wpskin', 'scratchwikiskin2' ],
 		];
 		return true;
