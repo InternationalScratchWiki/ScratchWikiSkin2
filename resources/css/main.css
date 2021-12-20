@@ -1192,3 +1192,7 @@ dl dt {
     background-color: #1f1f1f;
     border-color: #000;
 }
+
+.dark-theme .mw-rcfilters-ui-changesListWrapperWidget .mw-changeslist-legend {
+    background-color: unset;
+}
