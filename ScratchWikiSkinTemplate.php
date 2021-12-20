@@ -269,7 +269,11 @@ function mod(el) {
 	return el;
 }
 var body = mod(document.body);
-if (window.matchMedia('(prefers-color-scheme: dark)') && !body.hasclass('dark-theme')) {
+if (
+	window.matchMedia
+	&& window.matchMedia('(prefers-color-scheme: dark)').matches
+	&& !body.hasclass('dark-theme')
+) {
 	body.addclass('dark-theme');
 }
 (function () {
