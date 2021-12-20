@@ -39,7 +39,7 @@ body {
 }
 body {
     display: flex;
-    height: 100vh;
+    min-height: 100vh;
     flex-direction: column;
 }
 body.dark-theme {
