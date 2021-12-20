@@ -270,14 +270,14 @@ function mod(el) {
 	return el;
 }
 var body = mod(document.body);
-if (
+/* if (
 	window.matchMedia
 	&& window.matchMedia('(prefers-color-scheme: dark)').matches
 	&& !body.hasclass('dark-theme')
 ) {
 	body.addclass('dark-theme');
 	document.querySelector('div#feet').style.display = '';
-}
+} */
 (function () {
 	let selected = document.querySelectorAll('#navigation a.dropdown-toggle');
 	for (var i = 0; i < selected.length; i++) {
