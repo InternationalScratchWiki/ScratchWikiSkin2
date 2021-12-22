@@ -1248,3 +1248,47 @@ dl dt {
     color: #fff;
     background-color: var(--dark-bg-2);
 }
+
+/* Fix editing */
+.dark-theme .wikiEditor-ui-toolbar {
+    background-color: var(--dark-bg-1);
+}
+.dark-theme .wikiEditor-ui-toolbar .group .tool-select .options {
+    background-color: var(--dark-bg-1);
+    color: var(--font-color);
+}
+.dark-theme .ui-widget-content {
+    background: var(--dark-bg-3);
+    color: var(--font-color);
+}
+.dark-theme .wikiEditor-ui-toolbar .tabs span.tab a {
+    color: var(--link-color);
+}
+.dark-theme .wikiEditor-ui-toolbar .group .tool-select .options .option {
+    color: var(--font-color);
+}
+.dark-theme .wikiEditor-ui-toolbar .tabs span.tab a.current,
+.dark-theme .wikiEditor-ui-toolbar .tabs span.tab a.current:visited,
+.dark-theme .wikiEditor-ui-toolbar .group .tool-select .label {
+    color: #ddd;
+}
+.dark-theme .wikiEditor-ui-toolbar .group .label {
+    color: #afaaa7;
+}
+.dark-theme .ui-widget-header {
+    background: var(--dark-bg-2);
+    color: var(--font-color);
+}
+.dark-theme .ui-state-default,
+.dark-theme .ui-widget-content .ui-state-default,
+.dark-theme .ui-widget-header .ui-state-default {
+    background: var(--dark-bg-1);
+    border-color: var(--dark-bg-1);
+    color: var(--font-color);
+}
+.dark-theme .wikiEditor-ui .wikiEditor-ui-top,
+.dark-theme .wikiEditor-ui-toolbar .group,
+.dark-theme .wikiEditor-ui .wikiEditor-ui-view,
+.dark-theme .wikiEditor-ui-toolbar .sections .section {
+    border-color: var(--dark-border-1);
+}
