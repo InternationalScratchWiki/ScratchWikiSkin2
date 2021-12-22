@@ -43,7 +43,10 @@ body {
     flex-direction: column;
 }
 body.dark-theme {
-    color: #eee;
+    --font-color: #eee;
+    --dark-bg-1: #1f1f1f;
+    --dark-bg-2: #232323;
+    color: var(--font-color);
 }
 
 /* Typography */
@@ -64,7 +67,7 @@ h5 {
 .dark-theme h3,
 .dark-theme h4,
 .dark-theme h5 {
-    color: #eee;
+    color: var(--font-color);
 }
 
 h1 {
@@ -138,7 +141,7 @@ p {
     color: #575e75;
 }
 .dark-theme p {
-    color: #eee;
+    color: var(--font-color);
 }
 
 .box-content {
@@ -584,7 +587,7 @@ dl dt {
 }
 .dark-theme #navigation,
 .dark-theme #navigation .dropdown {
-    background-color: #1f1f1f; /* Sorry, but less colors go well with dark than light */
+    background-color: var(--dark-bg-1); /* Sorry, but less colors go well with dark than light */
     filter: drop-shadow(2px 4px 6px #000);
 }
 
@@ -598,7 +601,7 @@ dl dt {
 }
 .dark-theme #footer {
     background-color: #202225;
-    color: #eee;
+    color: var(--font-color);
 }
 
 #footer .lists {
@@ -680,8 +683,8 @@ dl dt {
     overflow: hidden;
 }
 .dark-theme .box .box-header {
-    background-color: #1f1f1f;
-    border-top-color: #1f1f1f;
+    background-color: var(--dark-bg-1);
+    border-top-color: var(--dark-bg-1);
     border-bottom-color: #000;
 }
 
@@ -820,7 +823,7 @@ dl dt {
     overflow-x: auto;
 }
 .dark-theme #content {
-    color: #eee;
+    color: var(--font-color);
 }
 
 #content p {
@@ -865,9 +868,9 @@ dl dt {
 }
 .dark-theme #content pre,
 .dark-theme #content code {
-    border-color: #1f1f1f;
+    border-color: var(--dark-bg-1);
     background-color: #23272a;
-    color: #eee;
+    color: var(--font-color);
 }
 
 #content pre {
@@ -895,7 +898,7 @@ dl dt {
 }
 .dark-theme #content h1,
 .dark-theme #content h2 {
-    border-bottom-color: #eee;
+    border-bottom-color: var(--font-color);
 }
 
 #content p img {
@@ -1006,7 +1009,7 @@ dl dt {
 }
 .dark-theme .mw-notification {
     background-color: #2c2f33;
-    color: #eee;
+    color: var(--font-color);
     border: 1px solid #fff;
 }
 
@@ -1014,15 +1017,15 @@ dl dt {
 .dark-theme input,
 .dark-theme select {
     background-color: #2c2f33;
-    color: #eee;
-    border: 1px solid #1f1f1f;
+    color: var(--font-color);
+    border: 1px solid var(--dark-bg-1);
 }
 .dark-theme textarea {
-    border: 1px solid #1f1f1f !important;
+    border: 1px solid var(--dark-bg-1) !important;
 }
 .dark-theme .editOptions {
     background-color: #36393f;
-    border: 1px solid #1f1f1f;
+    border: 1px solid var(--dark-bg-1);
 }
 
 .dark-theme #mw-indicator-mw-helplink a {
@@ -1037,15 +1040,15 @@ dl dt {
     filter: invert(1);
 }
 .dark-theme .oo-ui-inputWidget-input {
-    color: #eee;
-    background-color: #1f1f1f;
+    color: var(--font-color);
+    background-color: var(--dark-bg-1);
     border: 1px solid #000;
 }
 .dark-theme .oo-ui-inputWidget-input[type=search] {
     box-shadow: none;
 }
 .dark-theme .mw-search-profile-tabs {
-    background-color: #1f1f1f;
+    background-color: var(--dark-bg-1);
     border-color: #000;
 }
 
@@ -1065,9 +1068,9 @@ dl dt {
 .dark-theme table.wikitable,
 .dark-theme table.prettytable,
 .dark-theme table.mw-datatable {
-    background-color: #1f1f1f;
+    background-color: var(--dark-bg-1);
     border-color: #666;
-    color: #eee;
+    color: var(--font-color);
 }
 .dark-theme table.mw-datatable td {
     background-color: transparent;
@@ -1096,20 +1099,20 @@ dl dt {
 }
 
 .dark-theme #mw-searchoptions {
-    background-color: #1f1f1f;
+    background-color: var(--dark-bg-1);
     border-color: #000;
 }
 .dark-theme .editOptions {
-    color: #eee;
+    color: var(--font-color);
 }
 .dark-theme #catlinks {
-    background-color: #1f1f1f;
+    background-color: var(--dark-bg-1);
     border-color: #000;
 }
 /* More OOUI hacks */
 .dark-theme .oo-ui-buttonElement-framed.oo-ui-widget-enabled > .oo-ui-buttonElement-button {
-    background-color: #1f1f1f;
-    color: #eee;
+    background-color: var(--dark-bg-1);
+    color: var(--font-color);
     border-color: #000;
 }
 .dark-theme .oo-ui-buttonElement-framed.oo-ui-widget-enabled.oo-ui-flaggedElement-primary.oo-ui-flaggedElement-progressive > .oo-ui-buttonElement-button {
@@ -1117,8 +1120,8 @@ dl dt {
     border-color: #0645ad;
 }
 .dark-theme .oo-ui-dropdownWidget.oo-ui-widget-enabled .oo-ui-dropdownWidget-handle {
-    background-color: #1f1f1f;
-    color: #eee;
+    background-color: var(--dark-bg-1);
+    color: var(--font-color);
 }
 .dark-theme .oo-ui-tabSelectWidget-framed {
     background-color: #262626;
@@ -1128,7 +1131,7 @@ dl dt {
 }
 .dark-theme .oo-ui-tabSelectWidget-framed .oo-ui-tabOptionWidget.oo-ui-optionWidget-selected {
     background-color: #000;
-    color: #eee;
+    color: var(--font-color);
 }
 .dark-theme .mw-prefs-buttons {
     background-color: transparent;
@@ -1151,11 +1154,11 @@ dl dt {
     border-color: #000;
 }
 .dark-theme .oo-ui-menuSelectWidget {
-    background-color: #1f1f1f;
-    color: #eee;
+    background-color: var(--dark-bg-1);
+    color: var(--font-color);
 }
 .dark-theme .oo-ui-menuOptionWidget.oo-ui-widget-enabled.oo-ui-optionWidget {
-    color: #eee;
+    color: var(--font-color);
 }
 .dark-theme .oo-ui-menuOptionWidget.oo-ui-optionWidget-selected,
 .dark-theme .oo-ui-menuOptionWidget.oo-ui-optionWidget-highlighted {
@@ -1163,24 +1166,24 @@ dl dt {
 }
 
 .dark-theme .toc {
-    background-color: #1f1f1f;
+    background-color: var(--dark-bg-1);
     border-color: #000;
 }
 .dark-theme .tocnumber {
-    color: #eee;
+    color: var(--font-color);
 }
 
 .dark-theme .diff-context {
-    background-color: #1f1f1f;
+    background-color: var(--dark-bg-1);
     border-color: #000;
-    color: #eee;
+    color: var(--font-color);
 }
 .dark-theme .diff-addedline {
-    background-color: #1f1f1f;
+    background-color: var(--dark-bg-1);
     border-color: #859900;
 }
 .dark-theme .diff-deletedline {
-    background-color: #1f1f1f;
+    background-color: var(--dark-bg-1);
     border-color: #dc322f;
 }
 .dark-theme .diffchange {
@@ -1189,7 +1192,7 @@ dl dt {
 }
 
 .dark-theme #filetoc {
-    background-color: #1f1f1f;
+    background-color: var(--dark-bg-1);
     border-color: #000;
 }
 
