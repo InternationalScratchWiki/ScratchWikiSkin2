@@ -46,6 +46,9 @@ body.dark-theme {
     --font-color: #eee;
     --dark-bg-1: #1f1f1f;
     --dark-bg-2: #232323;
+    --dark-bg-3: #36393f;
+    --dark-border-1: #bfbfbf;
+    --link-color: #5da8ed;
     color: var(--font-color);
 }
 
@@ -119,7 +122,7 @@ a:hover {
 .dark-theme a:visited,
 .dark-theme a:active,
 .dark-theme .toctogglelabel {
-    color: #5da8ed;
+    color: var(--link-color);
 }
 
 .dark-theme a:hover {
@@ -1018,13 +1021,13 @@ dl dt {
 .dark-theme select {
     background-color: #2c2f33;
     color: var(--font-color);
-    border: 1px solid var(--dark-bg-1);
+    border: 1px solid var(--dark-border-1);
 }
 .dark-theme textarea {
     border: 1px solid var(--dark-bg-1) !important;
 }
 .dark-theme .editOptions {
-    background-color: #36393f;
+    background-color: var(--dark-bg-3);
     border: 1px solid var(--dark-bg-1);
 }
 
@@ -1042,14 +1045,14 @@ dl dt {
 .dark-theme .oo-ui-inputWidget-input {
     color: var(--font-color);
     background-color: var(--dark-bg-1);
-    border: 1px solid #000;
+    border: 1px solid var(--dark-border-1);
 }
 .dark-theme .oo-ui-inputWidget-input[type=search] {
     box-shadow: none;
 }
 .dark-theme .mw-search-profile-tabs {
     background-color: var(--dark-bg-1);
-    border-color: #000;
+    border-color: var(--dark-border-1);
 }
 
 /* VisualEditor integration */
