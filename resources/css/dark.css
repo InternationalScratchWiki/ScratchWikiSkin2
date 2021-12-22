@@ -3,6 +3,7 @@ body.dark-theme {
     --dark-bg-1: #1f1f1f;
     --dark-bg-2: #232323;
     --dark-bg-3: #36393f;
+    --dark-bg-4: #2c2f33;
     --dark-border-1: #bfbfbf;
     --link-color: #5da8ed;
     color: var(--font-color);
@@ -59,7 +60,7 @@ body.dark-theme {
 }
 
 .dark-theme .box {
-    background-color: #2c2f33;
+    background-color: var(--dark-bg-4);
     border-color: #000;
 }
 
@@ -89,7 +90,7 @@ body.dark-theme {
 .dark-theme #content pre,
 .dark-theme #content code {
     border-color: var(--dark-bg-1);
-    background-color: #23272a;
+    background: #23272a;
     color: var(--font-color);
 }
 
@@ -103,7 +104,7 @@ body.dark-theme {
 }
 
 .dark-theme .mw-notification {
-    background-color: #2c2f33;
+    background-color: var(--dark-bg-4);
     color: var(--font-color);
     border: 1px solid #fff;
 }
@@ -111,7 +112,7 @@ body.dark-theme {
 .dark-theme textarea,
 .dark-theme input,
 .dark-theme select {
-    background-color: #2c2f33;
+    background-color: var(--dark-bg-4);
     color: var(--font-color);
     border: 1px solid var(--dark-border-1);
 }
