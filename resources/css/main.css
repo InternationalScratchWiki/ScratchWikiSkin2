@@ -1196,14 +1196,52 @@ dl dt {
     border-color: #000;
 }
 
-.dark-theme .mw-rcfilters-ui-changesListWrapperWidget .mw-changeslist-legend {
-    background-color: unset;
-}
-
+/* Fix image thumbnails */
 .dark-theme .thumbimage {
     background-color: unset;
     border-color: #8b8174;
 }
 .dark-theme div.thumbinner {
     background-color: #070605;
+}
+
+/* Fix recent changes */
+.dark-theme .oo-ui-tagMultiselectWidget,
+.dark-theme .oo-ui-tagMultiselectWidget.oo-ui-widget-enabled,
+.dark-theme .oo-ui-tagMultiselectWidget.oo-ui-widget-enabled.oo-ui-tagMultiselectWidget-outlined,
+.dark-theme .mw-rcfilters-ui-filterTagMultiselectWidget.oo-ui-widget-enabled .oo-ui-tagMultiselectWidget-handle,
+.dark-theme .mw-rcfilters-ui-filterMenuOptionWidget.oo-ui-flaggedElement-muted:not( .oo-ui-optionWidget-selected ),
+.dark-theme .mw-rcfilters-ui-filterMenuHeaderWidget-header,
+.dark-theme .mw-rcfilters-ui-menuSelectWidget-footer,
+.dark-theme .oo-ui-popupWidget-popup {
+    background-color: var(--dark-bg-1);
+}
+.dark-theme .oo-ui-labelWidget,
+.dark-theme .mw-rcfilters-ui-itemMenuOptionWidget-label-desc,
+.dark-theme .oo-ui-labelElement-label,
+.dark-theme .mw-rcfilters-ui-filterMenuSectionOptionWidget-header-title.oo-ui-labelElement-label,
+.dark-theme .mw-rcfilters-ui-viewSwitchWidget label.oo-ui-labelWidget {
+    color: var(--font-color);
+}
+.dark-theme .oo-ui-iconElement-icon {
+    filter: invert(1);
+}
+.dark-theme .oo-ui-textInputWidget .oo-ui-inputWidget-input,
+.dark-theme .oo-ui-tagMultiselectWidget.oo-ui-widget-enabled.oo-ui-tagMultiselectWidget-outlined .oo-ui-tagItemWidget.oo-ui-widget-enabled,
+.dark-theme .mw-rcfilters-ui-filterMenuSectionOptionWidget {
+    background-color: var(--dark-bg-1);
+    color: var(--font-color);
+}
+.dark-theme .mw-rcfilters-ui-changesListWrapperWidget .mw-changeslist-legend {
+    background-color: unset;
+}
+.dark-theme .mw-rcfilters-ui-filterMenuOptionWidget.oo-ui-flaggedElement-muted.oo-ui-optionWidget-highlighted {
+    background-color: var(--dark-bg-2);
+}
+.dark-theme .mw-rcfilters-ui-filterMenuOptionWidget.oo-ui-flaggedElement-muted .mw-rcfilters-ui-itemMenuOptionWidget-label-desc {
+    color: #ddd;
+}
+.dark-theme .oo-ui-buttonElement-framed.oo-ui-widget-enabled > .oo-ui-buttonElement-button:hover {
+    color: #fff;
+    background-color: var(--dark-bg-2);
 }
