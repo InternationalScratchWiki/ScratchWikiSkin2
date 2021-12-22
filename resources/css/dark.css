@@ -419,3 +419,30 @@ body.dark-theme {
     color: var(--link-color);
     background-color: var(--dark-bg-3);
 }
+
+/* SyntaxHighlight fixes */
+.dark-theme .mw-highlight .k,
+.dark-theme .mw-highlight .nb {
+    color: #0f0;
+}
+.dark-theme .mw-highlight .nf {
+    color: #f0f;
+}
+.dark-theme .mw-highlight .o {
+    color: #999;
+}
+.dark-theme .mw-highlight .c1 {
+    color: #52a3a3;
+}
+.dark-theme .mw-highlight .s1 {
+    color: #e46767;
+}
+.dark-theme .mw-highlight .gd {
+    color: #ff4d4d;
+}
+.dark-theme .mw-highlight .gi {
+    color: #4dff4d;
+}
+.dark-theme .mw-highlight .gu {
+    color: #f0f;
+}
