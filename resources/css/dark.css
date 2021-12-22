@@ -373,3 +373,49 @@ body.dark-theme {
 .dark-theme .wikiEditor-ui-toolbar .sections .section {
     border-color: var(--dark-border-1);
 }
+
+/* CodeMirror fixes */
+.dark-theme .CodeMirror {
+    background-color: var(--dark-bg-4);
+}
+.dark-theme .CodeMirror .cm-mw-link-pagename,
+.dark-theme .CodeMirror .cm-mw-link-bracket,
+.dark-theme .CodeMirror .cm-mw-link-tosection,
+.dark-theme .CodeMirror .cm-mw-link-delimiter {
+    color: var(--link-color);
+}
+.dark-theme .CodeMirror .cm-mw-link {
+    color: var(--font-color);
+}
+.dark-theme .CodeMirror .cm-mw-htmltag-name,
+.dark-theme .CodeMirror .cm-mw-htmltag-bracket,
+.dark-theme .CodeMirror .cm-mw-htmltag-attribute,
+.dark-theme .CodeMirror .cm-mw-mnemonic,
+.dark-theme .CodeMirror .cm-mw-exttag-name,
+.dark-theme .CodeMirror .cm-mw-exttag-bracket,
+.dark-theme .CodeMirror .cm-mw-exttag-attribute {
+    color: #32e600;
+}
+.dark-theme .CodeMirror .cm-mw-apostrophes-bold,
+.dark-theme .CodeMirror .cm-mw-apostrophes-italic {
+    color: #80c4ff;
+}
+.dark-theme .CodeMirror .cm-mw-template-name,
+.dark-theme .CodeMirror .cm-mw-template-bracket,
+.dark-theme .CodeMirror .cm-mw-template-delimiter {
+    color: #b31aff;
+}
+.dark-theme .CodeMirror .cm-mw-template,
+.dark-theme .CodeMirror .cm-mw-template-argument-name {
+    color: #d580ff;
+}
+.dark-theme .CodeMirror .cm-mw-parserfunction-name,
+.dark-theme .CodeMirror .cm-mw-parserfunction-bracket {
+    color: #e81717;
+}
+.dark-theme .CodeMirror .cm-mw-doubleUnderscore,
+.dark-theme .CodeMirror .cm-mw-signature,
+.dark-theme .CodeMirror .cm-mw-hr {
+    color: var(--link-color);
+    background-color: var(--dark-bg-3);
+}

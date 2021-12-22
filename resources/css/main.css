@@ -804,6 +804,9 @@ dl dt {
 #content pre[class^=CodeMirror], #content pre[class*=CodeMirror] {
     white-space: pre-wrap;
 }
+#content .CodeMirror pre {
+    border-radius: none;
+}
 
 #content code[class^=blocks],
 #content pre[class^=blocks] {
