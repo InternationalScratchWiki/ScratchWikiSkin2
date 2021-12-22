@@ -1196,3 +1196,11 @@ dl dt {
 .dark-theme .mw-rcfilters-ui-changesListWrapperWidget .mw-changeslist-legend {
     background-color: unset;
 }
+
+.dark-theme .thumbimage {
+    background-color: unset;
+    border-color: #8b8174;
+}
+.dark-theme div.thumbinner {
+    background-color: #070605;
+}
