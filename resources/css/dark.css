@@ -1,0 +1,448 @@
+body.dark-theme {
+    --font-color: #eee;
+    --dark-bg-1: #1f1f1f;
+    --dark-bg-2: #232323;
+    --dark-bg-3: #36393f;
+    --dark-bg-4: #2c2f33;
+    --dark-border-1: #bfbfbf;
+    --link-color: #5da8ed;
+    color: var(--font-color);
+}
+
+.dark-theme h1,
+.dark-theme h2,
+.dark-theme h3,
+.dark-theme h4,
+.dark-theme h5 {
+    color: var(--font-color);
+}
+
+.dark-theme a:link,
+.dark-theme a:visited,
+.dark-theme a:active,
+.dark-theme .toctogglelabel {
+    color: var(--link-color);
+}
+
+.dark-theme a:hover {
+    text-decoration: underline;
+}
+
+.dark-theme p {
+    color: var(--font-color);
+}
+
+.dark-theme #view {
+    background-color: #23272a;
+}
+
+.dark-theme .dropdown>li a:hover {
+    background-color: rgba(0, 0, 0, 0.3);
+}
+
+.dark-theme #navigation .inner>ul>li.right a:hover {
+    background-color: rgba(0, 0, 0, 0.3);
+}
+
+.dark-theme #navigation .inner>ul>li.search .input {
+    background-color: rgba(0, 0, 0, 0.3);
+}
+
+.dark-theme #navigation,
+.dark-theme #navigation .dropdown {
+    background-color: var(--dark-bg-1); /* Sorry, but less colors go well with dark than light */
+    filter: drop-shadow(2px 4px 6px #000);
+}
+
+.dark-theme #footer {
+    background-color: #202225;
+    color: var(--font-color);
+}
+
+.dark-theme .box {
+    background-color: var(--dark-bg-4);
+    border-color: #000;
+}
+
+.dark-theme .box .box-header {
+    background-color: var(--dark-bg-1);
+    border-top-color: var(--dark-bg-1);
+    border-bottom-color: #000;
+}
+
+.dark-theme .right .box .box-content {
+    background-color: #2f3136;
+}
+
+.dark-theme #content {
+    color: var(--font-color);
+}
+
+.dark-theme #content a.new, .dark-theme #content a.stub {
+    color: #ef916c;
+}
+
+.dark-theme #content a.new:visited,
+.dark-theme #content a.stub:visited {
+    color: #aaaa00;
+}
+
+.dark-theme #content pre,
+.dark-theme #content code {
+    border-color: var(--dark-bg-1);
+    background: #23272a;
+    color: var(--font-color);
+}
+
+.dark-theme #content h1,
+.dark-theme #content h2 {
+    border-bottom-color: var(--font-color);
+}
+
+.dark-theme #content a:visited {
+    color: #339cff;
+}
+
+.dark-theme .mw-notification {
+    background-color: var(--dark-bg-4);
+    color: var(--font-color);
+    border: 1px solid #fff;
+}
+
+.dark-theme textarea,
+.dark-theme input,
+.dark-theme select {
+    background-color: var(--dark-bg-4);
+    color: var(--font-color);
+    border: 1px solid var(--dark-border-1);
+}
+.dark-theme textarea {
+    border: 1px solid var(--dark-bg-1) !important;
+}
+.dark-theme .editOptions {
+    background-color: var(--dark-bg-3);
+    border: 1px solid var(--dark-bg-1);
+}
+
+.dark-theme #mw-indicator-mw-helplink a {
+    filter: invert(100%);
+    color: #ff6930; /* hack to invert the black question mark */
+}
+.dark-theme .mw-plusminus-pos {
+    color: #00bb00; /* lighten it cuz */
+}
+/* OOUI hacks */
+.dark-theme .oo-ui-icon-search {
+    filter: invert(1);
+}
+.dark-theme .oo-ui-inputWidget-input {
+    color: var(--font-color);
+    background-color: var(--dark-bg-1);
+    border: 1px solid var(--dark-border-1);
+}
+.dark-theme .oo-ui-inputWidget-input[type=search] {
+    box-shadow: none;
+}
+.dark-theme .mw-search-profile-tabs {
+    background-color: var(--dark-bg-1);
+    border-color: var(--dark-border-1);
+}
+
+/* tables */
+.dark-theme table.wikitable,
+.dark-theme table.prettytable,
+.dark-theme table.mw-datatable {
+    background-color: var(--dark-bg-1);
+    border-color: #666;
+    color: var(--font-color);
+}
+.dark-theme table.mw-datatable td {
+    background-color: transparent;
+}
+.dark-theme table.mw-datatable :hover td {
+    background-color: rgba(255, 255, 255, 0.1) !important;
+}
+.dark-theme table.wikitable th,
+.dark-theme table.wikitable td.h13,
+.dark-theme table.wikitable th.h13,
+.dark-theme table.prettytable th,
+.dark-theme table.prettytable td.h13,
+.dark-theme table.prettytable th.h13,
+.dark-theme table.mw-datatable th,
+.dark-theme table.mw-datatable td.h13,
+.dark-theme table.mw-datatable th.h13 {
+    background-color: #102448
+}
+.dark-theme table.wikitable th,
+.dark-theme table.wikitable td,
+.dark-theme table.prettytable th,
+.dark-theme table.prettytable td,
+.dark-theme table.mw-datatable th,
+.dark-theme table.mw-datatable td {
+    border-color: #666;
+}
+
+.dark-theme #mw-searchoptions {
+    background-color: var(--dark-bg-1);
+    border-color: #000;
+}
+.dark-theme .editOptions {
+    color: var(--font-color);
+}
+.dark-theme #catlinks {
+    background-color: var(--dark-bg-1);
+    border-color: #000;
+}
+/* More OOUI hacks */
+.dark-theme .oo-ui-buttonElement-framed.oo-ui-widget-enabled > .oo-ui-buttonElement-button {
+    background-color: var(--dark-bg-1);
+    color: var(--font-color);
+    border-color: #000;
+}
+.dark-theme .oo-ui-buttonElement-framed.oo-ui-widget-enabled.oo-ui-flaggedElement-primary.oo-ui-flaggedElement-progressive > .oo-ui-buttonElement-button {
+    background-color: #0645ad;
+    border-color: #0645ad;
+}
+.dark-theme .oo-ui-dropdownWidget.oo-ui-widget-enabled .oo-ui-dropdownWidget-handle {
+    background-color: var(--dark-bg-1);
+    color: var(--font-color);
+}
+.dark-theme .oo-ui-tabSelectWidget-framed {
+    background-color: #262626;
+}
+.dark-theme .oo-ui-tabOptionWidget {
+    color: #ddd;
+}
+.dark-theme .oo-ui-tabSelectWidget-framed .oo-ui-tabOptionWidget.oo-ui-optionWidget-selected {
+    background-color: #000;
+    color: var(--font-color);
+}
+.dark-theme .mw-prefs-buttons {
+    background-color: transparent;
+}
+.dark-theme .oo-ui-labelWidget.oo-ui-inline-help {
+    color: #ccc;
+}
+.dark-theme .oo-ui-buttonElement-framed.oo-ui-widget-disabled > .oo-ui-buttonElement-button {
+    background-color: transparent;
+    border-color: rgba(0, 0, 0, 0.5);
+}
+.dark-theme .oo-ui-dropdownWidget-handle {
+    border-color: #000;
+}
+.dark-theme .oo-ui-dropdownInputWidget.oo-ui-widget-enabled {
+    background-color: transparent;
+}
+.dark-theme .warningbox {
+    background-color: #251a06;
+    border-color: #000;
+}
+.dark-theme .oo-ui-menuSelectWidget {
+    background-color: var(--dark-bg-1);
+    color: var(--font-color);
+}
+.dark-theme .oo-ui-menuOptionWidget.oo-ui-widget-enabled.oo-ui-optionWidget {
+    color: var(--font-color);
+}
+.dark-theme .oo-ui-menuOptionWidget.oo-ui-optionWidget-selected,
+.dark-theme .oo-ui-menuOptionWidget.oo-ui-optionWidget-highlighted {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.dark-theme .toc {
+    background-color: var(--dark-bg-1);
+    border-color: #000;
+}
+.dark-theme .tocnumber {
+    color: var(--font-color);
+}
+
+.dark-theme .diff-context {
+    background-color: var(--dark-bg-1);
+    border-color: #000;
+    color: var(--font-color);
+}
+.dark-theme .diff-addedline {
+    background-color: var(--dark-bg-1);
+    border-color: #859900;
+}
+.dark-theme .diff-deletedline {
+    background-color: var(--dark-bg-1);
+    border-color: #dc322f;
+}
+.dark-theme .diffchange {
+    background-color: unset;
+    border: 1px solid #aaa;
+}
+
+.dark-theme #filetoc {
+    background-color: var(--dark-bg-1);
+    border-color: #000;
+}
+
+/* Fix image thumbnails */
+.dark-theme .thumbimage {
+    background-color: unset;
+    border-color: #8b8174;
+}
+.dark-theme div.thumbinner {
+    background-color: #070605;
+}
+
+/* Fix recent changes */
+.dark-theme .oo-ui-tagMultiselectWidget,
+.dark-theme .oo-ui-tagMultiselectWidget.oo-ui-widget-enabled,
+.dark-theme .oo-ui-tagMultiselectWidget.oo-ui-widget-enabled.oo-ui-tagMultiselectWidget-outlined,
+.dark-theme .mw-rcfilters-ui-filterTagMultiselectWidget.oo-ui-widget-enabled .oo-ui-tagMultiselectWidget-handle,
+.dark-theme .mw-rcfilters-ui-filterMenuOptionWidget.oo-ui-flaggedElement-muted:not( .oo-ui-optionWidget-selected ),
+.dark-theme .mw-rcfilters-ui-filterMenuHeaderWidget-header,
+.dark-theme .mw-rcfilters-ui-menuSelectWidget-footer,
+.dark-theme .oo-ui-popupWidget-popup {
+    background-color: var(--dark-bg-1);
+}
+.dark-theme .oo-ui-labelWidget,
+.dark-theme .mw-rcfilters-ui-itemMenuOptionWidget-label-desc,
+.dark-theme .oo-ui-labelElement-label,
+.dark-theme .mw-rcfilters-ui-filterMenuSectionOptionWidget-header-title.oo-ui-labelElement-label,
+.dark-theme .mw-rcfilters-ui-viewSwitchWidget label.oo-ui-labelWidget {
+    color: var(--font-color);
+}
+.dark-theme .oo-ui-iconElement-icon {
+    filter: invert(1);
+}
+.dark-theme .oo-ui-textInputWidget .oo-ui-inputWidget-input,
+.dark-theme .oo-ui-tagMultiselectWidget.oo-ui-widget-enabled.oo-ui-tagMultiselectWidget-outlined .oo-ui-tagItemWidget.oo-ui-widget-enabled,
+.dark-theme .mw-rcfilters-ui-filterMenuSectionOptionWidget {
+    background-color: var(--dark-bg-1);
+    color: var(--font-color);
+}
+.dark-theme .mw-rcfilters-ui-changesListWrapperWidget .mw-changeslist-legend {
+    background-color: unset;
+}
+.dark-theme .mw-rcfilters-ui-filterMenuOptionWidget.oo-ui-flaggedElement-muted.oo-ui-optionWidget-highlighted {
+    background-color: var(--dark-bg-2);
+}
+.dark-theme .mw-rcfilters-ui-filterMenuOptionWidget.oo-ui-flaggedElement-muted .mw-rcfilters-ui-itemMenuOptionWidget-label-desc {
+    color: #ddd;
+}
+.dark-theme .oo-ui-buttonElement-framed.oo-ui-widget-enabled > .oo-ui-buttonElement-button:hover {
+    color: #fff;
+    background-color: var(--dark-bg-2);
+}
+
+/* Fix editing */
+.dark-theme .wikiEditor-ui-toolbar {
+    background-color: var(--dark-bg-1);
+}
+.dark-theme .wikiEditor-ui-toolbar .group .tool-select .options {
+    background-color: var(--dark-bg-1);
+    color: var(--font-color);
+}
+.dark-theme .ui-widget-content {
+    background: var(--dark-bg-3);
+    color: var(--font-color);
+}
+.dark-theme .wikiEditor-ui-toolbar .tabs span.tab a {
+    color: var(--link-color);
+}
+.dark-theme .wikiEditor-ui-toolbar .group .tool-select .options .option {
+    color: var(--font-color);
+}
+.dark-theme .wikiEditor-ui-toolbar .tabs span.tab a.current,
+.dark-theme .wikiEditor-ui-toolbar .tabs span.tab a.current:visited,
+.dark-theme .wikiEditor-ui-toolbar .group .tool-select .label {
+    color: #ddd;
+}
+.dark-theme .wikiEditor-ui-toolbar .group .label {
+    color: #afaaa7;
+}
+.dark-theme .ui-widget-header {
+    background: var(--dark-bg-2);
+    color: var(--font-color);
+}
+.dark-theme .ui-state-default,
+.dark-theme .ui-widget-content .ui-state-default,
+.dark-theme .ui-widget-header .ui-state-default {
+    background: var(--dark-bg-1);
+    border-color: var(--dark-bg-1);
+    color: var(--font-color);
+}
+.dark-theme .wikiEditor-ui .wikiEditor-ui-top,
+.dark-theme .wikiEditor-ui-toolbar .group,
+.dark-theme .wikiEditor-ui .wikiEditor-ui-view,
+.dark-theme .wikiEditor-ui-toolbar .sections .section {
+    border-color: var(--dark-border-1);
+}
+
+/* CodeMirror fixes */
+.dark-theme .CodeMirror {
+    background-color: var(--dark-bg-4);
+}
+.dark-theme .CodeMirror .cm-mw-link-pagename,
+.dark-theme .CodeMirror .cm-mw-link-bracket,
+.dark-theme .CodeMirror .cm-mw-link-tosection,
+.dark-theme .CodeMirror .cm-mw-link-delimiter {
+    color: var(--link-color);
+}
+.dark-theme .CodeMirror .cm-mw-link {
+    color: var(--font-color);
+}
+.dark-theme .CodeMirror .cm-mw-htmltag-name,
+.dark-theme .CodeMirror .cm-mw-htmltag-bracket,
+.dark-theme .CodeMirror .cm-mw-htmltag-attribute,
+.dark-theme .CodeMirror .cm-mw-mnemonic,
+.dark-theme .CodeMirror .cm-mw-exttag-name,
+.dark-theme .CodeMirror .cm-mw-exttag-bracket,
+.dark-theme .CodeMirror .cm-mw-exttag-attribute {
+    color: #32e600;
+}
+.dark-theme .CodeMirror .cm-mw-apostrophes-bold,
+.dark-theme .CodeMirror .cm-mw-apostrophes-italic {
+    color: #80c4ff;
+}
+.dark-theme .CodeMirror .cm-mw-template-name,
+.dark-theme .CodeMirror .cm-mw-template-bracket,
+.dark-theme .CodeMirror .cm-mw-template-delimiter {
+    color: #b31aff;
+}
+.dark-theme .CodeMirror .cm-mw-template,
+.dark-theme .CodeMirror .cm-mw-template-argument-name {
+    color: #d580ff;
+}
+.dark-theme .CodeMirror .cm-mw-parserfunction-name,
+.dark-theme .CodeMirror .cm-mw-parserfunction-bracket {
+    color: #e81717;
+}
+.dark-theme .CodeMirror .cm-mw-doubleUnderscore,
+.dark-theme .CodeMirror .cm-mw-signature,
+.dark-theme .CodeMirror .cm-mw-hr {
+    color: var(--link-color);
+    background-color: var(--dark-bg-3);
+}
+
+/* SyntaxHighlight fixes */
+.dark-theme .mw-highlight .k,
+.dark-theme .mw-highlight .nb {
+    color: #0f0;
+}
+.dark-theme .mw-highlight .nf {
+    color: #f0f;
+}
+.dark-theme .mw-highlight .o {
+    color: #999;
+}
+.dark-theme .mw-highlight .c1 {
+    color: #52a3a3;
+}
+.dark-theme .mw-highlight .s1 {
+    color: #e46767;
+}
+.dark-theme .mw-highlight .gd {
+    color: #ff4d4d;
+}
+.dark-theme .mw-highlight .gi {
+    color: #4dff4d;
+}
+.dark-theme .mw-highlight .gu {
+    color: #f0f;
+}
