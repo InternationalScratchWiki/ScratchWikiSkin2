@@ -837,11 +837,8 @@ dl dt {
 }
 
 #content .plainlinks a {
-    background-image: inherit;
-    background-size: inherit;
-    background-position: inherit;
-    background-repeat: inherit;
-    padding-right: inherit;
+    background: none;
+    padding-right: 0;
 }
 
 #content hr {
