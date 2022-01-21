@@ -125,6 +125,7 @@ $wordmarkH = $logos['wordmark']['height'] ?? 28;
 		</ul>
 	</div>
 </div>
+<div id="not-nav">
 <div id="view">
 	<div class="splash">
 		<div class="inner mod-splash">
@@ -256,6 +257,7 @@ $line = wfMessage('scratchwikiskin-dark-theme-feedback')->rawParams( $link )->in
 			</dl>
 		</div>
 	</div>
+</div>
 </div><?php if (date('m j') == '04 1') { ?><div style="background-color:white">;</div><?php } ?>
 <script>
 /*
@@ -337,9 +339,6 @@ window.addEventListener('click', function (e) {
 		}
 	}
 	searchExpanded = false;
-});
-window.addEventListener('hashchange', function(){
-	window.scrollBy(0, -50);
 });
 
 var sidebarShown = false;

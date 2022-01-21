@@ -51,7 +51,6 @@ body.dark-theme {
 .dark-theme #navigation,
 .dark-theme #navigation .dropdown {
     background-color: var(--dark-bg-1); /* Sorry, but less colors go well with dark than light */
-    filter: drop-shadow(2px 4px 6px #000);
 }
 
 .dark-theme #footer {

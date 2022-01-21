@@ -42,9 +42,7 @@ body {
     font-size: 16px;
 }
 body {
-    display: flex;
-    min-height: 100vh;
-    flex-direction: column;
+    height: 100vh;
 }
 
 /* Typography */
@@ -154,9 +152,15 @@ dl dt {
     font-weight: bold;
 }
 
+#not-nav {
+    display: flex;
+    flex-direction: column;
+    height: calc(100vh - var(--nav-height));
+    overflow-y: auto;
+}
+
 #view {
     display: inline-block;
-    margin-top: 50px;
     background-color: #fcfcfc;
     min-width: 100%;
     flex: 1 0 auto;
@@ -294,9 +298,6 @@ dl dt {
 
 #navigation {
     display: block;
-    position: fixed;
-    top: 0;
-    left: 0;
     z-index: 8;
     border-bottom: 1px solid rgba(0, 0, 0, 0.1);
     box-shadow: 0 0 3px rgba(0, 0, 0, 0.25);
