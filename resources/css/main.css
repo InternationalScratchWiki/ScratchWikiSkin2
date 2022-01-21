@@ -25,6 +25,10 @@
     font-weight: bold;
 }
 
+:root {
+    --nav-height: 50px;
+}
+
 /* Tags */
 
 html,
@@ -298,7 +302,8 @@ dl dt {
     box-shadow: 0 0 3px rgba(0, 0, 0, 0.25);
     background-color: #7953c4;
     width: 100%;
-    height: 50px;
+    height: var(--nav-height);
+    box-sizing: border-box;
 }
 
 #navigation a, #navigation a:link {
@@ -311,7 +316,7 @@ dl dt {
     display: flex;
     margin: 0;
     padding: 0;
-    height: 50px;
+    height: var(--nav-height);
     list-style: none;
     -webkit-flex-wrap: nowrap;
     -ms-flex-wrap: nowrap;
@@ -540,7 +545,7 @@ dl dt {
 #navigation .discuss .dropdown,
 #navigation .tips .dropdown,
 #navigation .about .dropdown {
-    top: 50px;
+    top: var(--nav-height);
     padding: 0;
     margin-top: 0;
     box-sizing: border-box;
