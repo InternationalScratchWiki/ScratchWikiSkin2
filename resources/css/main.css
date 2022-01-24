@@ -236,6 +236,7 @@ dl dt {
     font-size: .8125rem;
     font-weight: normal;
     width: max-content;
+    z-index: 8;
 }
 .right .dropdown {
     left: inherit;
