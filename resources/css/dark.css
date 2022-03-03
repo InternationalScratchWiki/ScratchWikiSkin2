@@ -487,9 +487,13 @@ body.dark-theme {
 .dark-theme .mwe-popups {
     background: #181a1b;
 }
+.dark-theme .mwe-popups.flipped-y:after {
+    border-color: #000;
+}
 .dark-theme .mwe-popups * {
     color: unset;
 }
-.dark-theme .mwe-popups .mwe-popups-extract:after {
+.dark-theme .mwe-popups .mwe-popups-extract[dir='ltr']:after,
+.dark-theme .mwe-popups .mwe-popups-extract[dir='rtl']:after {
     background: none;
 }
