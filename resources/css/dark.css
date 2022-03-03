@@ -487,11 +487,17 @@ body.dark-theme {
 .dark-theme .mwe-popups {
     background: #181a1b;
 }
-.dark-theme .mwe-popups.flipped-y:after {
-    border-color: #000;
+.dark-theme .mwe-popups.flipped-y:after,
+.dark-theme .mwe-popups.mwe-popups-no-image-pointer:after,
+.dark-theme .mwe-popups.flipped-y:before,
+.dark-theme .mwe-popups.mwe-popups-no-image-pointer:before {
+    border-top-color: #181a1b;
+    border-bottom-color: #181a1b;
 }
-.dark-theme .mwe-popups * {
-    color: unset;
+.dark-theme .mwe-popups *,
+.dark-theme .mwe-popups a.mwe-popups-extract,
+.dark-theme .mwe-popups a.mwe-popups-extract:link {
+    color: #dfdedd;
 }
 .dark-theme .mwe-popups .mwe-popups-extract[dir='ltr']:after,
 .dark-theme .mwe-popups .mwe-popups-extract[dir='rtl']:after {
