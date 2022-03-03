@@ -420,28 +420,37 @@ body.dark-theme {
 }
 
 /* SyntaxHighlight fixes */
-.dark-theme .mw-highlight .k,
-.dark-theme .mw-highlight .nb {
+
+.dark-theme #content pre[class*="language-"],
+.dark-theme #content code[class*="language-"] {
+    background: #1d1f21;
+    text-shadow: none;
+    filter: saturate(2);
+}
+
+.dark-theme .mw-syntaxhighlight .keyword,
+.dark-theme .mw-syntaxhighlight .builtin {
     color: #0f0;
 }
-.dark-theme .mw-highlight .nf {
+.dark-theme .mw-syntaxhighlight .function {
     color: #f0f;
 }
-.dark-theme .mw-highlight .o {
+.dark-theme .mw-syntaxhighlight .operator {
     color: #999;
+    background: none;
 }
-.dark-theme .mw-highlight .c1 {
+.dark-theme .mw-syntaxhighlight .comment {
     color: #52a3a3;
 }
-.dark-theme .mw-highlight .s1 {
+.dark-theme .mw-syntaxhighlight .string {
     color: #e46767;
 }
-.dark-theme .mw-highlight .gd {
+.dark-theme .mw-syntaxhighlight .deleted {
     color: #ff4d4d;
 }
-.dark-theme .mw-highlight .gi {
+.dark-theme .mw-syntaxhighlight .inserted {
     color: #4dff4d;
 }
-.dark-theme .mw-highlight .gu {
+.dark-theme .mw-syntaxhighlight .unchanged {
     color: #f0f;
 }
