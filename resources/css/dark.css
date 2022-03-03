@@ -454,3 +454,10 @@ body.dark-theme {
 .dark-theme .mw-syntaxhighlight .unchanged {
     color: #f0f;
 }
+
+/* RecentChanges banner fixes */
+.dark-theme .mw-scratch-confirmaccount-rc-awaiting,
+.dark-theme .mw-reoprt-reports-awaiting {
+    background-color: #060606;
+    color: #fff;
+}
