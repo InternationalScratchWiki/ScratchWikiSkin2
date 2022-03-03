@@ -482,3 +482,14 @@ body.dark-theme {
     background-color: rgb(4, 74, 62);
     border-color: rgb(27, 182, 148);
 }
+
+/* Page preview fixes */
+.dark-theme .mwe-popups {
+    background: #181a1b;
+}
+.dark-theme .mwe-popups * {
+    color: unset;
+}
+.dark-theme .mwe-popups .mwe-popups-extract:after {
+    background: none;
+}
