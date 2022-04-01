@@ -257,8 +257,8 @@ $line = wfMessage('scratchwikiskin-dark-theme-feedback')->rawParams( $link )->in
 			</dl>
 		</div>
 	</div>
+</div><?php if (date('m j') == '04 1') { ?><div style="background-color:white;color:black">;</div><?php } ?>
 </div>
-</div><?php if (date('m j') == '04 1') { ?><div style="background-color:white">;</div><?php } ?>
 <script>
 /*
 ScratchWikiSkin script
