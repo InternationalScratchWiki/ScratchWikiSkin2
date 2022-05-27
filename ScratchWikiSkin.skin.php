@@ -53,6 +53,14 @@ class SkinScratchWikiSkin extends SkinTemplate {
 		$template = 'ScratchWikiSkinTemplate', $useHeadElement = true;
 
 	/**
+	 * @inheritDoc
+	 */
+	public function __construct( $options ) {
+		$options['bodyOnly'] = true;
+		parent::__construct( $options );
+	}
+
+	/**
 	 * Add CSS via ResourceLoader
 	 *
 	 * @param OutputPage $out
