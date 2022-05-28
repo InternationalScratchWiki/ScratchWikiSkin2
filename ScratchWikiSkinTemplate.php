@@ -15,7 +15,11 @@ class ScratchWikiSkinTemplate extends BaseTemplate {
 		global $wgRequest, $wgStylePath, $wgLogo, $wgRightsPage, $wgRightsUrl, $wgRightsIcon, $wgRightsText, $wgLang, $wgSWS2JoinBox;
 		$user = RequestContext::getMain()->getUser();
 		$skin = $this->data['skin'];
-		$this->html('headelement');
+		$pre139 = version_compare( MW_VERSION, '1.39', '<' );
+
+		if ( $pre139 ) {
+			$this->html('headelement');
+		}
 		$userOptionsLookup = MediaWikiServices::getInstance()->getUserOptionsLookup();
 		$colorPref = $userOptionsLookup->getOption( $user, HEADER_COLOR_PREF );
 		$darkPref = $userOptionsLookup->getOption( $user, DARK_THEME_PREF );
@@ -354,6 +358,10 @@ document.querySelector('#navigation .sidebar-toggle').addEventListener('click', 
 });
 
 </script>
-<?php $this->printTrail();
+
+<?php
+		if ( $pre139 ) {
+			$this->printTrail();
+		}
 	}
 }
