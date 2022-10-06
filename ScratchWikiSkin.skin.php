@@ -78,7 +78,8 @@ class SkinScratchWikiSkin extends SkinTemplate {
 	public static function onOutputPageBodyAttributes( $out, $skin, &$bodyAttrs ) {
 		global $wgSWS2ForceDarkTheme;
 		$user = RequestContext::getMain()->getUser();
-		if ($user->getOption( DARK_THEME_PREF ) || $wgSWS2ForceDarkTheme) {
+		$userOptionsLookup = MediaWikiServices::getInstance()->getUserOptionsLookup();
+		if ($userOptionsLookup->getOption( $user, DARK_THEME_PREF ) || $wgSWS2ForceDarkTheme) {
 			$bodyAttrs['class'] .= ' dark-theme';
 		}
 	}
