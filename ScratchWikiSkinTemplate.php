@@ -119,7 +119,15 @@ $wordmarkH = $logos['wordmark']['height'] ?? 28;
 					<span class="profile-name"><?php if ($user->isAnon()) { ?><?=wfMessage( 'scratchwikiskin-notloggedin' )->inLanguage( $wgLang )->escaped()?><?php } else { ?><?=htmlspecialchars($user->getName())?><?php } ?></span>
 				</a>
 				<ul class="dropdown">
-<?php foreach ($this->data['personal_urls'] as $key => $tab) { ?>
+<?php foreach ($this->data['personal_urls'] as $key => $tab) { 
+					if (!array_key_exists('href', $tab)) {
+						if (!array_key_exists('class', $tab)) {
+							$tab['class'] = '';
+						}
+						
+						$tab['class'] .= 'no-link';
+					}
+?>
 					<?=$this->getSkin()->makeListItem($key, $tab)?>
 
 <?php } ?>

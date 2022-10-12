@@ -272,6 +272,10 @@ dl dt {
     text-decoration: none;
 }
 
+.dropdown>li.no-link {
+	padding: 0 15px;
+}
+
 .input {
     transition: all .5s ease;
     margin-bottom: .75rem;
