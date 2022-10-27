@@ -235,7 +235,7 @@ $line = wfMessage('scratchwikiskin-dark-theme-feedback')->rawParams( $link )->in
 <dd><span><a href="https://scratch.mit.edu/credits"><?=wfMessage('scratchwikiskin-footer-credits')->inLanguage( $wgLang )->escaped()?></a></span></dd>
 <dd><span><a href="https://scratchfoundation.org/supporters"><?=wfMessage('scratchwikiskin-footer-donors')->inLanguage( $wgLang )->escaped()?></a></span></dd>
 <dd><span><a href="https://www.scratchfoundation.org/opportunities"><?=wfMessage('scratchwikiskin-footer-jobs')->inLanguage( $wgLang )->escaped()?></a></span></dd>
-<dd><span><a href="https://secure.donationpay.org/scratchfoundation/"><?=wfMessage('scratchwikiskin-footer-donate')->inLanguage( $wgLang )->escaped()?></a></span></dd>
+<dd><span><a href="https://www.scratchfoundation.org/donate"><?=wfMessage('scratchwikiskin-footer-donate')->inLanguage( $wgLang )->escaped()?></a></span></dd>
 			</dl>
 			<dl class="community">
 				<dt><span><?=wfMessage('scratchwikiskin-footer-community-title')->inLanguage( $wgLang )->escaped()?></span></dt>
