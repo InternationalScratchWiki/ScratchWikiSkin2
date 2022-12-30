@@ -20,7 +20,8 @@
 	},
 	"HookHandlers": {
 		"main": {
-			"class": "ScratchWikiSkinHooks"
+			"class": "ScratchWikiSkinHooks",
+			"services": ["UserOptionsLookup"]
 		}
 	},
 	"MessagesDirs": {

@@ -2,7 +2,7 @@
 
 use MediaWiki\Hook\OutputPageBodyAttributesHook;
 use MediaWiki\Preferences\Hook\GetPreferencesHook;
-use MediaWiki\MediaWikiServices;
+use MediaWiki\User\UserOptionsLookup;
 
 require_once __DIR__ . '/consts.php';
 
@@ -45,19 +45,23 @@ class HTMLColorField extends HTMLFormField {
 }
 
 class ScratchWikiSkinHooks implements OutputPageBodyAttributesHook, GetPreferencesHook {
+    private $userOptionsLookup;
+
+    public function __construct(UserOptionsLookup $userOptionsLookup) {
+        $this->userOptionsLookup = $userOptionsLookup;
+    }
+
     public function onOutputPageBodyAttributes($out, $sk, &$bodyAttrs): void {
         global $wgSWS2ForceDarkTheme;
         $user = RequestContext::getMain()->getUser();
-        $userOptionsLookup = MediaWikiServices::getInstance()->getUserOptionsLookup();
-        if ($userOptionsLookup->getOption($user, DARK_THEME_PREF) || $wgSWS2ForceDarkTheme) {
+        if ($this->userOptionsLookup->getOption($user, DARK_THEME_PREF) || $wgSWS2ForceDarkTheme) {
             $bodyAttrs['class'] .= ' dark-theme';
         }
     }
 
     public function onGetPreferences($user, &$preferences) {
         HTMLForm::$typeMappings['color'] = HTMLColorField::class;
-        $userOptionsLookup = MediaWikiServices::getInstance()->getUserOptionsLookup();
-        $origpref = $userOptionsLookup->getOption($user, HEADER_COLOR_PREF);
+        $origpref = $this->userOptionsLookup->getOption($user, HEADER_COLOR_PREF);
         $preferences[HEADER_COLOR_PREF] = [
             'type' => 'color',
             'pattern' => '#[0-9A-Fa-f]{6}',
