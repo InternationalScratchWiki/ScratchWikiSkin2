@@ -67,8 +67,15 @@
 		"remoteSkinPath": "ScratchWikiSkin2"
 	},
 	"config": {
-		"SWS2JoinBox": true,
-		"SWS2ForceDarkTheme": false
+		"SWS2JoinBox": {
+			"value": true
+		},
+		"SWS2ForceDarkTheme": {
+			"value": false
+		}
 	},
-	"manifest_version": 1
+	"manifest_version": 2,
+	"requires": {
+		"MediaWiki": ">= 1.29.0"
+	}
 }
