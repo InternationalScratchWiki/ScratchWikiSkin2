@@ -11,11 +11,17 @@
 	},
 	"AutoloadClasses": {
 		"SkinScratchWikiSkin": "ScratchWikiSkin.skin.php",
-		"ScratchWikiSkinTemplate": "ScratchWikiSkinTemplate.php"
+		"ScratchWikiSkinTemplate": "ScratchWikiSkinTemplate.php",
+		"ScratchWikiSkinHooks": "ScratchWikiSkin.hooks.php"
 	},
 	"Hooks": {
-		"GetPreferences": "SkinScratchWikiSkin::onGetPreferences",
-		"OutputPageBodyAttributes": "SkinScratchWikiSkin::onOutputPageBodyAttributes"
+		"GetPreferences": "main",
+		"OutputPageBodyAttributes": "main"
+	},
+	"HookHandlers": {
+		"main": {
+			"class": "ScratchWikiSkinHooks"
+		}
 	},
 	"MessagesDirs": {
 		"ScratchWikiSkin": "i18n"
