@@ -23,6 +23,19 @@
 	"ResourceModules": {
 		"skins.scratchwikiskin2": {
 			"class": "ResourceLoaderSkinModule",
+			"features": {
+				"content-links": true,
+				"content-thumbnails": true,
+				"interface-message-box": true,
+				"interface-category": true,
+				"content-tables": true,
+				"i18n-ordered-lists": true,
+				"i18n-all-lists-margins": true,
+				"i18n-headings": true,
+				"elements": true,
+				"interface": true,
+				"logo": true
+			},
 			"position": "top",
 			"styles": {
 				"resources/css/main.css": {
