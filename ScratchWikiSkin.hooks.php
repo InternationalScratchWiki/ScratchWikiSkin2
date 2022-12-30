@@ -15,7 +15,7 @@ class HTMLColorField extends HTMLFormField {
             'name' => $this->mName,
             'value' => $value,
             'dir' => $this->mDir,
-            'pattern' => '#[0-9A-Za-z]{6}',
+            'pattern' => '#[0-9A-Fa-f]{6}',
         ];
 
         if ($this->mClass !== '') {
@@ -37,7 +37,7 @@ class HTMLColorField extends HTMLFormField {
     }
 
     public function validate($value, $alldata) {
-        if (preg_match('%#[a-zA-Z0-9]{6}%', $value) === 0) {
+        if (preg_match('%^#[a-fA-F0-9]{6}$%', $value) === 0) {
             return $this->msg('htmlform-invalid-input');
         }
         return parent::validate($value, $alldata);
@@ -60,7 +60,7 @@ class ScratchWikiSkinHooks implements OutputPageBodyAttributesHook, GetPreferenc
         $origpref = $userOptionsLookup->getOption($user, HEADER_COLOR_PREF);
         $preferences[HEADER_COLOR_PREF] = [
             'type' => 'color',
-            'pattern' => '#[0-9A-Za-z]{6}',
+            'pattern' => '#[0-9A-Fa-f]{6}',
             'label-message' => 'scratchwikiskin-pref-color',
             'section' => 'rendering/skin',
             // Only expose background color preference when the skin is selected
