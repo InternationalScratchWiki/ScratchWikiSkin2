@@ -938,13 +938,6 @@ dl dt {
     border-radius: 5px;
 }
 
-/* VisualEditor integration */
-/* make sure there's sufficient space in the editor for the menus to appear */
-/* TODO: find a way to allow the menus to overrun #content rather than forcing the size */
-.ve-init-target-visual {
-    min-height: 300px;
-}
-
 /* recent changes */
 .mw-rcfilters-ui-overlay {
     z-index: 1;

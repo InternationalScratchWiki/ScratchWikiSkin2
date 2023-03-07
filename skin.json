@@ -11,11 +11,18 @@
 	},
 	"AutoloadClasses": {
 		"SkinScratchWikiSkin": "ScratchWikiSkin.skin.php",
-		"ScratchWikiSkinTemplate": "ScratchWikiSkinTemplate.php"
+		"ScratchWikiSkinTemplate": "ScratchWikiSkinTemplate.php",
+		"ScratchWikiSkinHooks": "ScratchWikiSkin.hooks.php"
 	},
 	"Hooks": {
-		"GetPreferences": "SkinScratchWikiSkin::onGetPreferences",
-		"OutputPageBodyAttributes": "SkinScratchWikiSkin::onOutputPageBodyAttributes"
+		"GetPreferences": "main",
+		"OutputPageBodyAttributes": "main"
+	},
+	"HookHandlers": {
+		"main": {
+			"class": "ScratchWikiSkinHooks",
+			"services": ["UserOptionsLookup"]
+		}
 	},
 	"MessagesDirs": {
 		"ScratchWikiSkin": "i18n"
@@ -23,6 +30,19 @@
 	"ResourceModules": {
 		"skins.scratchwikiskin2": {
 			"class": "ResourceLoaderSkinModule",
+			"features": {
+				"content-links": true,
+				"content-thumbnails": true,
+				"interface-message-box": true,
+				"interface-category": true,
+				"content-tables": true,
+				"i18n-ordered-lists": true,
+				"i18n-all-lists-margins": true,
+				"i18n-headings": true,
+				"elements": true,
+				"interface": true,
+				"logo": true
+			},
 			"position": "top",
 			"styles": {
 				"resources/css/main.css": {
@@ -54,8 +74,15 @@
 		"remoteSkinPath": "ScratchWikiSkin2"
 	},
 	"config": {
-		"SWS2JoinBox": true,
-		"SWS2ForceDarkTheme": false
+		"SWS2JoinBox": {
+			"value": true
+		},
+		"SWS2ForceDarkTheme": {
+			"value": false
+		}
 	},
-	"manifest_version": 1
+	"manifest_version": 2,
+	"requires": {
+		"MediaWiki": ">= 1.35.0"
+	}
 }

@@ -12,9 +12,8 @@ require_once __DIR__ . '/consts.php';
 
 class ScratchWikiSkinTemplate extends BaseTemplate {
 	public function execute() {
-		global $wgRequest, $wgStylePath, $wgLogo, $wgRightsPage, $wgRightsUrl, $wgRightsIcon, $wgRightsText, $wgLang, $wgSWS2JoinBox;
+		global $wgLogo, $wgRightsPage, $wgRightsUrl, $wgRightsIcon, $wgRightsText, $wgLang, $wgSWS2JoinBox;
 		$user = RequestContext::getMain()->getUser();
-		$skin = $this->data['skin'];
 		$pre139 = version_compare( MW_VERSION, '1.39', '<' );
 
 		if ( $pre139 ) {
