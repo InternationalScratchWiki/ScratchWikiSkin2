@@ -232,8 +232,8 @@ $line = wfMessage('scratchwikiskin-dark-theme-feedback')->rawParams( $link )->in
 <dd><span><a href="https://scratch.mit.edu/educators/"><?=wfMessage('scratchwikiskin-footer-educators')->inLanguage( $wgLang )->escaped()?></a></span></dd>
 <dd><span><a href="https://scratch.mit.edu/developers/"><?=wfMessage('scratchwikiskin-footer-developers')->inLanguage( $wgLang )->escaped()?></a></span></dd>
 <dd><span><a href="https://scratch.mit.edu/credits"><?=wfMessage('scratchwikiskin-footer-credits')->inLanguage( $wgLang )->escaped()?></a></span></dd>
-<dd><span><a href="https://scratchfoundation.org/supporters"><?=wfMessage('scratchwikiskin-footer-donors')->inLanguage( $wgLang )->escaped()?></a></span></dd>
-<dd><span><a href="https://www.scratchfoundation.org/opportunities"><?=wfMessage('scratchwikiskin-footer-jobs')->inLanguage( $wgLang )->escaped()?></a></span></dd>
+<dd><span><a href="https://www.scratchfoundation.org/supporters"><?=wfMessage('scratchwikiskin-footer-donors')->inLanguage( $wgLang )->escaped()?></a></span></dd>
+<dd><span><a href="https://www.scratchfoundation.org/careers"><?=wfMessage('scratchwikiskin-footer-jobs')->inLanguage( $wgLang )->escaped()?></a></span></dd>
 <dd><span><a href="https://www.scratchfoundation.org/donate"><?=wfMessage('scratchwikiskin-footer-donate')->inLanguage( $wgLang )->escaped()?></a></span></dd>
 			</dl>
 			<dl class="community">
