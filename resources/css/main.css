@@ -169,13 +169,10 @@ dl dt {
 }
 
 #view .left {
-    float: left;
     width: 160px;
-    display: block;
 }
 
 #view .right {
-    margin-left: 180px;
     width: 800px;
 }
 
@@ -739,6 +736,9 @@ dl dt {
 
 .inner.mod-splash {
     margin-top: 20px;
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
 }
 
 .splash .box {
