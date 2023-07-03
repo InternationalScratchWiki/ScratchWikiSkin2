@@ -118,12 +118,12 @@ $wordmarkH = $logos['wordmark']['height'] ?? 28;
 					<span class="profile-name"><?php if ($user->isAnon()) { ?><?=wfMessage( 'scratchwikiskin-notloggedin' )->inLanguage( $wgLang )->escaped()?><?php } else { ?><?=htmlspecialchars($user->getName())?><?php } ?></span>
 				</a>
 				<ul class="dropdown">
-<?php foreach ($this->data['personal_urls'] as $key => $tab) { 
+<?php foreach ($this->data['personal_urls'] as $key => $tab) {
 					if (!array_key_exists('href', $tab)) {
 						if (!array_key_exists('class', $tab)) {
 							$tab['class'] = '';
 						}
-						
+
 						$tab['class'] .= 'no-link';
 					}
 ?>
@@ -354,15 +354,30 @@ window.addEventListener('click', function (e) {
 
 var sidebarShown = false;
 
-document.querySelector('#navigation .sidebar-toggle').addEventListener('click', function(){
+function toggleSidebar(e) {
+	e.stopPropagation();
+
 	if (window.innerWidth >= 981) return;
+
+	const left = document.querySelector('#view .inner .left');
+	const notNav = document.querySelector('#not-nav');
+
 	if (!sidebarShown) {
-		document.querySelector('#view .inner .left').style.left = '0';
+		// show sidebar and enable non-nav close listener
+		left.style.left = '0';
+		notNav.addEventListener('click', toggleSidebar);
 	} else {
-		document.querySelector('#view .inner .left').style.left = null;
+		// ignore clicks in the sidebar itself
+		if (left.contains(e.target)) return;
+		// hide sidebar and disable non-nav close listener
+		e.preventDefault();
+		left.style.left = null;
+		notNav.removeEventListener('click', toggleSidebar);
 	}
 	sidebarShown = !sidebarShown;
-});
+}
+
+document.querySelector('#navigation .sidebar-toggle').addEventListener('click', toggleSidebar);
 
 </script>
 
