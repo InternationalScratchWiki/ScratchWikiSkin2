@@ -103,6 +103,37 @@ $wordmarkH = $logos['wordmark']['height'] ?? 28;
 					</div>
 				</form>
 			</li>
+			<?php
+			//  Start dropdown here so we know its output before it saves to the page, and we can use it earlier.
+			$swsDropdownItems = "";
+			foreach ($this->data['personal_urls'] as $key => $tab) { 
+					if (!array_key_exists('href', $tab)) {
+						if (!array_key_exists('class', $tab)) {
+							$tab['class'] = '';
+						}
+						
+						$tab['class'] .= 'no-link';
+					}
+					if(isset($tab["class"]) && gettype($tab["class"]) == "array" && $tab["class"][0] == "mw-echo-alert"){
+						$swsUnread = true;
+						continue;
+					}
+					if(strpos($key, "notifications") !== false){
+						if(in_array("mw-echo-unseen-notifications", $tab["link-class"])){
+							$swsUnread = true;
+						}
+						continue;
+					}
+					$swsDropdownItems .= $this->getSkin()->makeListItem($key, $tab);
+			}
+			// ONLY output this if Echo extension is turned on. Otherwise don't put it there.
+			if(ExtensionRegistry::getInstance()->isLoaded("Echo")){
+			?>
+			<li class="link right notifications">
+				<a href="/wiki/Special:Notifications<?php /* This probably should be localized and not hardcoded, but it works*/ ?>"><div></div></a>
+				<?php if(isset($swsUnread)){ ?><div class="unread"></div><?php } ?>
+			</li>
+			<?php } ?>
 			<li class="link right content-actions">
 				<a class="dropdown-toggle" href="?action=edit"><div></div></a>
 				<ul class="dropdown">
@@ -118,19 +149,7 @@ $wordmarkH = $logos['wordmark']['height'] ?? 28;
 					<span class="profile-name"><?php if ($user->isAnon()) { ?><?=wfMessage( 'scratchwikiskin-notloggedin' )->inLanguage( $wgLang )->escaped()?><?php } else { ?><?=htmlspecialchars($user->getName())?><?php } ?></span>
 				</a>
 				<ul class="dropdown">
-<?php foreach ($this->data['personal_urls'] as $key => $tab) { 
-					if (!array_key_exists('href', $tab)) {
-						if (!array_key_exists('class', $tab)) {
-							$tab['class'] = '';
-						}
-						
-						$tab['class'] .= 'no-link';
-					}
-?>
-					<?=$this->getSkin()->makeListItem($key, $tab)?>
-
-<?php } ?>
-
+				<?php echo($swsDropdownItems) ?>
 				</ul>
 			</li>
 		</ul>
@@ -200,7 +219,7 @@ $line = wfMessage('scratchwikiskin-dark-theme-feedback')->rawParams( $link )->in
 					<div id="feet" style="margin: 0<?=$darkPref ? '' : '; display: none'?>"><?=$line?></div>
 					</div>
 				</div>
-				<ul id="feet">
+				<ul>
 <?php foreach ( $this->getFooterLinks('flat') as $key ) { ?>
 					<li><?php $this->html( $key ) ?></li>
 <?php } ?>

@@ -499,18 +499,21 @@ dl dt {
 }
 
 #navigation .account-nav .dropdown-toggle,
-#navigation .content-actions .dropdown-toggle {
+#navigation .content-actions .dropdown-toggle,
+#navigation .notifications .dropdown-toggle {
     padding-top: 14px;
 }
 
 #navigation .account-nav .dropdown li,
-#navigation .content-actions .dropdown li {
+#navigation .content-actions .dropdown li,
+#navigation .notifications .dropdown li {
     margin: 0;
     white-space: nowrap;
 }
 
 #navigation .account-nav>a,
-#navigation .content-actions>a {
+#navigation .content-actions>a,
+#navigation .notifications>a {
     display: inline-block;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -545,6 +548,7 @@ dl dt {
 
 #navigation .account-nav .dropdown,
 #navigation .content-actions .dropdown,
+#navigation .notifications .dropdown,
 #navigation .create .dropdown,
 #navigation .explore .dropdown,
 #navigation .discuss .dropdown,
@@ -704,6 +708,28 @@ dl dt {
     background-size: 25px 25px;
     background-position: 12.5px center;
     background-repeat: no-repeat;
+}
+
+#navigation ul>li.notifications>a {
+    height: 17px;
+    width: auto;
+    min-width: 25px;
+    padding: 16px;
+    /* @embed */
+    background-image: url('../nav-notifications.png');
+    background-size: 25px 17px;
+    background-position: 16px center;
+    background-repeat: no-repeat;
+}
+
+#navigation ul>li.notifications>div.unread{
+	border-radius: 50%;
+	position: absolute;
+	right: 8px;
+	top: 8px;
+	background-color: #ffab1a;
+	width:12px;
+	height:12px;
 }
 
 #navigation ul>li.content-actions>a.dropdown-toggle>div {
