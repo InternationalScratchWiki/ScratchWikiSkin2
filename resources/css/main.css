@@ -500,20 +500,20 @@ dl dt {
 
 #navigation .account-nav .dropdown-toggle,
 #navigation .content-actions .dropdown-toggle,
-#navigation .notifications .dropdown-toggle {
+#navigation .messages .dropdown-toggle {
     padding-top: 14px;
 }
 
 #navigation .account-nav .dropdown li,
 #navigation .content-actions .dropdown li,
-#navigation .notifications .dropdown li {
+#navigation .messages .dropdown li {
     margin: 0;
     white-space: nowrap;
 }
 
 #navigation .account-nav>a,
 #navigation .content-actions>a,
-#navigation .notifications>a {
+#navigation .messages>a {
     display: inline-block;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -548,7 +548,7 @@ dl dt {
 
 #navigation .account-nav .dropdown,
 #navigation .content-actions .dropdown,
-#navigation .notifications .dropdown,
+#navigation .messages .dropdown,
 #navigation .create .dropdown,
 #navigation .explore .dropdown,
 #navigation .discuss .dropdown,
@@ -710,7 +710,7 @@ dl dt {
     background-repeat: no-repeat;
 }
 
-#navigation ul>li.notifications>a {
+#navigation ul>li.messages>a {
     height: 17px;
     width: auto;
     min-width: 25px;
@@ -722,7 +722,7 @@ dl dt {
     background-repeat: no-repeat;
 }
 
-#navigation ul>li.notifications>div.unread{
+#navigation ul>li.messages>div.unread{
 	border-radius: 50%;
 	position: absolute;
 	right: 8px;

@@ -106,12 +106,12 @@ $wordmarkH = $logos['wordmark']['height'] ?? 28;
 			<?php
 			//  Start dropdown here so we know its output before it saves to the page, and we can use it earlier.
 			$swsDropdownItems = "";
-			foreach ($this->data['personal_urls'] as $key => $tab) { 
+			foreach ($this->data['personal_urls'] as $key => $tab) {
 					if (!array_key_exists('href', $tab)) {
 						if (!array_key_exists('class', $tab)) {
 							$tab['class'] = '';
 						}
-						
+
 						$tab['class'] .= 'no-link';
 					}
 					if(isset($tab["class"]) && gettype($tab["class"]) == "array" && $tab["class"][0] == "mw-echo-alert"){
@@ -130,7 +130,7 @@ $wordmarkH = $logos['wordmark']['height'] ?? 28;
 			// ONLY output this if Echo extension is turned on and user is logged in. Otherwise don't put it there.
 			if(ExtensionRegistry::getInstance()->isLoaded("Echo") && !$user->isAnon()){
 			?>
-			<li class="link right notifications">
+			<li class="link right messages">
 				<a href="<?php echo Title::newFromText("Special:Notifications")->getLocalURL();?>"><div></div></a>
 				<?php if(isset($swsUnread)){ ?><div class="unread"></div><?php } ?>
 			</li>
