@@ -106,7 +106,7 @@ $wordmarkH = $logos['wordmark']['height'] ?? 28;
 <?php
 // Start processing dropdown here so we know its output before it saves to the page, and we can use it earlier.
 $personalUrls = [];
-$echoUnread = false;
+$echoUnread = 0;
 foreach ($this->data['personal_urls'] as $key => $tab) {
 	// additional class for non-link items
 	if (!array_key_exists('href', $tab)) {
@@ -114,16 +114,16 @@ foreach ($this->data['personal_urls'] as $key => $tab) {
 		if (is_array($tab['class'])) array_push($tab['class'], 'no-link');
 		else $tab['class'] .= ' no-link';
 	}
-	// check if Echo is telling you to check notifications regardless of "unseen" status
+	// treat "You have a new Talk page message" as 1 notification...
 	if (is_array($tab['class']) && in_array('mw-echo-alert', $tab["class"])) {
-		$echoUnread = true;
+		// ...if not already counted
+		if ($echoUnread === 0) $echoUnread = 1;
 		continue; // don't include the item in personal URLs
 	}
-	// check if Echo has unseen notifications
+	// skip other Echo notices
 	if (strpos($key, 'notifications') !== false) {
-		if (in_array('mw-echo-unseen-notifications', $tab['link-class'])) {
-			$echoUnread = true;
-		}
+		// get number of Echo notifications
+		if ($key === 'notifications-alert') $echoUnread = $tab['data']['counter-num'] ?? $echoUnread;
 		continue; // don't include the item in personal URLs
 	}
 	array_push($personalUrls, $this->getSkin()->makeListItem($key, $tab));
@@ -131,8 +131,9 @@ foreach ($this->data['personal_urls'] as $key => $tab) {
 // ONLY output this if Echo extension is turned on and user is logged in. Otherwise don't put it there.
 if (ExtensionRegistry::getInstance()->isLoaded("Echo") && !$user->isAnon()) { ?>
 			<li class="link right messages">
-				<a href="<?=SpecialPage::getTitleFor('Notifications')->getLinkURL()?>"><div></div></a>
-				<?php if ($echoUnread) { ?><div class="unread"></div><?php } ?>
+				<a href="<?=SpecialPage::getTitleFor('Notifications')->getLinkURL()?>">
+					<span class="<?=$echoUnread > 0 ? 'message-count show' : 'message-count'?>"><?=$echoUnread?></span>
+				</a>
 			</li>
 <?php } ?>
 			<li class="link right content-actions">

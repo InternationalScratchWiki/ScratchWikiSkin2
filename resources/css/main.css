@@ -710,33 +710,49 @@ dl dt {
     background-repeat: no-repeat;
 }
 
-#navigation ul>li.messages>a {
-    height: 17px;
-    width: auto;
-    min-width: 25px;
-    padding: 16px;
-    /* @embed */
-    background-image: url('../nav-notifications.png');
-    background-size: 25px 17px;
-    background-position: 16px center;
-    background-repeat: no-repeat;
-}
-
-#navigation ul>li.messages>div.unread{
-	border-radius: 50%;
-	position: absolute;
-	right: 8px;
-	top: 8px;
-	background-color: #ffab1a;
-	width:12px;
-	height:12px;
-}
-
 #navigation ul>li.content-actions>a.dropdown-toggle>div {
     height: 25px;
     width: 25px;
     display: inline-block;
     vertical-align: middle;
+}
+
+#navigation ul>li.messages>a {
+    /* @embed */
+    background-image: url('../nav-notifications.png');
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: 45%;
+    transition: .15s ease background-size;
+    padding-right: 10px;
+    padding-left: 10px;
+    width: 30px;
+    overflow: hidden;
+    text-indent: 50px;
+    white-space: nowrap;
+}
+
+#navigation .messages>a:hover {
+    background-size: 50%;
+}
+
+#navigation .messages .message-count {
+    display: none;
+}
+
+#navigation .messages .message-count.show {
+    display: block;
+    position: absolute;
+    top: .5rem;
+    right: .25rem;
+    border-radius: 1rem;
+    background-color: #ffab1a;
+    padding: 0 .25rem;
+    text-indent: 0;
+    line-height: 1rem;
+    color: #fff;
+    font-size: .7rem;
+    font-weight: bold;
 }
 
 #lastmod {
