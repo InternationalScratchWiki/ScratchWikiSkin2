@@ -622,6 +622,7 @@ dl dt {
 .box {
     display: inline-block;
     border: 1px solid #d9d9d9;
+    box-sizing: border-box;
     border-radius: 10px 10px 0 0;
     background-color: #fff;
     width: 100%;
