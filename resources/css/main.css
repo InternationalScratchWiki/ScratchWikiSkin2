@@ -745,7 +745,7 @@ dl dt {
     color: #6b6b6b;
 }
 
-#feet {
+.feet {
     list-style: none;
     display: block;
     text-align: center;
@@ -754,7 +754,7 @@ dl dt {
     margin-bottom: 20px;
 }
 
-#feet li {
+.feet li {
     list-style: none;
     display: inline;
     margin-right: 10px;
