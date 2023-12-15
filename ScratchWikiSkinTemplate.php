@@ -115,6 +115,7 @@ $wordmarkH = $logos['wordmark']['height'] ?? 28;
 						$tab['class'] .= 'no-link';
 					}
 					if(isset($tab["class"]) && gettype($tab["class"]) == "array" && $tab["class"][0] == "mw-echo-alert"){
+						// Look through the items being outputted for an alert from Echo- this means you're being alerted to check your notifications, regardless of the "unseen" status
 						$swsUnread = true;
 						continue;
 					}
