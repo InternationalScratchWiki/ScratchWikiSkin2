@@ -127,8 +127,8 @@ $wordmarkH = $logos['wordmark']['height'] ?? 28;
 					}
 					$swsDropdownItems .= $this->getSkin()->makeListItem($key, $tab);
 			}
-			// ONLY output this if Echo extension is turned on. Otherwise don't put it there.
-			if(ExtensionRegistry::getInstance()->isLoaded("Echo")){
+			// ONLY output this if Echo extension is turned on and user is logged in. Otherwise don't put it there.
+			if(ExtensionRegistry::getInstance()->isLoaded("Echo") && !$user->isAnon()){
 			?>
 			<li class="link right notifications">
 				<a href="<?php echo Title::newFromText("Special:Notifications")->getLocalURL();?>"><div></div></a>
