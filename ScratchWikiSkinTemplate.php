@@ -130,7 +130,8 @@ $wordmarkH = $logos['wordmark']['height'] ?? 28;
 			if(ExtensionRegistry::getInstance()->isLoaded("Echo")){
 			?>
 			<li class="link right notifications">
-				<a href="/wiki/Special:Notifications<?php /* This probably should be localized and not hardcoded, but it works*/ ?>"><div></div></a>
+				<a href="<?php echo Title::newFromText("Special:Notifications")->getLocalURL();?>"><div></div></a>
+				<?php echo(wfMessage( 'portal-url' )->inContentLanguage()->text())?>
 				<?php if(isset($swsUnread)){ ?><div class="unread"></div><?php } ?>
 			</li>
 			<?php } ?>
@@ -216,10 +217,10 @@ $text = wfMessage('scratchwikiskin-discuss-wiki-text')->inLanguage( $wgLang )->e
 $link = "<a href=\"$url\" target=\"_blank\">$text</a>";
 $line = wfMessage('scratchwikiskin-dark-theme-feedback')->rawParams( $link )->inLanguage( $wgLang )->escaped();
 ?>
-					<div id="feet" style="margin: 0<?=$darkPref ? '' : '; display: none'?>"><?=$line?></div>
+					<div class="feet" style="margin: 0<?=$darkPref ? '' : '; display: none'?>"><?=$line?></div>
 					</div>
 				</div>
-				<ul>
+				<ul class="feet">
 <?php foreach ( $this->getFooterLinks('flat') as $key ) { ?>
 					<li><?php $this->html( $key ) ?></li>
 <?php } ?>
@@ -309,7 +310,7 @@ var body = mod(document.body);
 	&& !body.hasclass('dark-theme')
 ) {
 	body.addclass('dark-theme');
-	document.querySelector('div#feet').style.display = '';
+	document.querySelector('div.feet').style.display = '';
 } */
 (function () {
 	let selected = document.querySelectorAll('#navigation a.dropdown-toggle');
