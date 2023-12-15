@@ -54,6 +54,9 @@
 				"resources/css/mobile.css": {
 					"media": "only screen and (max-width: 981.4px)"
 				},
+				"resources/css/mobile-40.css": {
+					"media": "only screen and (max-width: 351.4px)"
+				},
 				"resources/css/mobile-30.css": {
 					"media": "only screen and (max-width: 519.4px)"
 				},
