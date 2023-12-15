@@ -112,7 +112,7 @@ foreach ($this->data['personal_urls'] as $key => $tab) {
 		else $tab['class'] .= ' no-link';
 	}
 	// treat "You have a new Talk page message" as 1 notification...
-	if (is_array($tab['class']) && in_array('mw-echo-alert', $tab["class"])) {
+	if (array_key_exists('class', $tab) && is_array($tab['class']) && in_array('mw-echo-alert', $tab['class'])) {
 		// ...if not already counted
 		if ($echoUnread === 0) $echoUnread = 1;
 		continue; // don't include the item in personal URLs
