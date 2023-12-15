@@ -132,7 +132,6 @@ $wordmarkH = $logos['wordmark']['height'] ?? 28;
 			?>
 			<li class="link right notifications">
 				<a href="<?php echo Title::newFromText("Special:Notifications")->getLocalURL();?>"><div></div></a>
-				<?php echo(wfMessage( 'portal-url' )->inContentLanguage()->text())?>
 				<?php if(isset($swsUnread)){ ?><div class="unread"></div><?php } ?>
 			</li>
 			<?php } ?>
