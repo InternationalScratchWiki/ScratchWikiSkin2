@@ -366,9 +366,9 @@ window.addEventListener('click', function (e) {
 });
 
 var sidebarShown = false;
-
-document.querySelector('#navigation .sidebar-toggle').addEventListener('click', function(){
-	if (window.innerWidth >= 981) return;
+var sidebarToggle = document.querySelector('#navigation .sidebar-toggle')
+sidebarToggle.addEventListener('click', function(){
+	if (sidebarToggle.computedStyleMap().get('display').value === 'none') return;
 	if (!sidebarShown) {
 		document.querySelector('#view .inner .left').style.left = '0';
 	} else {
