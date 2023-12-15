@@ -98,7 +98,7 @@ $wordmarkH = $logos['wordmark']['height'] ?? 28;
 								name="search" autocomplete="off"
 								placeholder="<?=wfMessage( 'scratchwikiskin-search' )->inLanguage( $wgLang )->escaped() ?>"
 							/>
-							<input type="hidden" value="Special:Search" name="title" />
+							<input type="hidden" value="<?=SpecialPage::getTitleFor( 'Search' )->getPrefixedDBkey()?>" name="title" />
 						</div>
 					</div>
 				</form>
@@ -129,9 +129,9 @@ foreach ($this->data['personal_urls'] as $key => $tab) {
 	array_push($personalUrls, $this->getSkin()->makeListItem($key, $tab));
 }
 // ONLY output this if Echo extension is turned on and user is logged in. Otherwise don't put it there.
-if (ExtensionRegistry::getInstance()->isLoaded("Echo") && !$user->isAnon()) { ?>
+if (ExtensionRegistry::getInstance()->isLoaded("Echo") && $user->isRegistered()) { ?>
 			<li class="link right messages">
-				<a href="<?=SpecialPage::getTitleFor('Notifications')->getLinkURL()?>">
+				<a href="<?=SpecialPage::getTitleFor( 'Notifications' )->getLinkURL()?>">
 					<span class="<?=$echoUnread > 0 ? 'message-count show' : 'message-count'?>"><?=$echoUnread?></span>
 				</a>
 			</li>
@@ -145,8 +145,8 @@ if (ExtensionRegistry::getInstance()->isLoaded("Echo") && !$user->isAnon()) { ?>
 				</ul>
 			</li>
 			<li class="link right account-nav">
-				<a class="dropdown-toggle" href="<?php if ($user->isAnon()) { ?><?=Title::newFromText( 'Special:UserLogin' )->fixSpecialName()->getLinkURL() ?><?php } else { ?><?=$user->getUserPage()->getLinkURL()?><?php } ?>">
-					<span class="profile-name"><?php if ($user->isAnon()) { ?><?=wfMessage( 'scratchwikiskin-notloggedin' )->inLanguage( $wgLang )->escaped()?><?php } else { ?><?=htmlspecialchars($user->getName())?><?php } ?></span>
+				<a class="dropdown-toggle" href="<?php if (!$user->isRegistered()) { ?><?=SpecialPage::getTitleFor( 'UserLogin' )->getLinkURL() ?><?php } else { ?><?=$user->getUserPage()->getLinkURL()?><?php } ?>">
+					<span class="profile-name"><?php if (!$user->isRegistered()) { ?><?=wfMessage( 'scratchwikiskin-notloggedin' )->inLanguage( $wgLang )->escaped()?><?php } else { ?><?=htmlspecialchars($user->getName())?><?php } ?></span>
 				</a>
 				<ul class="dropdown">
 				<?=implode($personalUrls)?>
@@ -181,7 +181,7 @@ if (ExtensionRegistry::getInstance()->isLoaded("Echo") && !$user->isAnon()) { ?>
 					</div>
 				</div>
 <?php }
-if ($user->isAnon() && $wgSWS2JoinBox) { ?>
+if (!$user->isRegistered() && $wgSWS2JoinBox) { ?>
 				<div class="box" role="complementary" aria-label="<?=wfMessage( 'scratchwikiskin-helpthewiki' )->inLanguage( $wgLang )->escaped()?>">
 					<div class="box-header">
 						<h4><?=wfMessage( 'scratchwikiskin-helpthewiki' )->inLanguage( $wgLang )->escaped()?></h4>
