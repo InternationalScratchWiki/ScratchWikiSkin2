@@ -1,6 +1,6 @@
 .inner {
     width: 982px;
 }
-#navigation .sidebar-toggle {
+#navigation .inner>ul>.sidebar-toggle {
     display: none;
 }
