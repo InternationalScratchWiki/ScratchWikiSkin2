@@ -32,7 +32,7 @@
 			"class": "ResourceLoaderSkinModule",
 			"features": {
 				"content-links": true,
-				"content-thumbnails": true,
+				"content-media": true,
 				"interface-message-box": true,
 				"interface-category": true,
 				"content-tables": true,
