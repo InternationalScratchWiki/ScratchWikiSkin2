@@ -103,46 +103,44 @@ $wordmarkH = $logos['wordmark']['height'] ?? 28;
 					</div>
 				</form>
 			</li>
-			<?php
-			//  Start dropdown here so we know its output before it saves to the page, and we can use it earlier.
-			$swsDropdownItems = "";
-			foreach ($this->data['personal_urls'] as $key => $tab) {
-					if (!array_key_exists('href', $tab)) {
-						if (!array_key_exists('class', $tab)) {
-							$tab['class'] = '';
-						}
-
-						$tab['class'] .= 'no-link';
-					}
-					if(isset($tab["class"]) && gettype($tab["class"]) == "array" && $tab["class"][0] == "mw-echo-alert"){
-						// Look through the items being outputted for an alert from Echo- this means you're being alerted to check your notifications, regardless of the "unseen" status
-						$swsUnread = true;
-						continue;
-					}
-					if(strpos($key, "notifications") !== false){
-						if(in_array("mw-echo-unseen-notifications", $tab["link-class"])){
-							$swsUnread = true;
-						}
-						continue;
-					}
-					$swsDropdownItems .= $this->getSkin()->makeListItem($key, $tab);
-			}
-			// ONLY output this if Echo extension is turned on and user is logged in. Otherwise don't put it there.
-			if(ExtensionRegistry::getInstance()->isLoaded("Echo") && !$user->isAnon()){
-			?>
+<?php
+// Start processing dropdown here so we know its output before it saves to the page, and we can use it earlier.
+$personalUrls = [];
+$echoUnread = false;
+foreach ($this->data['personal_urls'] as $key => $tab) {
+	// additional class for non-link items
+	if (!array_key_exists('href', $tab)) {
+		if (!array_key_exists('class', $tab)) $tab['class'] = [];
+		if (is_array($tab['class'])) array_push($tab['class'], 'no-link');
+		else $tab['class'] .= ' no-link';
+	}
+	// check if Echo is telling you to check notifications regardless of "unseen" status
+	if (is_array($tab['class']) && in_array('mw-echo-alert', $tab["class"])) {
+		$echoUnread = true;
+		continue; // don't include the item in personal URLs
+	}
+	// check if Echo has unseen notifications
+	if (strpos($key, 'notifications') !== false) {
+		if (in_array('mw-echo-unseen-notifications', $tab['link-class'])) {
+			$echoUnread = true;
+		}
+		continue; // don't include the item in personal URLs
+	}
+	array_push($personalUrls, $this->getSkin()->makeListItem($key, $tab));
+}
+// ONLY output this if Echo extension is turned on and user is logged in. Otherwise don't put it there.
+if (ExtensionRegistry::getInstance()->isLoaded("Echo") && !$user->isAnon()) { ?>
 			<li class="link right messages">
-				<a href="<?php echo Title::newFromText("Special:Notifications")->getLocalURL();?>"><div></div></a>
-				<?php if(isset($swsUnread)){ ?><div class="unread"></div><?php } ?>
+				<a href="<?=SpecialPage::getTitleFor('Notifications')->getLinkURL()?>"><div></div></a>
+				<?php if ($echoUnread) { ?><div class="unread"></div><?php } ?>
 			</li>
-			<?php } ?>
+<?php } ?>
 			<li class="link right content-actions">
 				<a class="dropdown-toggle" href="?action=edit"><div></div></a>
 				<ul class="dropdown">
 <?php foreach ($this->data['content_actions'] as $key => $tab) { ?>
 					<?=$this->getSkin()->makeListItem($key, $tab)?>
-
 <?php } ?>
-
 				</ul>
 			</li>
 			<li class="link right account-nav">
@@ -150,7 +148,7 @@ $wordmarkH = $logos['wordmark']['height'] ?? 28;
 					<span class="profile-name"><?php if ($user->isAnon()) { ?><?=wfMessage( 'scratchwikiskin-notloggedin' )->inLanguage( $wgLang )->escaped()?><?php } else { ?><?=htmlspecialchars($user->getName())?><?php } ?></span>
 				</a>
 				<ul class="dropdown">
-				<?php echo($swsDropdownItems) ?>
+				<?=implode($personalUrls)?>
 				</ul>
 			</li>
 		</ul>
