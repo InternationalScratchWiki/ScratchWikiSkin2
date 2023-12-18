@@ -176,7 +176,7 @@ dl dt {
     width: 800px;
 }
 
-.wikilogo {
+.mw-wiki-logo {
     background-repeat: no-repeat;
     height: 140px;
     display: block;
@@ -499,18 +499,21 @@ dl dt {
 }
 
 #navigation .account-nav .dropdown-toggle,
-#navigation .content-actions .dropdown-toggle {
+#navigation .content-actions .dropdown-toggle,
+#navigation .messages .dropdown-toggle {
     padding-top: 14px;
 }
 
 #navigation .account-nav .dropdown li,
-#navigation .content-actions .dropdown li {
+#navigation .content-actions .dropdown li,
+#navigation .messages .dropdown li {
     margin: 0;
     white-space: nowrap;
 }
 
 #navigation .account-nav>a,
-#navigation .content-actions>a {
+#navigation .content-actions>a,
+#navigation .messages>a {
     display: inline-block;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -545,6 +548,7 @@ dl dt {
 
 #navigation .account-nav .dropdown,
 #navigation .content-actions .dropdown,
+#navigation .messages .dropdown,
 #navigation .create .dropdown,
 #navigation .explore .dropdown,
 #navigation .discuss .dropdown,
@@ -618,6 +622,7 @@ dl dt {
 .box {
     display: inline-block;
     border: 1px solid #d9d9d9;
+    box-sizing: border-box;
     border-radius: 10px 10px 0 0;
     background-color: #fff;
     width: 100%;
@@ -713,13 +718,51 @@ dl dt {
     vertical-align: middle;
 }
 
+#navigation ul>li.messages>a {
+    /* @embed */
+    background-image: url('../nav-notifications.png');
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: 45%;
+    transition: .15s ease background-size;
+    padding-right: 10px;
+    padding-left: 10px;
+    width: 30px;
+    overflow: hidden;
+    text-indent: 50px;
+    white-space: nowrap;
+}
+
+#navigation .messages>a:hover {
+    background-size: 50%;
+}
+
+#navigation .messages .message-count {
+    display: none;
+}
+
+#navigation .messages .message-count.show {
+    display: block;
+    position: absolute;
+    top: .5rem;
+    right: .25rem;
+    border-radius: 1rem;
+    background-color: #ffab1a;
+    padding: 0 .25rem;
+    text-indent: 0;
+    line-height: 1rem;
+    color: #fff;
+    font-size: .7rem;
+    font-weight: bold;
+}
+
 #lastmod {
     text-align: center;
     font-size: 11px;
     color: #6b6b6b;
 }
 
-#feet {
+.feet {
     list-style: none;
     display: block;
     text-align: center;
@@ -728,7 +771,7 @@ dl dt {
     margin-bottom: 20px;
 }
 
-#feet li {
+.feet li {
     list-style: none;
     display: inline;
     margin-right: 10px;

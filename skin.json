@@ -32,7 +32,7 @@
 			"class": "ResourceLoaderSkinModule",
 			"features": {
 				"content-links": true,
-				"content-thumbnails": true,
+				"content-media": true,
 				"interface-message-box": true,
 				"interface-category": true,
 				"content-tables": true,
@@ -54,16 +54,19 @@
 				"resources/css/mobile.css": {
 					"media": "only screen and (max-width: 981.4px)"
 				},
-				"resources/css/mobile-0-519.4.css": {
+				"resources/css/mobile-40.css": {
+					"media": "only screen and (max-width: 351.4px)"
+				},
+				"resources/css/mobile-30.css": {
 					"media": "only screen and (max-width: 519.4px)"
 				},
-				"resources/css/mobile-519.5-679.4.css": {
+				"resources/css/mobile-20.css": {
 					"media": "only screen and (min-width: 519.5px) and (max-width: 679.4px)"
 				},
-				"resources/css/mobile-679.5-981.4.css": {
+				"resources/css/mobile-10.css": {
 					"media": "only screen and (min-width: 679.5px) and (max-width: 981.4px)"
 				},
-				"resources/css/mobile-981.5+.css": {
+				"resources/css/mobile-00.css": {
 					"media": "only screen and (min-width: 981.5px)"
 				}
 			}
