@@ -364,15 +364,31 @@ window.addEventListener('click', function (e) {
 
 var sidebarShown = false;
 var sidebarToggle = document.querySelector('#navigation .sidebar-toggle')
-sidebarToggle.addEventListener('click', function(){
-	if (sidebarToggle.computedStyleMap().get('display').value === 'none') return;
+
+function toggleSidebar(e) {
+	e.stopPropagation();
+
+	if (getComputedStyle(sidebarToggle).display === 'none') return;
+
+	const left = document.querySelector('#view .inner .left');
+	const notNav = document.querySelector('#not-nav');
+
 	if (!sidebarShown) {
-		document.querySelector('#view .inner .left').style.left = '0';
+		// show sidebar and enable non-nav close listener
+		left.style.left = '0';
+		notNav.addEventListener('click', toggleSidebar);
 	} else {
-		document.querySelector('#view .inner .left').style.left = null;
+		// ignore clicks in the sidebar itself
+		if (left.contains(e.target)) return;
+		// hide sidebar and disable non-nav close listener
+		e.preventDefault();
+		left.style.left = null;
+		notNav.removeEventListener('click', toggleSidebar);
 	}
 	sidebarShown = !sidebarShown;
-});
+}
+
+sidebarToggle.addEventListener('click', toggleSidebar);
 
 </script>
 
