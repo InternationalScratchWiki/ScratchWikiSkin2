@@ -110,7 +110,9 @@ body.dark-theme {
 
 .dark-theme textarea,
 .dark-theme input,
-.dark-theme select {
+.dark-theme select,
+.dark-theme [class^="mw-widget-"],
+.dark-theme .mw-ui-button {
     background-color: var(--dark-bg-4);
     color: var(--font-color);
     border: 1px solid var(--dark-border-1);
@@ -531,5 +533,10 @@ body.dark-theme {
 
 /* Visual Editor-specific (non-OOUI) fixes */
 .dark-theme .ve-activated #catlinks:hover {
+    background-color: var(--dark-bg-1);
+}
+
+/* Fix history page */
+.dark-theme #pagehistory li.selected {
     background-color: var(--dark-bg-1);
 }
