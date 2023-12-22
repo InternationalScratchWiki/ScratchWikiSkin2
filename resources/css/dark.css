@@ -507,3 +507,14 @@ body.dark-theme {
 .dark-theme .mwe-popups .mwe-popups-extract[dir='rtl']:after {
     background: none;
 }
+
+/* File: page metadata fixes */
+.dark-theme .mw_metadata th {
+    background-color: var(--dark-bg-2);
+}
+.dark-theme .mw_metadata td {
+    background-color: var(--dark-bg-1);
+}
+.dark-theme .mw_metadata td, .dark-theme .mw_metadata th {
+    border-color: var(--dark-bg-3);
+}
