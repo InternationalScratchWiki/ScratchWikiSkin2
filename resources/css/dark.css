@@ -243,6 +243,16 @@ body.dark-theme {
 .dark-theme .oo-ui-menuOptionWidget.oo-ui-optionWidget-highlighted {
     background-color: rgba(255, 255, 255, 0.1);
 }
+.dark-theme .oo-ui-toolbar-bar {
+    background-color: #000;
+    color: var(--font-color);
+}
+.dark-theme .oo-ui-popupToolGroup.oo-ui-widget-enabled > .oo-ui-popupToolGroup-handle:hover {
+    background-color: #222526;
+}
+.dark-theme .oo-ui-barToolGroup-tools.oo-ui-toolGroup-disabled-tools .oo-ui-tool.oo-ui-flaggedElement-primary > .oo-ui-tool-link {
+    background-color: #35393b;
+}
 
 .dark-theme .toc {
     background-color: var(--dark-bg-1);
@@ -517,4 +527,9 @@ body.dark-theme {
 }
 .dark-theme .mw_metadata td, .dark-theme .mw_metadata th {
     border-color: var(--dark-bg-3);
+}
+
+/* Visual Editor-specific (non-OOUI) fixes */
+.dark-theme .ve-activated #catlinks:hover {
+    background-color: var(--dark-bg-1);
 }
