@@ -409,6 +409,11 @@ body.dark-theme {
     background-color: var(--dark-bg-1);
     border-right-color: var(--dark-border-1);
 }
+.dark-theme .CodeMirror .cm-mw-extlink-protocol,
+.dark-theme .CodeMirror .cm-mw-free-extlink-protocol,
+.dark-theme .CodeMirror .cm-mw-extlink,
+.dark-theme .CodeMirror .cm-mw-free-extlink,
+.dark-theme .CodeMirror .cm-mw-extlink-bracket,
 .dark-theme .CodeMirror .cm-mw-link-pagename,
 .dark-theme .CodeMirror .cm-mw-link-bracket,
 .dark-theme .CodeMirror .cm-mw-link-tosection,
