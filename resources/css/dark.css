@@ -374,6 +374,9 @@ body.dark-theme {
 .dark-theme .CodeMirror {
     background-color: var(--dark-bg-4);
 }
+.dark-theme .CodeMirror ::selection {
+    color: var(--dark-bg-4);
+}
 .dark-theme .CodeMirror .cm-mw-link-pagename,
 .dark-theme .CodeMirror .cm-mw-link-bracket,
 .dark-theme .CodeMirror .cm-mw-link-tosection,
