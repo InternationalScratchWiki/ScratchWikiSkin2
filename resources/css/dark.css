@@ -126,9 +126,9 @@ body.dark-theme {
     border: 1px solid var(--dark-bg-4);
 }
 .dark-theme [class$="-handle"],
-.dark-theme [class$="-input"],
+.dark-theme [class$="-input"]:not(.mw-input),
 .dark-theme [class*="-handle "],
-.dark-theme [class*="-input "] {
+.dark-theme [class*="-input "]:not(.mw-input) {
     border: 1px solid #000;
 }
 .dark-theme .editOptions {
