@@ -86,8 +86,8 @@ body.dark-theme {
     color: #aaaa00;
 }
 
-.dark-theme #content pre,
-.dark-theme #content code {
+.dark-theme #content pre:not([class^="blocks"]),
+.dark-theme #content code:not([class^="blocks"]) {
     border-color: var(--dark-bg-1);
     background: #23272a;
     color: var(--font-color);
@@ -583,4 +583,9 @@ body.dark-theme {
 .dark-theme .suggestions-result,
 .dark-theme .suggestions-special .special-query {
     color: var(--font-color);
+}
+
+/* Fix math */
+.dark-theme .mwe-math-fallback-image-inline {
+    filter: invert(1);
 }
