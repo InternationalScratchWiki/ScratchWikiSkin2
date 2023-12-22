@@ -282,6 +282,7 @@ body.dark-theme {
 }
 .dark-theme div.thumbinner {
     background-color: #070605;
+    color: var(--font-color);
 }
 
 /* Fix recent changes */
