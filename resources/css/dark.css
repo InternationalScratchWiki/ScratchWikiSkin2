@@ -515,7 +515,8 @@ body.dark-theme {
     background-color: rgb(64, 5, 3);
     border-color: rgb(149, 25, 25);
 }
-.dark-theme .warningbox {
+.dark-theme .warningbox,
+.dark-theme .mw-message-box-warning {
     background-color: rgb(63, 42, 3);
     border-color: rgb(163, 122, 0);
 }
@@ -543,6 +544,9 @@ body.dark-theme {
 .dark-theme .mwe-popups .mwe-popups-extract[dir='ltr']:after,
 .dark-theme .mwe-popups .mwe-popups-extract[dir='rtl']:after {
     background: none;
+}
+.dark-theme #content .previewnote p {
+    color: #ffa2a2;
 }
 
 /* File: page metadata fixes */
