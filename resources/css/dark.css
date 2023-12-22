@@ -255,6 +255,12 @@ body.dark-theme {
 .dark-theme .oo-ui-barToolGroup-tools.oo-ui-toolGroup-disabled-tools .oo-ui-tool.oo-ui-flaggedElement-primary > .oo-ui-tool-link {
     background-color: #35393b;
 }
+.dark-theme .oo-ui-pendingElement-pending {
+    background-color: var(--dark-bg-2);
+    background-image: linear-gradient(135deg, #000 25%, transparent 25%, transparent 50%, #000 50%, #000 75%, transparent 75%, transparent);
+    background-size: 1.42857143em 1.42857143em;
+    animation: oo-ui-pendingElement-stripes 650ms linear infinite;
+}
 
 .dark-theme .toc {
     background-color: var(--dark-bg-1);
