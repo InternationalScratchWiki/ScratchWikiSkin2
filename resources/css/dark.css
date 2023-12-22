@@ -111,7 +111,6 @@ body.dark-theme {
 .dark-theme textarea,
 .dark-theme input,
 .dark-theme select,
-.dark-theme [class^="mw-widget-"],
 .dark-theme .mw-ui-button {
     background-color: var(--dark-bg-4);
     color: var(--font-color);
@@ -119,6 +118,18 @@ body.dark-theme {
 }
 .dark-theme textarea {
     border: 1px solid var(--dark-bg-1) !important;
+}
+.dark-theme [class^="mw-widget-"],
+.dark-theme [class*=" mw-widget-"] {
+    background-color: var(--dark-bg-1);
+    color: var(--font-color);
+    border: 1px solid var(--dark-bg-4);
+}
+.dark-theme [class$="-handle"],
+.dark-theme [class$="-input"],
+.dark-theme [class*="-handle "],
+.dark-theme [class*="-input "] {
+    border: 1px solid #000;
 }
 .dark-theme .editOptions {
     background-color: var(--dark-bg-3);
@@ -135,11 +146,6 @@ body.dark-theme {
 /* OOUI hacks */
 .dark-theme .oo-ui-icon-search {
     filter: invert(1);
-}
-.dark-theme .oo-ui-inputWidget-input {
-    color: var(--font-color);
-    background-color: var(--dark-bg-1);
-    border: 1px solid var(--dark-border-1);
 }
 .dark-theme .oo-ui-inputWidget-input[type=search] {
     box-shadow: none;
@@ -228,11 +234,14 @@ body.dark-theme {
     background-color: transparent;
     border-color: rgba(0, 0, 0, 0.5);
 }
-.dark-theme .oo-ui-dropdownWidget-handle {
-    border-color: #000;
-}
 .dark-theme .oo-ui-dropdownInputWidget.oo-ui-widget-enabled {
     background-color: transparent;
+}
+.dark-theme .oo-ui-dropdownInputWidget.oo-ui-widget-enabled select,
+.dark-theme .oo-ui-dropdownInputWidget.oo-ui-widget-enabled input {
+    background-color: var(--dark-bg-1);
+    color: var(--font-color);
+    border: 1px solid #000;
 }
 .dark-theme .oo-ui-menuSelectWidget {
     background-color: var(--dark-bg-1);
@@ -248,9 +257,6 @@ body.dark-theme {
 .dark-theme .oo-ui-toolbar-bar {
     background-color: #000;
     color: var(--font-color);
-}
-.dark-theme .oo-ui-popupToolGroup.oo-ui-widget-enabled > .oo-ui-popupToolGroup-handle:hover {
-    background-color: #222526;
 }
 .dark-theme .oo-ui-barToolGroup-tools.oo-ui-toolGroup-disabled-tools .oo-ui-tool.oo-ui-flaggedElement-primary > .oo-ui-tool-link {
     background-color: #35393b;
