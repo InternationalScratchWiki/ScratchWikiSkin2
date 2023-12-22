@@ -401,6 +401,10 @@ body.dark-theme {
 .dark-theme .CodeMirror ::selection {
     color: var(--dark-bg-4);
 }
+.dark-theme .CodeMirror .CodeMirror-gutters {
+    background-color: var(--dark-bg-1);
+    border-right-color: var(--dark-border-1);
+}
 .dark-theme .CodeMirror .cm-mw-link-pagename,
 .dark-theme .CodeMirror .cm-mw-link-bracket,
 .dark-theme .CodeMirror .cm-mw-link-tosection,
