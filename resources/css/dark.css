@@ -556,3 +556,18 @@ body.dark-theme {
 .dark-theme #pagehistory li.selected {
     background-color: var(--dark-bg-1);
 }
+
+/* Fix search suggestions */
+.dark-theme .suggestions-results,
+.dark-theme .suggestions-special {
+    background-color: var(--dark-bg-1);
+    border-color: var(--dark-border-1);
+}
+.dark-theme .suggestions a.mw-searchSuggest-link,
+.dark-theme .suggestions a.mw-searchSuggest-link:hover,
+.dark-theme .suggestions a.mw-searchSuggest-link:active,
+.dark-theme .suggestions a.mw-searchSuggest-link:focus,
+.dark-theme .suggestions-result,
+.dark-theme .suggestions-special .special-query {
+    color: var(--font-color);
+}
