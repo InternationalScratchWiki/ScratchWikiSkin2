@@ -1,29 +1,29 @@
 {
 	"@metadata": {
 		"authors": [
-			"Hungarian Scratch translators", "ahmetlii"
+			"Hungarian Scratch translators", "ahmetlii", "OragSam"
 		]
 	},
-	"skinname-scratchwikiskin2": "ScratchWikiHéj",
-	"scratchwikiskin-desc": "Egy héj a Scratch Wiki számára.",
+	"skinname-scratchwikiskin2": "ScratchWikiSkin",
+	"scratchwikiskin-desc": "Egy skin a Scratch Wiki számára.",
 	"scratchwikiskin-create": "Alkoss",
-	"scratchwikiskin-create-project": "Készítsen egy projektet",
-	"scratchwikiskin-create-page": "Hozzon létre egy projektet",
-	"scratchwikiskin-create-page-url": "Project:Hozzon létre egy projektet",
+	"scratchwikiskin-create-project": "Hozz létre egy projektet",
+	"scratchwikiskin-create-page": "Hozz létre egy oldalt",
+	"scratchwikiskin-create-page-url": "Project:Hozz létre egy projektet",
 	"scratchwikiskin-explore": "Böngéssz",
-	"scratchwikiskin-explore-projects": "Böngéssz Projekteket",
-	"scratchwikiskin-discuss": "Megvitat",
-	"scratchwikiskin-discuss-text": "Megvitat Scratch",
-	"scratchwikiskin-discuss-wiki": "https://scratch.mit.edu/discuss/topic/294197/",
-	"scratchwikiskin-discuss-wiki-text": "Wiki Forum Téma",
+	"scratchwikiskin-explore-projects": "Böngéssz Projektek után",
+	"scratchwikiskin-discuss": "Vitasd meg",
+	"scratchwikiskin-discuss-text": "Scratch Fórumok",
+	"scratchwikiskin-discuss-wiki": "https://scratch.mit.edu/discuss/topic/16774/",
+	"scratchwikiskin-discuss-wiki-text": "Magyar Wiki Témája",
 	"scratchwikiskin-ideas": "Ötletek",
 	"scratchwikiskin-ideas-text": "Scratch Ötletek",
 	"scratchwikiskin-faq-page-url": "Project:GYIK",
 	"scratchwikiskin-faq-page": "Wiki GYIK",
-	"scratchwikiskin-about": "Körül",
+	"scratchwikiskin-about": "Névjegy",
 	"scratchwikiskin-about-text": "A Scratch-ről",
-	"scratchwikiskin-helpthewiki": "Segítsen a wiki!",
-	"scratchwikiskin-madeforscratchers": "A Scratch Wikit a Scratchers készíti a Scratchers számára. Szeretne közreműködni?",
+	"scratchwikiskin-helpthewiki": "Segítsd a wikit!",
+	"scratchwikiskin-madeforscratchers": "A Scratch Wikit Scratcherek készítik Scratcherek számára. Szeretnél közreműködni?",
 	"scratchwikiskin-becomeacontributor-page": "Project:Váljon közreműködővé",
 	"scratchwikiskin-learnaboutjoining": "További információ a szerkesztőként való csatlakozásról!",
 	"scratchwikiskin-seeportal": "Lásd a Közösségi portálon folyó megbeszéléseket",
@@ -61,5 +61,5 @@
 	"scratchwikiskin-footer-foundation": "Scratch alapítvány",
 	"scratchwikiskin-notloggedin": "Nincs bejelentkezve",
 	"scratchwikiskin-pref-color": "Fejléc színe:",
-	"scratchwikiskin-search": "Keresés a Wikián"
+	"scratchwikiskin-search": "Keresés a Wikin"
 }

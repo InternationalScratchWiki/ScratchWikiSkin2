@@ -1,22 +1,27 @@
 Below are attributions to files that require attribution.
-
 * Mobile layout hamburger icon: https://commons.wikimedia.org/wiki/File:Hamburger_icon.svg (licensed under CC BY-SA 3.0) (color inverted with CSS)
 * Mobile layout "person" icon: https://www.iconfinder.com/icons/1954535/account_people_person_profile_user_icon (licensed under CC BY 3.0) (color inverted with CSS)
 * Pencil icon for edit tools: https://commons.wikimedia.org/wiki/File:White_pencil.png (public domain)
 * External link icon: https://en.scratch-wiki.info/wiki/File:Link_icon.png (licensed under CC BY-SA 4.0)
 
-The Scratch logo is a trademark of Scratch. The search bar glass icon and dropdown icons are licensed under CC BY-SA 2.0.
+The [https://scratch.mit.edu Scratch website] is licensed under CC BY-SA 2.0; the following was copied from it:
+* The Scratch logo is a trademark of Scratch.
+* The search bar glass icon, dropdown icon, and message envelope icon.
+* A significant amount of source code, especially HTML and CSS.
 
-Thanks to people who reported bugs during the skin's development and use.
+Thanks to the skin's [https://github.com/InternationalScratchWiki/ScratchWikiSkin2/graphs/contributors contributors] and people who reported bugs during the skin's development and use.
 
 Thanks to the skin's translators:
 * apple502j (Japanese)
+* T-taku (Japanese)
 * Smrman (French and Dutch)
 * Bouboufez (French)
 * RuMaks (Russian)
 * asqwde (Russian)
+* gohoski (Russian)
 * Kenny2scratch (Chinese)
 * Rumanti (Indonesian)
 * mtwoll (German)
 * LiFaytheGoblin (German)
 * ahmetlii (Turkish)
+* OragSam (Hungarian)
