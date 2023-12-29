@@ -210,6 +210,10 @@ body.dark-theme {
     background-color: #0645ad;
     border-color: #0645ad;
 }
+.dark-theme .oo-ui-dropdownWidget.oo-ui-widget-enabled.oo-ui-dropdownWidget-open .oo-ui-dropdownWidget-handle,
+.dark-theme .oo-ui-dropdownWidget.oo-ui-widget-enabled .oo-ui-dropdownWidget-handle:hover {
+    background-color: #000;
+}
 .dark-theme .oo-ui-dropdownWidget.oo-ui-widget-enabled .oo-ui-dropdownWidget-handle {
     background-color: var(--dark-bg-1);
     color: var(--font-color);
@@ -259,13 +263,67 @@ body.dark-theme {
     color: var(--font-color);
 }
 .dark-theme .oo-ui-barToolGroup-tools.oo-ui-toolGroup-disabled-tools .oo-ui-tool.oo-ui-flaggedElement-primary > .oo-ui-tool-link {
-    background-color: #35393b;
+    background-color: var(--dark-bg-3);
 }
 .dark-theme .oo-ui-pendingElement-pending {
     background-color: var(--dark-bg-2);
     background-image: linear-gradient(135deg, #000 25%, transparent 25%, transparent 50%, #000 50%, #000 75%, transparent 75%, transparent);
     background-size: 1.42857143em 1.42857143em;
     animation: oo-ui-pendingElement-stripes 650ms linear infinite;
+}
+.dark-theme .oo-ui-windowManager-modal > .oo-ui-dialog > .oo-ui-window-frame,
+.dark-theme .oo-ui-popupToolGroup.oo-ui-popupToolGroup-active > .oo-ui-popupToolGroup-handle {
+    background-color: var(--dark-bg-1);
+}
+.dark-theme .oo-ui-toolbar-actions .oo-ui-popupToolGroup.oo-ui-widget-enabled > .oo-ui-popupToolGroup-handle:hover {
+    border-right-color: #000;
+}
+.dark-theme .oo-ui-windowManager-modal > .oo-ui-dialog {
+    background-color: rgba(0, 0, 0, 0.5);
+}
+.dark-theme .oo-ui-tool.oo-ui-widget-enabled > .oo-ui-tool-link:hover,
+.dark-theme .oo-ui-tool.oo-ui-widget-enabled > .oo-ui-tool-link:active,
+.dark-theme .oo-ui-listToolGroup-tools .oo-ui-tool.oo-ui-widget-enabled:hover,
+.dark-theme .oo-ui-popupToolGroup.oo-ui-widget-enabled > .oo-ui-popupToolGroup-handle:hover,
+.dark-theme .oo-ui-tool.oo-ui-widget-enabled.oo-ui-tool-active > .oo-ui-tool-link,
+.dark-theme .oo-ui-tool.oo-ui-widget-enabled.oo-ui-popupToolGroup-active > .oo-ui-tool-link {
+    background-color: var(--dark-bg-3);
+    color: var(--font-color);
+}
+.dark-theme .oo-ui-indicator-down {
+    filter: invert(1);
+}
+.dark-theme select.oo-ui-indicator-down {
+    filter: none;
+}
+.dark-theme .oo-ui-popupToolGroup-tools {
+    background-color: var(--dark-bg-1);
+}
+.dark-theme .oo-ui-popupToolGroup-tools .oo-ui-tool-active.oo-ui-widget-enabled .oo-ui-tool-link .oo-ui-tool-title {
+    color: #c93;
+}
+.dark-theme .oo-ui-toggleSwitchWidget {
+    background-color: var(--dark-bg-3);
+    border-color: var(--dark-border-1);
+}
+.dark-theme .oo-ui-toggleSwitchWidget.oo-ui-widget-disabled {
+    background-color: var(--dark-bg-1);
+    border-color: var(--dark-bg-3);
+}
+.dark-theme .oo-ui-toggleSwitchWidget.oo-ui-widget-disabled .oo-ui-toggleSwitchWidget-grip {
+    background-color: #f8f9fa;
+}
+.dark-theme .oo-ui-toggleSwitchWidget.oo-ui-widget-enabled:hover {
+    background-color: #000;
+}
+.dark-theme .oo-ui-menuToolGroup {
+    border-color: #000;
+}
+.dark-theme .mw-widget-mediaResultWidget .mw-widget-mediaResultWidget-overlay {
+    background-color: unset; /* to counteract .dark-theme [class^="mw-widget-"] */
+}
+.dark-theme .oo-ui-selectFileWidget.oo-ui-widget-enabled.oo-ui-selectFileWidget-dropTarget {
+    background-color: #000;
 }
 
 .dark-theme .toc {
@@ -289,6 +347,7 @@ body.dark-theme {
     background-color: var(--dark-bg-1);
     border-color: #dc322f;
 }
+.dark-theme [class^="diff"] .diffchange,
 .dark-theme .diffchange {
     background-color: unset;
     border: 1px solid #aaa;
@@ -304,6 +363,8 @@ body.dark-theme {
     background-color: unset;
     border-color: #8b8174;
 }
+.dark-theme figure[typeof],
+.dark-theme figure[typeof] > figcaption,
 .dark-theme div.thumbinner {
     background-color: #070605;
     color: var(--font-color);
@@ -335,6 +396,12 @@ body.dark-theme {
 .dark-theme .mw-rcfilters-ui-filterMenuSectionOptionWidget {
     background-color: var(--dark-bg-1);
     color: var(--font-color);
+}
+.dark-theme .oo-ui-textInputWidget.oo-ui-widget-disabled .oo-ui-inputWidget-input,
+.dark-theme .oo-ui-textInputWidget.oo-ui-widget-enabled .oo-ui-inputWidget-input[readonly]:not( .oo-ui-pendingElement-pending ) {
+    background-color: unset;
+    border-color: #000;
+    text-shadow: none;
 }
 .dark-theme .mw-rcfilters-ui-changesListWrapperWidget .mw-changeslist-legend {
     background-color: unset;
@@ -570,6 +637,23 @@ body.dark-theme {
 
 /* Visual Editor-specific (non-OOUI) fixes */
 .dark-theme .ve-activated #catlinks:hover {
+    background-color: var(--dark-bg-1);
+}
+.dark-theme .ve-ce-branchNode-blockSlug,
+.dark-theme .ve-ce-branchNode-newSlug {
+    background-color: rgba(29, 32, 33, 0.75);
+}
+.dark-theme .ve-ui-mwSaveDialog-options {
+    background-color: unset;
+}
+.dark-theme .ve-ui-mwSaveDialog-summary {
+    background-color: unset;
+    border: 1px solid #fff;
+}
+.dark-theme .ve-ui-targetWidget:not(.oo-ui-pendingElement-pending) {
+    background-color: #000;
+}
+.dark-theme .ve-ui-mwGalleryDialog-highlighted-image {
     background-color: var(--dark-bg-1);
 }
 
