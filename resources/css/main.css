@@ -988,3 +988,11 @@ dl dt {
 .mw-rcfilters-ui-filterTagMultiselectWidget-views-select-widget.oo-ui-widget.oo-ui-buttonGroupWidget {
     height: unset;
 }
+
+/* VisualEditor fixes/hacks */
+.ve-ui-context .oo-ui-popupWidget-body.oo-ui-clippableElement-clippable {
+    height: unset !important;
+}
+.ve-ui-context-menu.ve-ui-desktopContext-menu {
+    position: initial;
+}
