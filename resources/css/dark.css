@@ -576,6 +576,7 @@ body.dark-theme {
 /* Fix history page */
 .dark-theme #pagehistory li.selected {
     background-color: var(--dark-bg-1);
+    color: var(--font-color);
 }
 
 /* Fix search suggestions */
