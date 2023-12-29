@@ -341,6 +341,12 @@ body.dark-theme {
 .dark-theme .oo-ui-selectFileWidget.oo-ui-widget-enabled.oo-ui-selectFileWidget-dropTarget {
     background-color: #000;
 }
+.dark-theme .mw-htmlform-ooui .mw-htmlform-matrix tbody tr:nth-child( even ) td {
+    background-color: #000;
+}
+.dark-theme .mw-htmlform-ooui .mw-htmlform-matrix tbody tr:hover td {
+    background-color: var(--dark-bg-3);
+}
 
 .dark-theme .toc {
     background-color: var(--dark-bg-1);
@@ -697,4 +703,9 @@ body.dark-theme {
 /* Fix math */
 .dark-theme .mwe-math-fallback-image-inline {
     filter: invert(1);
+}
+
+/* Fix Special:Preferences */
+.dark-theme #wpTimeCorrection {
+    background-color: transparent;
 }
