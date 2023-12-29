@@ -393,6 +393,7 @@ body.dark-theme {
 .dark-theme .wikiEditor-ui-toolbar .sections .section {
     border-color: var(--dark-border-1);
 }
+.dark-theme .wikiEditor-ui-toolbar .page-characters div span,
 .dark-theme .wikiEditor-ui-toolbar .page-table th,
 .dark-theme .wikiEditor-ui-toolbar .page-table td {
     color: var(--font-color);
