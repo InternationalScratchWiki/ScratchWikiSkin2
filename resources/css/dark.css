@@ -501,25 +501,32 @@ body.dark-theme {
 
 /* Box fixes */
 
+.dark-theme .mw-message-box,
 .dark-theme .messagebox,
+.dark-theme .mw-message-box-error,
 .dark-theme .errorbox,
+.dark-theme .mw-message-box-warning,
 .dark-theme .warningbox,
+.dark-theme .mw-message-box-success,
 .dark-theme .successbox {
     color: unset;
 }
+.dark-theme .mw-message-box,
 .dark-theme .messagebox {
     background-color: rgb(34, 37, 38);
     border-color: rgb(72, 78, 81);
 }
+.dark-theme .mw-message-box-error,
 .dark-theme .errorbox {
     background-color: rgb(64, 5, 3);
     border-color: rgb(149, 25, 25);
 }
-.dark-theme .warningbox,
-.dark-theme .mw-message-box-warning {
+.dark-theme .mw-message-box-warning,
+.dark-theme .warningbox {
     background-color: rgb(63, 42, 3);
     border-color: rgb(163, 122, 0);
 }
+.dark-theme .mw-message-box-success,
 .dark-theme .successbox {
     background-color: rgb(4, 74, 62);
     border-color: rgb(27, 182, 148);
