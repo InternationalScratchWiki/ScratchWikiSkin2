@@ -117,7 +117,7 @@ body.dark-theme {
     border: 1px solid var(--dark-border-1);
 }
 .dark-theme textarea {
-    border: 1px solid var(--dark-bg-1) !important;
+    border: 1px solid var(--dark-border-1) !important;
 }
 .dark-theme [class^="mw-widget-"],
 .dark-theme [class*=" mw-widget-"] {
@@ -126,10 +126,20 @@ body.dark-theme {
     border: 1px solid var(--dark-bg-4);
 }
 .dark-theme [class$="-handle"],
-.dark-theme [class$="-input"]:not(.mw-input),
+.dark-theme [class$="-input"]:not(.mw-input, .oo-ui-labelElement),
 .dark-theme [class*="-handle "],
-.dark-theme [class*="-input "]:not(.mw-input) {
-    border: 1px solid #000;
+.dark-theme [class*="-input "]:not(.mw-input, .oo-ui-labelElement) {
+    border: 1px solid var(--dark-border-1);
+}
+.dark-theme [class$="-disabled"] [class$="-handle"],
+.dark-theme [class$="-disabled"] [class$="-input"]:not(.mw-input, .oo-ui-labelElement),
+.dark-theme [class$="-disabled"] [class*="-handle "],
+.dark-theme [class$="-disabled"] [class*="-input "]:not(.mw-input, .oo-ui-labelElement),
+.dark-theme [class*="-disabled "] [class$="-handle"],
+.dark-theme [class*="-disabled "] [class$="-input"]:not(.mw-input, .oo-ui-labelElement),
+.dark-theme [class*="-disabled "] [class*="-handle "],
+.dark-theme [class*="-disabled "] [class*="-input "]:not(.mw-input, .oo-ui-labelElement) {
+    border-color: #000;
 }
 .dark-theme .editOptions {
     background-color: var(--dark-bg-3);
@@ -204,7 +214,7 @@ body.dark-theme {
 .dark-theme .oo-ui-buttonElement-framed.oo-ui-widget-enabled > .oo-ui-buttonElement-button {
     background-color: var(--dark-bg-1);
     color: var(--font-color);
-    border-color: #000;
+    border-color: var(--dark-border-1);
 }
 .dark-theme .oo-ui-buttonElement-framed.oo-ui-widget-enabled.oo-ui-flaggedElement-primary.oo-ui-flaggedElement-progressive > .oo-ui-buttonElement-button {
     background-color: #0645ad;
@@ -261,6 +271,12 @@ body.dark-theme {
 .dark-theme .oo-ui-toolbar-bar {
     background-color: #000;
     color: var(--font-color);
+}
+.dark-theme .oo-ui-toolbar-bar [class$="-handle"],
+.dark-theme .oo-ui-toolbar-bar [class$="-input"]:not(.mw-input),
+.dark-theme .oo-ui-toolbar-bar [class*="-handle "],
+.dark-theme .oo-ui-toolbar-bar [class*="-input "]:not(.mw-input) {
+    border: none;
 }
 .dark-theme .oo-ui-barToolGroup-tools.oo-ui-toolGroup-disabled-tools .oo-ui-tool.oo-ui-flaggedElement-primary > .oo-ui-tool-link {
     background-color: var(--dark-bg-3);
