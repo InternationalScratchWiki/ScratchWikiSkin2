@@ -347,6 +347,12 @@ body.dark-theme {
 .dark-theme .mw-htmlform-ooui .mw-htmlform-matrix tbody tr:hover td {
     background-color: var(--dark-bg-3);
 }
+.dark-theme .oo-ui-textInputWidget.oo-ui-widget-disabled .oo-ui-inputWidget-input,
+.dark-theme .oo-ui-textInputWidget.oo-ui-widget-enabled .oo-ui-inputWidget-input[readonly]:not( .oo-ui-pendingElement-pending ) {
+    background-color: unset;
+    border-color: #000;
+    text-shadow: none;
+}
 
 .dark-theme .toc {
     background-color: var(--dark-bg-1);
@@ -418,12 +424,6 @@ body.dark-theme {
 .dark-theme .mw-rcfilters-ui-filterMenuSectionOptionWidget {
     background-color: var(--dark-bg-1);
     color: var(--font-color);
-}
-.dark-theme .oo-ui-textInputWidget.oo-ui-widget-disabled .oo-ui-inputWidget-input,
-.dark-theme .oo-ui-textInputWidget.oo-ui-widget-enabled .oo-ui-inputWidget-input[readonly]:not( .oo-ui-pendingElement-pending ) {
-    background-color: unset;
-    border-color: #000;
-    text-shadow: none;
 }
 .dark-theme .mw-rcfilters-ui-changesListWrapperWidget .mw-changeslist-legend {
     background-color: unset;
