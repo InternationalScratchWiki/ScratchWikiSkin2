@@ -354,6 +354,7 @@ body.dark-theme {
     text-shadow: none;
 }
 
+/* Table of Contents fixes */
 .dark-theme .toc {
     background-color: var(--dark-bg-1);
     border-color: #000;
@@ -425,6 +426,7 @@ body.dark-theme {
     background-color: var(--dark-bg-1);
     color: var(--font-color);
 }
+.dark-theme .mw-changeslist-legend,
 .dark-theme .mw-rcfilters-ui-changesListWrapperWidget .mw-changeslist-legend {
     background-color: unset;
 }
@@ -437,6 +439,10 @@ body.dark-theme {
 .dark-theme .oo-ui-buttonElement-framed.oo-ui-widget-enabled > .oo-ui-buttonElement-button:hover {
     color: #fff;
     background-color: var(--dark-bg-2);
+}
+.dark-theme .mw-rcfilters-ui-filterTagMultiselectWidget-views-input:not(.mw-input),
+.dark-theme .mw-rcfilters-ui-filterTagMultiselectWidget-views-input:not(.mw-input) .oo-ui-inputWidget-input {
+    border: none;
 }
 
 /* Fix editing */

@@ -985,3 +985,6 @@ dl dt {
 .mw-rcfilters-ui-overlay {
     z-index: 1;
 }
+.mw-rcfilters-ui-filterTagMultiselectWidget-views-select-widget.oo-ui-widget.oo-ui-buttonGroupWidget {
+    height: unset;
+}
