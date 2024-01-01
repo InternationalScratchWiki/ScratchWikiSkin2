@@ -216,6 +216,10 @@ body.dark-theme {
     color: var(--font-color);
     border-color: var(--dark-border-1);
 }
+.dark-theme .oo-ui-buttonElement-framed.oo-ui-widget-enabled.oo-ui-buttonElement-active > .oo-ui-buttonElement-button {
+    background-color: #000;
+    text-decoration: underline;
+}
 .dark-theme .oo-ui-buttonElement-framed.oo-ui-widget-enabled.oo-ui-flaggedElement-primary.oo-ui-flaggedElement-progressive > .oo-ui-buttonElement-button {
     background-color: #0645ad;
     border-color: #0645ad;
@@ -714,4 +718,45 @@ body.dark-theme {
 /* Fix Special:Preferences */
 .dark-theme #wpTimeCorrection {
     background-color: transparent;
+}
+
+/* Fix Echo */
+.dark-theme .mw-echo-ui-notificationsInboxWidget-toolbarWrapper {
+    background-color: unset;
+}
+.dark-theme .mw-echo-ui-notificationItemWidget {
+    background-color: var(--dark-bg-2);
+}
+.dark-theme .mw-echo-ui-notificationItemWidget:hover {
+    background-color: var(--dark-bg-4);
+}
+.dark-theme .mw-echo-ui-notificationItemWidget-unread {
+    background-color: #000;
+}
+.dark-theme .mw-echo-ui-notificationItemWidget-unread:hover {
+    background-color: var(--dark-bg-1);
+}
+.dark-theme .mw-echo-ui-notificationItemWidget-content-message-header,
+.dark-theme .mw-echo-ui-notificationItemWidget-content-message-body {
+    color: var(--font-color);
+}
+.dark-theme .mw-echo-ui-pageNotificationsOptionWidget.oo-ui-optionWidget-selected {
+    background-color: var(--dark-bg-1);
+}
+.dark-theme .mw-echo-ui-pageNotificationsOptionWidget-label-count {
+    background-color: var(--dark-bg-2);
+}
+.dark-theme .mw-echo-ui-pageNotificationsOptionWidget.oo-ui-optionWidget-selected.mw-echo-ui-pageNotificationsOptionWidget.oo-ui-optionWidget-highlighted,
+.dark-theme .mw-echo-ui-pageNotificationsOptionWidget.oo-ui-optionWidget-pressed.mw-echo-ui-pageNotificationsOptionWidget.oo-ui-optionWidget-highlighted {
+    background-color: rgba(33, 78, 163, 0.1);
+}
+.dark-theme .mw-echo-ui-pageNotificationsOptionWidget.oo-ui-optionWidget-highlighted {
+    background-color: var(--dark-bg-2);
+    color: var(--font-color);
+}
+.dark-theme .mw-echo-ui-menuItemWidget > .oo-ui-buttonElement-button > .oo-ui-labelElement-label {
+    color: var(--font-color);
+}
+.dark-theme .mw-echo-special-nojs {
+    filter: invert(1); /* doesn't look great but it works */
 }
