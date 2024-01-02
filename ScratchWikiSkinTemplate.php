@@ -328,7 +328,7 @@ var body = mod(document.body);
 				&& !document.querySelector('.suggestions')?.contains(e.toElement)
 			) {
 				if (btn.hasclass('open')) {
-					if (e.toElement.matches('#navigation .link, #navigation .link>a, #navigation .link>a *')) {
+					if (e.toElement.matches('#navigation .link:not([class~=messages]), #navigation .link>a.dropdown-toggle, #navigation .link>a.dropdown-toggle *')) {
 						e.toElement.click();
 					}
 				}
