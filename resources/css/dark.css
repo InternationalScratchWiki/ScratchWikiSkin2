@@ -760,3 +760,13 @@ body.dark-theme {
 .dark-theme .mw-echo-special-nojs {
     filter: invert(1); /* doesn't look great but it works */
 }
+
+/* Fix references */
+.dark-theme ol.references li:target,
+.dark-theme sup.reference:target {
+    background-color: #000;
+}
+.dark-theme #content sup.reference:target a,
+.dark-theme #content sup.reference:target a:visited {
+    color: #cc0;
+}
