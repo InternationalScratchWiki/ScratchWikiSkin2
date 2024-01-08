@@ -86,8 +86,8 @@ body.dark-theme {
     color: #aaaa00;
 }
 
-.dark-theme #content pre,
-.dark-theme #content code {
+.dark-theme #content pre:not([class^="blocks"]),
+.dark-theme #content code:not([class^="blocks"]) {
     border-color: var(--dark-bg-1);
     background: #23272a;
     color: var(--font-color);
@@ -110,13 +110,36 @@ body.dark-theme {
 
 .dark-theme textarea,
 .dark-theme input,
-.dark-theme select {
+.dark-theme select,
+.dark-theme .mw-ui-button {
     background-color: var(--dark-bg-4);
     color: var(--font-color);
     border: 1px solid var(--dark-border-1);
 }
 .dark-theme textarea {
-    border: 1px solid var(--dark-bg-1) !important;
+    border: 1px solid var(--dark-border-1) !important;
+}
+.dark-theme [class^="mw-widget-"],
+.dark-theme [class*=" mw-widget-"] {
+    background-color: var(--dark-bg-1);
+    color: var(--font-color);
+    border: 1px solid var(--dark-bg-4);
+}
+.dark-theme [class$="-handle"],
+.dark-theme [class$="-input"]:not(.mw-input, .oo-ui-labelElement),
+.dark-theme [class*="-handle "],
+.dark-theme [class*="-input "]:not(.mw-input, .oo-ui-labelElement) {
+    border: 1px solid var(--dark-border-1);
+}
+.dark-theme [class$="-disabled"] [class$="-handle"],
+.dark-theme [class$="-disabled"] [class$="-input"]:not(.mw-input, .oo-ui-labelElement),
+.dark-theme [class$="-disabled"] [class*="-handle "],
+.dark-theme [class$="-disabled"] [class*="-input "]:not(.mw-input, .oo-ui-labelElement),
+.dark-theme [class*="-disabled "] [class$="-handle"],
+.dark-theme [class*="-disabled "] [class$="-input"]:not(.mw-input, .oo-ui-labelElement),
+.dark-theme [class*="-disabled "] [class*="-handle "],
+.dark-theme [class*="-disabled "] [class*="-input "]:not(.mw-input, .oo-ui-labelElement) {
+    border-color: #000;
 }
 .dark-theme .editOptions {
     background-color: var(--dark-bg-3);
@@ -133,11 +156,6 @@ body.dark-theme {
 /* OOUI hacks */
 .dark-theme .oo-ui-icon-search {
     filter: invert(1);
-}
-.dark-theme .oo-ui-inputWidget-input {
-    color: var(--font-color);
-    background-color: var(--dark-bg-1);
-    border: 1px solid var(--dark-border-1);
 }
 .dark-theme .oo-ui-inputWidget-input[type=search] {
     box-shadow: none;
@@ -196,11 +214,19 @@ body.dark-theme {
 .dark-theme .oo-ui-buttonElement-framed.oo-ui-widget-enabled > .oo-ui-buttonElement-button {
     background-color: var(--dark-bg-1);
     color: var(--font-color);
-    border-color: #000;
+    border-color: var(--dark-border-1);
+}
+.dark-theme .oo-ui-buttonElement-framed.oo-ui-widget-enabled.oo-ui-buttonElement-active > .oo-ui-buttonElement-button {
+    background-color: #000;
+    text-decoration: underline;
 }
 .dark-theme .oo-ui-buttonElement-framed.oo-ui-widget-enabled.oo-ui-flaggedElement-primary.oo-ui-flaggedElement-progressive > .oo-ui-buttonElement-button {
     background-color: #0645ad;
     border-color: #0645ad;
+}
+.dark-theme .oo-ui-dropdownWidget.oo-ui-widget-enabled.oo-ui-dropdownWidget-open .oo-ui-dropdownWidget-handle,
+.dark-theme .oo-ui-dropdownWidget.oo-ui-widget-enabled .oo-ui-dropdownWidget-handle:hover {
+    background-color: #000;
 }
 .dark-theme .oo-ui-dropdownWidget.oo-ui-widget-enabled .oo-ui-dropdownWidget-handle {
     background-color: var(--dark-bg-1);
@@ -226,11 +252,14 @@ body.dark-theme {
     background-color: transparent;
     border-color: rgba(0, 0, 0, 0.5);
 }
-.dark-theme .oo-ui-dropdownWidget-handle {
-    border-color: #000;
-}
 .dark-theme .oo-ui-dropdownInputWidget.oo-ui-widget-enabled {
     background-color: transparent;
+}
+.dark-theme .oo-ui-dropdownInputWidget.oo-ui-widget-enabled select,
+.dark-theme .oo-ui-dropdownInputWidget.oo-ui-widget-enabled input {
+    background-color: var(--dark-bg-1);
+    color: var(--font-color);
+    border: 1px solid #000;
 }
 .dark-theme .oo-ui-menuSelectWidget {
     background-color: var(--dark-bg-1);
@@ -243,7 +272,93 @@ body.dark-theme {
 .dark-theme .oo-ui-menuOptionWidget.oo-ui-optionWidget-highlighted {
     background-color: rgba(255, 255, 255, 0.1);
 }
+.dark-theme .oo-ui-toolbar-bar {
+    background-color: #000;
+    color: var(--font-color);
+}
+.dark-theme .oo-ui-toolbar-bar [class$="-handle"],
+.dark-theme .oo-ui-toolbar-bar [class$="-input"]:not(.mw-input),
+.dark-theme .oo-ui-toolbar-bar [class*="-handle "],
+.dark-theme .oo-ui-toolbar-bar [class*="-input "]:not(.mw-input) {
+    border: none;
+}
+.dark-theme .oo-ui-barToolGroup-tools.oo-ui-toolGroup-disabled-tools .oo-ui-tool.oo-ui-flaggedElement-primary > .oo-ui-tool-link {
+    background-color: var(--dark-bg-3);
+}
+.dark-theme .oo-ui-pendingElement-pending {
+    background-color: var(--dark-bg-2);
+    background-image: linear-gradient(135deg, #000 25%, transparent 25%, transparent 50%, #000 50%, #000 75%, transparent 75%, transparent);
+    background-size: 1.42857143em 1.42857143em;
+    animation: oo-ui-pendingElement-stripes 650ms linear infinite;
+}
+.dark-theme .oo-ui-windowManager-modal > .oo-ui-dialog > .oo-ui-window-frame,
+.dark-theme .oo-ui-popupToolGroup.oo-ui-popupToolGroup-active > .oo-ui-popupToolGroup-handle {
+    background-color: var(--dark-bg-1);
+}
+.dark-theme .oo-ui-toolbar-actions .oo-ui-popupToolGroup.oo-ui-widget-enabled > .oo-ui-popupToolGroup-handle:hover {
+    border-right-color: #000;
+}
+.dark-theme .oo-ui-windowManager-modal > .oo-ui-dialog {
+    background-color: rgba(0, 0, 0, 0.5);
+}
+.dark-theme .oo-ui-tool.oo-ui-widget-enabled > .oo-ui-tool-link:hover,
+.dark-theme .oo-ui-tool.oo-ui-widget-enabled > .oo-ui-tool-link:active,
+.dark-theme .oo-ui-listToolGroup-tools .oo-ui-tool.oo-ui-widget-enabled:hover,
+.dark-theme .oo-ui-popupToolGroup.oo-ui-widget-enabled > .oo-ui-popupToolGroup-handle:hover,
+.dark-theme .oo-ui-tool.oo-ui-widget-enabled.oo-ui-tool-active > .oo-ui-tool-link,
+.dark-theme .oo-ui-tool.oo-ui-widget-enabled.oo-ui-popupToolGroup-active > .oo-ui-tool-link {
+    background-color: var(--dark-bg-3);
+    color: var(--font-color);
+}
+.dark-theme .oo-ui-indicator-down {
+    filter: invert(1);
+}
+.dark-theme select.oo-ui-indicator-down {
+    filter: none;
+}
+.dark-theme .oo-ui-popupToolGroup-tools {
+    background-color: var(--dark-bg-1);
+}
+.dark-theme .oo-ui-popupToolGroup-tools .oo-ui-tool-active.oo-ui-widget-enabled .oo-ui-tool-link .oo-ui-tool-title {
+    color: #c93;
+}
+.dark-theme .oo-ui-toggleSwitchWidget {
+    background-color: var(--dark-bg-3);
+    border-color: var(--dark-border-1);
+}
+.dark-theme .oo-ui-toggleSwitchWidget.oo-ui-widget-disabled {
+    background-color: var(--dark-bg-1);
+    border-color: var(--dark-bg-3);
+}
+.dark-theme .oo-ui-toggleSwitchWidget.oo-ui-widget-disabled .oo-ui-toggleSwitchWidget-grip {
+    background-color: #f8f9fa;
+}
+.dark-theme .oo-ui-toggleSwitchWidget.oo-ui-widget-enabled:hover {
+    background-color: #000;
+}
+.dark-theme .oo-ui-menuToolGroup {
+    border-color: #000;
+}
+.dark-theme .mw-widget-mediaResultWidget .mw-widget-mediaResultWidget-overlay {
+    background-color: unset; /* to counteract .dark-theme [class^="mw-widget-"] */
+}
+.dark-theme .oo-ui-selectFileWidget.oo-ui-widget-enabled.oo-ui-selectFileWidget-dropTarget {
+    background-color: #000;
+}
+.dark-theme .mw-htmlform-ooui .mw-htmlform-matrix tbody tr:nth-child( even ) td {
+    background-color: #000;
+}
+.dark-theme .mw-htmlform-ooui .mw-htmlform-matrix tbody tr:hover td {
+    background-color: var(--dark-bg-3);
+}
+.dark-theme .oo-ui-textInputWidget.oo-ui-widget-disabled .oo-ui-inputWidget-input,
+.dark-theme .oo-ui-textInputWidget.oo-ui-widget-enabled .oo-ui-inputWidget-input[readonly]:not( .oo-ui-pendingElement-pending ) {
+    background-color: unset;
+    border-color: #000;
+    text-shadow: none;
+}
 
+/* Table of Contents fixes */
 .dark-theme .toc {
     background-color: var(--dark-bg-1);
     border-color: #000;
@@ -265,6 +380,7 @@ body.dark-theme {
     background-color: var(--dark-bg-1);
     border-color: #dc322f;
 }
+.dark-theme [class^="diff"] .diffchange,
 .dark-theme .diffchange {
     background-color: unset;
     border: 1px solid #aaa;
@@ -280,8 +396,11 @@ body.dark-theme {
     background-color: unset;
     border-color: #8b8174;
 }
+.dark-theme figure[typeof],
+.dark-theme figure[typeof] > figcaption,
 .dark-theme div.thumbinner {
     background-color: #070605;
+    color: var(--font-color);
 }
 
 /* Fix recent changes */
@@ -311,6 +430,7 @@ body.dark-theme {
     background-color: var(--dark-bg-1);
     color: var(--font-color);
 }
+.dark-theme .mw-changeslist-legend,
 .dark-theme .mw-rcfilters-ui-changesListWrapperWidget .mw-changeslist-legend {
     background-color: unset;
 }
@@ -323,6 +443,10 @@ body.dark-theme {
 .dark-theme .oo-ui-buttonElement-framed.oo-ui-widget-enabled > .oo-ui-buttonElement-button:hover {
     color: #fff;
     background-color: var(--dark-bg-2);
+}
+.dark-theme .mw-rcfilters-ui-filterTagMultiselectWidget-views-input:not(.mw-input),
+.dark-theme .mw-rcfilters-ui-filterTagMultiselectWidget-views-input:not(.mw-input) .oo-ui-inputWidget-input {
+    border: none;
 }
 
 /* Fix editing */
@@ -368,11 +492,28 @@ body.dark-theme {
 .dark-theme .wikiEditor-ui-toolbar .sections .section {
     border-color: var(--dark-border-1);
 }
+.dark-theme .wikiEditor-ui-toolbar .page-characters div span,
+.dark-theme .wikiEditor-ui-toolbar .page-table th,
+.dark-theme .wikiEditor-ui-toolbar .page-table td {
+    color: var(--font-color);
+}
 
 /* CodeMirror fixes */
 .dark-theme .CodeMirror {
     background-color: var(--dark-bg-4);
 }
+.dark-theme .CodeMirror ::selection {
+    color: var(--dark-bg-4);
+}
+.dark-theme .CodeMirror .CodeMirror-gutters {
+    background-color: var(--dark-bg-1);
+    border-right-color: var(--dark-border-1);
+}
+.dark-theme .CodeMirror .cm-mw-extlink-protocol,
+.dark-theme .CodeMirror .cm-mw-free-extlink-protocol,
+.dark-theme .CodeMirror .cm-mw-extlink,
+.dark-theme .CodeMirror .cm-mw-free-extlink,
+.dark-theme .CodeMirror .cm-mw-extlink-bracket,
 .dark-theme .CodeMirror .cm-mw-link-pagename,
 .dark-theme .CodeMirror .cm-mw-link-bracket,
 .dark-theme .CodeMirror .cm-mw-link-tosection,
@@ -460,24 +601,32 @@ body.dark-theme {
 
 /* Box fixes */
 
+.dark-theme .mw-message-box,
 .dark-theme .messagebox,
+.dark-theme .mw-message-box-error,
 .dark-theme .errorbox,
+.dark-theme .mw-message-box-warning,
 .dark-theme .warningbox,
+.dark-theme .mw-message-box-success,
 .dark-theme .successbox {
     color: unset;
 }
+.dark-theme .mw-message-box,
 .dark-theme .messagebox {
     background-color: rgb(34, 37, 38);
     border-color: rgb(72, 78, 81);
 }
+.dark-theme .mw-message-box-error,
 .dark-theme .errorbox {
     background-color: rgb(64, 5, 3);
     border-color: rgb(149, 25, 25);
 }
+.dark-theme .mw-message-box-warning,
 .dark-theme .warningbox {
     background-color: rgb(63, 42, 3);
     border-color: rgb(163, 122, 0);
 }
+.dark-theme .mw-message-box-success,
 .dark-theme .successbox {
     background-color: rgb(4, 74, 62);
     border-color: rgb(27, 182, 148);
@@ -502,4 +651,122 @@ body.dark-theme {
 .dark-theme .mwe-popups .mwe-popups-extract[dir='ltr']:after,
 .dark-theme .mwe-popups .mwe-popups-extract[dir='rtl']:after {
     background: none;
+}
+.dark-theme #content .previewnote p {
+    color: #ffa2a2;
+}
+
+/* File: page metadata fixes */
+.dark-theme .mw_metadata th {
+    background-color: var(--dark-bg-2);
+}
+.dark-theme .mw_metadata td {
+    background-color: var(--dark-bg-1);
+}
+.dark-theme .mw_metadata td, .dark-theme .mw_metadata th {
+    border-color: var(--dark-bg-3);
+}
+
+/* Visual Editor-specific (non-OOUI) fixes */
+.dark-theme .ve-activated #catlinks:hover {
+    background-color: var(--dark-bg-1);
+}
+.dark-theme .ve-ce-branchNode-blockSlug,
+.dark-theme .ve-ce-branchNode-newSlug {
+    background-color: rgba(29, 32, 33, 0.75);
+}
+.dark-theme .ve-ui-mwSaveDialog-options {
+    background-color: unset;
+}
+.dark-theme .ve-ui-mwSaveDialog-summary {
+    background-color: unset;
+    border: 1px solid #fff;
+}
+.dark-theme .ve-ui-targetWidget:not(.oo-ui-pendingElement-pending) {
+    background-color: #000;
+}
+.dark-theme .ve-ui-mwGalleryDialog-highlighted-image {
+    background-color: var(--dark-bg-1);
+}
+
+/* Fix history page */
+.dark-theme #pagehistory li.selected {
+    background-color: var(--dark-bg-1);
+    color: var(--font-color);
+}
+
+/* Fix search suggestions */
+.dark-theme .suggestions-results,
+.dark-theme .suggestions-special {
+    background-color: var(--dark-bg-1);
+    border-color: var(--dark-border-1);
+}
+.dark-theme .suggestions a.mw-searchSuggest-link,
+.dark-theme .suggestions a.mw-searchSuggest-link:hover,
+.dark-theme .suggestions a.mw-searchSuggest-link:active,
+.dark-theme .suggestions a.mw-searchSuggest-link:focus,
+.dark-theme .suggestions-result,
+.dark-theme .suggestions-special .special-query {
+    color: var(--font-color);
+}
+
+/* Fix math */
+.dark-theme .mwe-math-fallback-image-inline {
+    filter: invert(1);
+}
+
+/* Fix Special:Preferences */
+.dark-theme #wpTimeCorrection {
+    background-color: transparent;
+}
+
+/* Fix Echo */
+.dark-theme .mw-echo-ui-notificationsInboxWidget-toolbarWrapper {
+    background-color: unset;
+}
+.dark-theme .mw-echo-ui-notificationItemWidget {
+    background-color: var(--dark-bg-2);
+}
+.dark-theme .mw-echo-ui-notificationItemWidget:hover {
+    background-color: var(--dark-bg-4);
+}
+.dark-theme .mw-echo-ui-notificationItemWidget-unread {
+    background-color: #000;
+}
+.dark-theme .mw-echo-ui-notificationItemWidget-unread:hover {
+    background-color: var(--dark-bg-1);
+}
+.dark-theme .mw-echo-ui-notificationItemWidget-content-message-header,
+.dark-theme .mw-echo-ui-notificationItemWidget-content-message-body {
+    color: var(--font-color);
+}
+.dark-theme .mw-echo-ui-pageNotificationsOptionWidget.oo-ui-optionWidget-selected {
+    background-color: var(--dark-bg-1);
+}
+.dark-theme .mw-echo-ui-pageNotificationsOptionWidget-label-count {
+    background-color: var(--dark-bg-2);
+}
+.dark-theme .mw-echo-ui-pageNotificationsOptionWidget.oo-ui-optionWidget-selected.mw-echo-ui-pageNotificationsOptionWidget.oo-ui-optionWidget-highlighted,
+.dark-theme .mw-echo-ui-pageNotificationsOptionWidget.oo-ui-optionWidget-pressed.mw-echo-ui-pageNotificationsOptionWidget.oo-ui-optionWidget-highlighted {
+    background-color: rgba(33, 78, 163, 0.1);
+}
+.dark-theme .mw-echo-ui-pageNotificationsOptionWidget.oo-ui-optionWidget-highlighted {
+    background-color: var(--dark-bg-2);
+    color: var(--font-color);
+}
+.dark-theme .mw-echo-ui-menuItemWidget > .oo-ui-buttonElement-button > .oo-ui-labelElement-label {
+    color: var(--font-color);
+}
+.dark-theme .mw-echo-special-nojs {
+    filter: invert(1); /* doesn't look great but it works */
+}
+
+/* Fix references */
+.dark-theme ol.references li:target,
+.dark-theme sup.reference:target {
+    background-color: #000;
+}
+.dark-theme #content sup.reference:target a,
+.dark-theme #content sup.reference:target a:visited {
+    color: #cc0;
 }
