@@ -29,7 +29,7 @@
 	},
 	"ResourceModules": {
 		"skins.scratchwikiskin2": {
-			"class": "ResourceLoaderSkinModule",
+			"class": "MediaWiki\\ResourceLoader\\SkinModule",
 			"features": {
 				"content-links": true,
 				"content-media": true,

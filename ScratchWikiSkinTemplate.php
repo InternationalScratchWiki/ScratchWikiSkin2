@@ -30,7 +30,7 @@ class ScratchWikiSkinTemplate extends BaseTemplate {
 }
 </style>
 <?php
-$logos = ResourceLoaderSkinModule::getAvailableLogos( $this->getSkin()->getConfig() );
+$logos = MediaWiki\ResourceLoader\SkinModule::getAvailableLogos( $this->getSkin()->getConfig() );
 $wordmark = $logos['wordmark']['src'] ?? $this->get('stylepath') . '/' . $this->getSkin()->stylename . '/resources/Scratch-logo-sm.png';
 $wordmarkW = $logos['wordmark']['width'] ?? 76;
 $wordmarkH = $logos['wordmark']['height'] ?? 28;
