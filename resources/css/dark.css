@@ -189,7 +189,7 @@ body.dark-theme {
 .dark-theme table.mw-datatable td.h13,
 .dark-theme table.mw-datatable th.h13 {
     background-color: #102448;
-    color: white;
+    color: var(--font-color);
 }
 .dark-theme table.wikitable th,
 .dark-theme table.wikitable td,
