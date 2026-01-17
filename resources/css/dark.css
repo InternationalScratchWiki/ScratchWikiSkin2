@@ -188,7 +188,8 @@ body.dark-theme {
 .dark-theme table.mw-datatable th,
 .dark-theme table.mw-datatable td.h13,
 .dark-theme table.mw-datatable th.h13 {
-    background-color: #102448
+    background-color: #102448;
+    color: white;
 }
 .dark-theme table.wikitable th,
 .dark-theme table.wikitable td,
@@ -396,7 +397,7 @@ body.dark-theme {
     background-color: unset;
     border-color: #8b8174;
 }
-.dark-theme figure[typeof],
+.dark-theme figure[typeof]:not([typeof="mw:File"]),
 .dark-theme figure[typeof] > figcaption,
 .dark-theme div.thumbinner {
     background-color: #070605;
