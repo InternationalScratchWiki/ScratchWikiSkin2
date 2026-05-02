@@ -996,3 +996,6 @@ dl dt {
 .ve-ui-context-menu.ve-ui-desktopContext-menu {
     position: initial;
 }
+html.ve-activated .mw-body-content {
+    min-height: calc(33vh - var(--nav-height));
+}
