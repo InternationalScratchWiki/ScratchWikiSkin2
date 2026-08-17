@@ -74,9 +74,9 @@ $wordmarkH = $logos['wordmark']['height'] ?? 28;
 				</ul>
 			</li>
 			<li class="link about">
-				<a class="dropdown-toggle" href="https://scratch.mit.edu/about"><span><?=wfMessage('scratchwikiskin-about')->inLanguage( $wgLang )->escaped()?></span></a>
+				<a class="dropdown-toggle" href="https://www.scratchfoundation.org/home"><span><?=wfMessage('scratchwikiskin-about')->inLanguage( $wgLang )->escaped()?></span></a>
 				<ul class="dropdown">
-					<li><a href="https://scratch.mit.edu/about"><span><?=wfMessage( 'scratchwikiskin-about-text' )->inLanguage( $wgLang )->escaped() ?></span></a></li>
+					<li><a href="https://www.scratchfoundation.org/home"><span><?=wfMessage( 'scratchwikiskin-about-text' )->inLanguage( $wgLang )->escaped() ?></span></a></li>
 					<li><a href="<?=Title::newFromText(wfMessage('aboutpage')->inContentLanguage()->text())->getLinkURL()?>"><span><?=wfMessage('aboutsite')->inLanguage( $wgLang )->escaped()?></span></a></li>
 				</ul>
 			</li>
@@ -236,13 +236,13 @@ $line = wfMessage('scratchwikiskin-dark-theme-feedback')->rawParams( $link )->in
 		<div class="lists">
 			<dl class="about">
 				<dt><span><?=wfMessage('scratchwikiskin-footer-about-title')->inLanguage( $wgLang )->escaped()?></span></dt>
-<dd><span><a href="https://scratch.mit.edu/about/"><?=wfMessage('scratchwikiskin-footer-about')->inLanguage( $wgLang )->escaped()?></a></span></dd>
+<dd><span><a href="https://www.scratchfoundation.org/home"><?=wfMessage('scratchwikiskin-footer-about')->inLanguage( $wgLang )->escaped()?></a></span></dd>
 <dd><span><a href="<?=Title::newFromText(wfMessage('aboutpage')->inContentLanguage()->text())->getLinkURL()?>"><?=wfMessage('aboutsite')->inLanguage( $wgLang )->escaped()?></a></span></dd>
-<dd><span><a href="https://scratch.mit.edu/parents/"><?=wfMessage('scratchwikiskin-footer-parents')->inLanguage( $wgLang )->escaped()?></a></span></dd>
-<dd><span><a href="https://scratch.mit.edu/educators/"><?=wfMessage('scratchwikiskin-footer-educators')->inLanguage( $wgLang )->escaped()?></a></span></dd>
+<dd><span><a href="https://www.scratchfoundation.org/learn/for-families"><?=wfMessage('scratchwikiskin-footer-parents')->inLanguage( $wgLang )->escaped()?></a></span></dd>
+<dd><span><a href="https://www.scratchfoundation.org/learn/for-educators"><?=wfMessage('scratchwikiskin-footer-educators')->inLanguage( $wgLang )->escaped()?></a></span></dd>
 <dd><span><a href="https://scratch.mit.edu/developers/"><?=wfMessage('scratchwikiskin-footer-developers')->inLanguage( $wgLang )->escaped()?></a></span></dd>
 <dd><span><a href="https://scratch.mit.edu/credits"><?=wfMessage('scratchwikiskin-footer-credits')->inLanguage( $wgLang )->escaped()?></a></span></dd>
-<dd><span><a href="https://www.scratchfoundation.org/supporters"><?=wfMessage('scratchwikiskin-footer-donors')->inLanguage( $wgLang )->escaped()?></a></span></dd>
+<dd><span><a href="https://www.scratchfoundation.org/get-involved/supporters"><?=wfMessage('scratchwikiskin-footer-donors')->inLanguage( $wgLang )->escaped()?></a></span></dd>
 <dd><span><a href="https://www.scratchfoundation.org/careers"><?=wfMessage('scratchwikiskin-footer-jobs')->inLanguage( $wgLang )->escaped()?></a></span></dd>
 <dd><span><a href="https://www.scratchfoundation.org/donate"><?=wfMessage('scratchwikiskin-footer-donate')->inLanguage( $wgLang )->escaped()?></a></span></dd>
 			</dl>
@@ -259,7 +259,7 @@ $line = wfMessage('scratchwikiskin-dark-theme-feedback')->rawParams( $link )->in
 <dd><span><a href="<?=Title::newFromText(wfMessage('scratchwikiskin-footer-help-page-url')->inContentLanguage()->text())->getLinkURL()?>"><?=wfMessage('scratchwikiskin-footer-help')->inLanguage( $wgLang )->escaped()?></a></span></dd>
 <dd><span><a href="https://scratch.mit.edu/ideas"><?=wfMessage('scratchwikiskin-footer-ideas')->inLanguage( $wgLang )->escaped()?></a></span></dd>
 <dd><span><a href="<?=Title::newFromText(wfMessage('scratchwikiskin-faq-page-url')->inContentLanguage()->text())->getLinkURL()?>"><?=wfMessage('scratchwikiskin-faq-page')->inLanguage( $wgLang )->escaped()?></a></span></dd>
-<dd><span><a href="https://scratch.mit.edu/download"><?=wfMessage('scratchwikiskin-footer-offline')->inLanguage( $wgLang )->escaped()?></a></span></dd>
+<dd><span><a href="https://scratch.mit.edu/download"><?=wfMessage('scratchwikiskin-footer-scratch-app')->inLanguage( $wgLang )->escaped()?></a></span></dd>
 			</dl>
 			<dl class="legal">
 				<dt><span><?=wfMessage('scratchwikiskin-footer-legal-title')->inLanguage( $wgLang )->escaped()?></span></dt>
@@ -269,12 +269,10 @@ $line = wfMessage('scratchwikiskin-dark-theme-feedback')->rawParams( $link )->in
 			<dl class="family">
 				<dt><span><?=wfMessage('scratchwikiskin-footer-family-title')->inLanguage( $wgLang )->escaped()?></span></dt>
 <dd><span><a href="https://scratch.mit.edu"><?=wfMessage('scratchwikiskin-footer-scratchsite')->inLanguage( $wgLang )->escaped()?></a></span></dd>
-<dd><span><a href="https://scratched.gse.harvard.edu"><?=wfMessage('scratchwikiskin-footer-scratched')->inLanguage( $wgLang )->escaped()?></a></span></dd>
 <dd><span><a href="https://www.scratchjr.org"><?=wfMessage('scratchwikiskin-footer-scratchjr')->inLanguage( $wgLang )->escaped()?></a></span></dd>
-<dd><span><a href="https://day.scratch.mit.edu"><?=wfMessage('scratchwikiskin-footer-scratchday')->inLanguage( $wgLang )->escaped()?></a></span></dd>
-<dd><span><a href="https://scratch.mit.edu/conference"><?=wfMessage('scratchwikiskin-footer-conference')->inLanguage( $wgLang )->escaped()?></a></span></dd>
+<dd><span><a href="https://www.scratchfoundation.org/get-involved/events"><?=wfMessage('scratchwikiskin-footer-events')->inLanguage( $wgLang )->escaped()?></a></span></dd>
 <dd><span><a href="https://www.scratchfoundation.org"><?=wfMessage('scratchwikiskin-footer-foundation')->inLanguage( $wgLang )->escaped()?></a></span></dd>
-<dd><span><a href="https://scratch.mit.edu/store"><?=wfMessage('scratchwikiskin-footer-store')->inLanguage( $wgLang )->escaped()?></a></span></dd>
+<dd><span><a href="https://www.scratchfoundation.org/shop"><?=wfMessage('scratchwikiskin-footer-store')->inLanguage( $wgLang )->escaped()?></a></span></dd>
 			</dl>
 		</div>
 	</div>
